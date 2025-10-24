@@ -1,15 +1,15 @@
 # aeroUI
 
-aeroUI is a Tailwind-authored design layer that keeps Bootstrap's semantic HTML and data-API while applying the shadcn aesthetic. Every component is defined in a single `aeroui.css` source file using Tailwind's `@layer` and `@apply` syntax, backed by the same HSL design tokens that power shadcn/ui so you can iterate quickly with the Tailwind CLI and avoid hand-writing longform CSS.
+aeroUI blends the best parts of Bootstrap, shadcn/ui, and Tailwind CSS into a single workflow. You author interfaces with Bootstrap's semantic class names and data attributes, layer on Tailwind utility recipes via `@apply`, and inherit shadcn's HSL design tokens for a modern aesthetic. Everything lives in one Tailwind source file so the CSS you ship is always tailored to your markup.
 
-Unlike Bootstrap's precompiled CSS bundles, aeroUI expects you to run a Tailwind-aware build (Tailwind CLI, Vite, etc.) inside your project so the generated stylesheet always reflects the markup you actually ship. The docs bundle at `docs/assets/aeroui.css` is only an example build; your application should compile its own CSS from `src/aeroui.css` so unused selectors can be shaken out and newly added components are captured automatically.
+Because aeroUI is a Tailwind-authored layer—not a precompiled drop-in—you copy `src/aeroui.css` into your project and run it through your own Tailwind build (Tailwind CLI, Vite, Laravel Mix, etc.). That pipeline generates the production stylesheet alongside your application's markup so Bootstrap semantics, shadcn tokens, and Tailwind utilities stay in sync. The file at `docs/assets/aeroui.css` only illustrates the output used on the documentation site; compile your own build to guarantee accurate purging and future updates.
 
 ## Key Goals
 
 - **Bootstrap API Compatibility** – Keep existing markup and behaviours powered by `bootstrap.bundle.min.js`.
 - **shadcn Token Parity** – Components inherit the exact shadcn HSL token set (`--background`, `--foreground`, `--primary`, ...) with both light and dark definitions so the visuals match the reference design system.
-- **Single CSS Source** – Author everything inside `src/aeroui.css` and compile with the Tailwind CLI.
-- **Utility Composition** – Classes are composed with Tailwind utilities through `@apply` inside `@layer` blocks.
+- **Single CSS Source** – Author everything inside `src/aeroui.css` and compile with the Tailwind CLI or an equivalent build tool.
+- **Utility Composition** – Classes are composed with Tailwind utilities through `@apply` inside `@layer` blocks so you reuse the Tailwind mental model while keeping Bootstrap semantics.
 
 > **Note**: aeroUI is not a drop-in replacement for every Bootstrap selector. It focuses on elements that are required for Bootstrap's JavaScript interactivity (modals, dropdowns, offcanvas, etc.) and augments them with Tailwind-authored styling. Layout primitives, grid utilities, and additional design choices are expected to be handled the “Tailwind way” within your project.
 
@@ -50,7 +50,7 @@ The Tailwind source describes structural expectations (modals, dropdowns, offcan
 
 ## Using aeroUI in Your Project
 
-1. **Integrate aeroUI into your Tailwind build** – Reference `src/aeroui.css` (copy it into your source tree or import it) and ensure your Tailwind/Vite pipeline scans the HTML, Blade, JSX, etc. where you author Bootstrap markup. The commands in `package.json` show the expected CLI flags if you prefer a standalone Tailwind process.
+1. **Integrate aeroUI into your Tailwind build** – Copy `src/aeroui.css` into your source tree (for example `resources/css/aeroui.css`) and ensure your Tailwind/Vite pipeline scans the HTML, Blade, JSX, etc. where you author Bootstrap markup. The commands in `package.json` show the expected CLI flags if you prefer a standalone Tailwind process.
 2. **Bundle Bootstrap JavaScript** – Include `bootstrap.bundle.min.js` (via npm, CDN, or your preferred bundler) so data attributes continue to power interactive components.
 3. **Serve your generated CSS** – Point your app to the Tailwind build artifact produced on your machine or CI. The sample `docs/assets/aeroui.css` is useful for demos but should not be treated as an immutable production asset.
 
