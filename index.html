@@ -5,621 +5,345 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="aeroUI is a shadcn-inspired Tailwind layer for Bootstrap markup. Build modern interfaces with familiar HTML and ready-made blocks."
+      content="aeroUI pairs Tailwind authoring with Bootstrap markup so you can ship polished interfaces fast."
     />
     <title>aeroUI — Tailwind-authored Bootstrap visuals</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%233b82f6'/%3E%3Cpath fill='white' d='M10.4 23.4a1.2 1.2 0 0 1-1.1-1.7l5.2-12c.4-.9 1.9-.9 2.3 0l5.2 12a1.2 1.2 0 0 1-1.1 1.7h-2.1a1.2 1.2 0 0 1-1.1-.7l-.9-2.1h-3.5l-.9 2.1a1.2 1.2 0 0 1-1.1.7zm6.2-6.2-1.2-2.8-1.2 2.8z'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="dist/aeroui.css" />
-    <style>
-      .hero-surface {
-        background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%),
-          radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 40%);
-      }
-      .code-block {
-        position: relative;
-        background: rgb(15 23 42 / 0.85);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        overflow-x: auto;
-        color: rgb(226 232 240);
-        font-size: 0.875rem;
-        line-height: 1.5;
-      }
-      .code-block pre {
-        margin: 0;
-        white-space: pre-wrap;
-        word-break: break-word;
-      }
-      .copy-button {
-        position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
-      }
-      .preview-card {
-        border-radius: 1rem;
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        background: linear-gradient(145deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.02));
-        padding: 1.75rem;
-        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
-      }
-      .blocks-grid {
-        display: grid;
-        gap: 1.5rem;
-      }
-      @media (min-width: 768px) {
-        .blocks-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-      .docs-card {
-        border-radius: 1rem;
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        padding: 1.5rem;
-        transition: transform 200ms ease, box-shadow 200ms ease;
-      }
-      .docs-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
-      }
-      .section-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        background: rgba(59, 130, 246, 0.12);
-        color: rgb(37, 99, 235);
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-
-      .muted-surface {
-        background-color: hsl(var(--muted) / 0.4);
-      }
-
-      .soft-background {
-        background-color: hsl(var(--background) / 0.85);
-      }
-
-      .soft-primary-chip {
-        background-color: hsl(var(--primary) / 0.15);
-        color: hsl(var(--primary));
-      }
-
-      .mt-4 {
-        margin-top: 1rem;
-      }
-
-      .mt-8 {
-        margin-top: 2rem;
-      }
-
-      .gap-12 {
-        gap: 3rem;
-      }
-
-      .grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .rounded-xl {
-        border-radius: 0.75rem;
-      }
-
-      .rounded-2xl {
-        border-radius: 1.25rem;
-      }
-
-      .w-9 {
-        width: 2.25rem;
-      }
-
-      .space-y-5 > * + * {
-        margin-top: 1.25rem;
-      }
-
-      .space-y-10 > * + * {
-        margin-top: 2.5rem;
-      }
-
-      .space-y-12 > * + * {
-        margin-top: 3rem;
-      }
-
-      @media (min-width: 640px) {
-        .sm\:grid-cols-2 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .sm\:grid-cols-3 {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .sm\:text-5xl {
-          font-size: 3rem;
-          line-height: 1;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .lg\:grid-cols-2 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .lg\:items-center {
-          align-items: center;
-        }
-      }
-    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body class="bg-background text-foreground">
-    <div class="min-h-screen flex flex-col">
-      <header class="sticky top-0 z-30 border-b bg-background backdrop-blur">
-        <div class="container flex items-center justify-between py-4">
+    <div class="flex min-h-screen flex-col" data-theme="light">
+      <header class="sticky top-0 z-40 border-b border-border/80 bg-background/80 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a class="flex items-center gap-2 text-lg font-semibold" href="#top">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                <path d="M4 16.5 9.5 4.5c.5-1 1.9-1 2.4 0L17 16.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="m6.5 16.5 2.5-6 2.5 6" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M9 19.5h6" stroke-linecap="round" />
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="m12 4 6.928 4v8L12 20l-6.928-4V8L12 4Z"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                />
+                <path d="m9.5 9.75 5 2.25-5 2.25" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </span>
             aeroUI
           </a>
-          <nav class="hidden items-center gap-6 text-sm font-medium md:flex">
-            <a class="text-muted-foreground hover:text-foreground" href="#docs">Docs</a>
-            <a class="text-muted-foreground hover:text-foreground" href="#components">Components</a>
-            <a class="text-muted-foreground hover:text-foreground" href="#blocks">Blocks</a>
-            <a class="text-muted-foreground hover:text-foreground" href="https://github.com/">GitHub</a>
+          <nav class="hidden items-center gap-10 text-sm font-medium md:flex">
+            <a class="text-muted-foreground transition hover:text-foreground" href="#overview">Overview</a>
+            <a class="text-muted-foreground transition hover:text-foreground" href="#components">Components</a>
+            <a class="text-muted-foreground transition hover:text-foreground" href="#blocks">Blocks</a>
+            <a class="text-muted-foreground transition hover:text-foreground" href="#docs">Docs</a>
           </nav>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-3">
             <button
+              id="theme-toggle"
               type="button"
-              class="btn btn-outline-primary btn-sm"
-              data-theme-toggle
-              aria-label="Toggle dark mode"
+              class="inline-flex items-center gap-2 rounded-full border border-border/60 bg-secondary/60 px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
             >
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 3.5a1 1 0 0 1 1 1v1.1a1 1 0 0 1-2 0V4.5a1 1 0 0 1 1-1zm6.37 2.13a1 1 0 0 1 1.37 1.37l-.78.79a1 1 0 1 1-1.41-1.41l.82-.75zM20.5 13a1 1 0 0 1-1 1h-1.1a1 1 0 0 1 0-2h1.1a1 1 0 0 1 1 1zm-2.76 5.74a1 1 0 0 1-1.37 1.37l-.79-.78a1 1 0 0 1 1.41-1.41l.75.82zM12 18.4a1 1 0 0 1 1 1V20.5a1 1 0 0 1-2 0v-1.1a1 1 0 0 1 1-1zm-5.63-.27a1 1 0 0 1-1.37-1.37l.78-.79a1 1 0 0 1 1.41 1.41l-.82.75zM5.6 12a1 1 0 0 1-1 1H3.5a1 1 0 0 1 0-2h1.1a1 1 0 0 1 1 1zm2.76-5.74a1 1 0 0 1 1.37-1.37l.79.78a1 1 0 1 1-1.41 1.41l-.75-.82z"
-                />
-                <circle cx="12" cy="12" r="3.25" />
-              </svg>
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M10 3a1 1 0 0 0-1 1v1.055a5.002 5.002 0 0 0-3.445 7.577l-.747.747a1 1 0 0 0 1.414 1.414l.747-.747A5.002 5.002 0 0 0 11.945 5H13a1 1 0 1 0 0-2h-1a1 1 0 0 0-1-1Z"
+                  />
+                </svg>
+              </span>
+              Toggle theme
             </button>
-            <a class="btn btn-primary btn-sm" href="https://github.com/search?q=aeroUI" target="_blank" rel="noreferrer">
-              Star on GitHub
+            <a
+              href="https://github.com/"
+              class="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 md:inline-flex"
+            >
+              GitHub
             </a>
           </div>
         </div>
       </header>
+
       <main id="top" class="flex-1">
-        <section class="hero-surface border-b py-24">
-          <div class="container grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div class="space-y-6">
-              <span class="section-eyebrow">Bootstrap markup, shadcn finish</span>
+        <section id="overview" class="relative overflow-hidden border-b border-border/70 bg-background">
+          <div class="pointer-events-none absolute inset-x-0 -top-40 -z-10 mx-auto h-[30rem] max-w-5xl bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.28),transparent_60%)] blur-3xl"></div>
+          <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-16 lg:flex-row lg:items-center">
+            <div class="flex-1 space-y-6">
+              <span class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                Tailwind authored. Bootstrap ready.
+              </span>
               <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                Build Bootstrap experiences that feel native to Tailwind
+                Ship polished Bootstrap markup with Tailwind precision.
               </h1>
-              <p class="lead max-w-xl">
-                aeroUI keeps Bootstrap's data-API and HTML semantics intact while layering the shadcn token system and Tailwind
-                ergonomics on top. Ship modals, dropdowns, and dashboards that look modern without rewriting your markup.
+              <p class="max-w-xl text-lg text-muted-foreground">
+                aeroUI layers a design system over plain Bootstrap components, giving you shadcn-level aesthetics while sticking to familiar markup. Preview live examples, grab copy-ready snippets, and assemble landing pages in minutes.
               </p>
-              <div class="flex flex-wrap gap-3">
-                <a class="btn btn-primary btn-lg" href="#docs">Read the docs</a>
-                <a class="btn btn-outline btn-lg" href="demo.html">Explore component lab</a>
+              <div class="flex flex-wrap items-center gap-4">
+                <a
+                  href="#docs"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:bg-primary/90"
+                >
+                  Read the docs
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="m7.5 5.5 5 5-5 5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <a
+                  href="#components"
+                  class="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/50 hover:text-primary"
+                >
+                  Explore components
+                </a>
               </div>
-              <dl class="mt-8 grid grid-cols-2 gap-6 text-sm text-muted-foreground sm:grid-cols-3">
+              <dl class="grid grid-cols-2 gap-6 pt-6 text-sm text-muted-foreground sm:max-w-md">
                 <div>
-                  <dt class="text-xs uppercase tracking-wide text-muted">Bundle size</dt>
-                  <dd class="text-lg font-semibold text-foreground">12kb gzipped</dd>
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-foreground/80">Framework</dt>
+                  <dd class="mt-1 font-medium text-foreground">Bootstrap 5</dd>
                 </div>
                 <div>
-                  <dt class="text-xs uppercase tracking-wide text-muted">Components</dt>
-                  <dd class="text-lg font-semibold text-foreground">40+ patterns</dd>
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-foreground/80">Styling</dt>
+                  <dd class="mt-1 font-medium text-foreground">Tailwind CSS</dd>
                 </div>
                 <div>
-                  <dt class="text-xs uppercase tracking-wide text-muted">Dark mode</dt>
-                  <dd class="text-lg font-semibold text-foreground">Token driven</dd>
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-foreground/80">Themes</dt>
+                  <dd class="mt-1 font-medium text-foreground">Light & Dark</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-semibold uppercase tracking-wider text-foreground/80">Blocks</dt>
+                  <dd class="mt-1 font-medium text-foreground">Marketing ready</dd>
                 </div>
               </dl>
             </div>
-            <div class="preview-card space-y-6">
-              <h2 class="text-xl font-semibold text-foreground">Assemble interfaces in minutes</h2>
-              <p class="text-sm text-muted-foreground">
-                Copy the markup, wire up Bootstrap's bundle, and you have production-ready UI that respects your theme tokens.
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <button class="btn btn-primary">Launch modal</button>
-                <button class="btn btn-secondary">Secondary</button>
-                <button class="btn btn-outline">Ghost</button>
-              </div>
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title text-base">Onboarding</h3>
-                    <span class="badge badge-success">New</span>
+            <div class="flex-1">
+              <div class="relative isolate overflow-hidden rounded-3xl border border-border bg-card shadow-[0_25px_70px_-30px_rgba(37,99,235,0.45)]">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.35),transparent_60%)]"></div>
+                <div class="relative space-y-6 p-8">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Live preview</span>
+                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Bootstrap + Tailwind</span>
                   </div>
-                  <div class="card-body space-y-2">
-                    <p class="text-sm">
-                      Mix Bootstrap data attributes with Tailwind utilities like <code>.gap-4</code> and <code>.rounded-xl</code>.
-                    </p>
-                    <button class="btn btn-primary btn-sm">Create workspace</button>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-body space-y-3">
-                    <div class="flex items-center justify-between">
-                      <span class="text-sm font-medium">Progress</span>
-                      <span class="badge badge-primary">62%</span>
-                    </div>
-                    <div class="progress" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
-                      <div class="progress-bar" style="width: 62%"></div>
-                    </div>
-                    <p class="text-xs text-muted-foreground">
-                      Form controls, accordions, offcanvas, and more ship with accessible defaults.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="docs" class="border-b py-20">
-          <div class="container space-y-12">
-            <div class="max-w-2xl space-y-4">
-              <span class="section-eyebrow">Documentation</span>
-              <h2 class="text-3xl font-semibold tracking-tight text-foreground">Everything you need to ship quickly</h2>
-              <p>
-                The README covers setup, component coverage, and the Tailwind-driven workflow. Use these quick links to get up
-                to speed or embed the CSS in your favourite framework.
-              </p>
-            </div>
-            <div class="grid gap-6 md:grid-cols-3">
-              <article class="docs-card">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-foreground">Getting started</h3>
-                  <span class="badge badge-primary">Step-by-step</span>
-                </div>
-                <p class="mt-3 text-sm">
-                  Install dependencies, run the Tailwind CLI, and compile <code>src/aeroui.css</code> into your application bundle.
-                </p>
-                <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>• Tailwind-powered source file</li>
-                  <li>• Bootstrap JS bundle expectations</li>
-                  <li>• Example commands for CI</li>
-                </ul>
-                <a class="btn btn-link mt-6" href="README.md">Open README</a>
-              </article>
-              <article class="docs-card">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-foreground">Design tokens</h3>
-                  <span class="badge badge-secondary">Theme</span>
-                </div>
-                <p class="mt-3 text-sm">
-                  Override shadcn-compatible CSS variables to match your brand and ship cohesive light and dark experiences.
-                </p>
-                <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>• Works with Tailwind config</li>
-                  <li>• Dark mode ready out of the box</li>
-                  <li>• System preference detection</li>
-                </ul>
-                <a class="btn btn-link mt-6" href="src/aeroui.css">Browse tokens</a>
-              </article>
-              <article class="docs-card">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-foreground">Component lab</h3>
-                  <span class="badge badge-info">Interactive</span>
-                </div>
-                <p class="mt-3 text-sm">
-                  Explore Bootstrap-powered interactions that adopt aeroUI styling — dropdowns, modals, offcanvas, and more.
-                </p>
-                <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>• Real Bootstrap data-API hooks</li>
-                  <li>• Accessible defaults baked in</li>
-                  <li>• Copy-paste friendly snippets</li>
-                </ul>
-                <a class="btn btn-link mt-6" href="demo.html">Launch demo</a>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="components" class="border-b py-20">
-          <div class="container space-y-12">
-            <div class="max-w-2xl space-y-4">
-              <span class="section-eyebrow">Components</span>
-              <h2 class="text-3xl font-semibold tracking-tight text-foreground">Preview live UI and copy the markup</h2>
-              <p>
-                Each component pairs a visual preview with the exact HTML you need. Bootstrap drives behaviour while Tailwind
-                utilities express the look and feel.
-              </p>
-            </div>
-            <div class="space-y-10">
-              <div class="grid gap-8 lg:grid-cols-2">
-                <div class="preview-card space-y-4">
-                  <h3 class="text-lg font-semibold">Modal + form controls</h3>
-                  <p class="text-sm text-muted-foreground">
-                    Combine <code>.btn</code>, <code>.modal</code>, and Tailwind spacing utilities. Copy the snippet to drop it in
-                    your project.
-                  </p>
-                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#previewModal">
-                    Open modal
-                  </button>
-                  <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Invite teammate</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body space-y-3">
-                          <div>
-                            <label for="previewEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="previewEmail" placeholder="you@example.com" />
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="previewAdmin" />
-                            <label class="form-check-label" for="previewAdmin">Grant admin permissions</label>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <button type="button" class="btn btn-primary">Send invite</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="code-block">
-                  <button class="btn btn-outline btn-sm copy-button" data-copy="snippet-modal">Copy</button>
-                  <pre id="snippet-modal">&lt;button class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#inviteModal&quot;&gt;
-  Invite teammate
-&lt;/button&gt;
-
-&lt;div class=&quot;modal fade&quot; id=&quot;inviteModal&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot;&gt;
-  &lt;div class=&quot;modal-dialog modal-dialog-centered&quot;&gt;
-    &lt;div class=&quot;modal-content&quot;&gt;
-      &lt;div class=&quot;modal-header&quot;&gt;
-        &lt;h5 class=&quot;modal-title&quot;&gt;Invite teammate&lt;/h5&gt;
-        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;modal-body space-y-3&quot;&gt;
-        &lt;div&gt;
-          &lt;label class=&quot;form-label&quot; for=&quot;inviteEmail&quot;&gt;Email address&lt;/label&gt;
-          &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;inviteEmail&quot; placeholder=&quot;you@example.com&quot; /&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form-check&quot;&gt;
-          &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;inviteAdmin&quot; /&gt;
-          &lt;label class=&quot;form-check-label&quot; for=&quot;inviteAdmin&quot;&gt;Grant admin permissions&lt;/label&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;modal-footer&quot;&gt;
-        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Cancel&lt;/button&gt;
-        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Send invite&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-                </div>
-              </div>
-
-              <div class="grid gap-8 lg:grid-cols-2">
-                <div class="preview-card space-y-4">
-                  <h3 class="text-lg font-semibold">Tabs + cards</h3>
-                  <p class="text-sm text-muted-foreground">
-                    Use <code>.nav-tabs</code> and <code>.card</code> primitives to switch between product states.
-                  </p>
-                  <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabOverview" type="button" role="tab">
-                        Overview
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabUsage" type="button" role="tab">
-                        Usage
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabBilling" type="button" role="tab">
-                        Billing
-                      </button>
-                    </li>
-                  </ul>
-                  <div class="tab-content">
-                    <div class="tab-pane fade show active" id="tabOverview" role="tabpanel">
-                      <div class="card mt-4">
-                        <div class="card-body space-y-2">
-                          <h4 class="text-base font-semibold">Monitor adoption</h4>
-                          <p class="text-sm text-muted-foreground">
-                            Break down traffic, feature usage, and feedback with ready-made cards.
-                          </p>
-                          <div class="d-flex items-center justify-between rounded-lg border border-dashed p-3">
-                            <span class="text-sm font-medium">Active seats</span>
-                            <span class="badge badge-success">128</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane fade" id="tabUsage" role="tabpanel">
-                      <div class="card mt-4">
-                        <div class="card-body space-y-2">
-                          <p class="text-sm">Track API consumption, rate limits, and alerts with drop-in utilities.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane fade" id="tabBilling" role="tabpanel">
-                      <div class="card mt-4">
-                        <div class="card-body space-y-2">
-                          <p class="text-sm">Build subscription management flows with accordions, tables, and alerts.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="code-block">
-                  <button class="btn btn-outline btn-sm copy-button" data-copy="snippet-tabs">Copy</button>
-                  <pre id="snippet-tabs">&lt;ul class=&quot;nav nav-tabs&quot; role=&quot;tablist&quot;&gt;
-  &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
-    &lt;button class=&quot;nav-link active&quot; data-bs-toggle=&quot;tab&quot; data-bs-target=&quot;#overview&quot; type=&quot;button&quot; role=&quot;tab&quot;&gt;
-      Overview
-    &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
-    &lt;button class=&quot;nav-link&quot; data-bs-toggle=&quot;tab&quot; data-bs-target=&quot;#usage&quot; type=&quot;button&quot; role=&quot;tab&quot;&gt;
-      Usage
-    &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
-    &lt;button class=&quot;nav-link&quot; data-bs-toggle=&quot;tab&quot; data-bs-target=&quot;#billing&quot; type=&quot;button&quot; role=&quot;tab&quot;&gt;
-      Billing
-    &lt;/button&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;tab-content&quot;&gt;
-  &lt;div class=&quot;tab-pane fade show active&quot; id=&quot;overview&quot; role=&quot;tabpanel&quot;&gt;
-    &lt;div class=&quot;card mt-4&quot;&gt;
-      &lt;div class=&quot;card-body space-y-2&quot;&gt;
-        &lt;h4 class=&quot;text-base font-semibold&quot;&gt;Monitor adoption&lt;/h4&gt;
-        &lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;
-          Break down traffic, feature usage, and feedback with ready-made cards.
-        &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;tab-pane fade&quot; id=&quot;usage&quot; role=&quot;tabpanel&quot;&gt;
-    &lt;!-- Additional content --&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;tab-pane fade&quot; id=&quot;billing&quot; role=&quot;tabpanel&quot;&gt;
-    &lt;!-- Additional content --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="blocks" class="border-b muted-surface py-20">
-          <div class="container space-y-12">
-            <div class="max-w-2xl space-y-4">
-              <span class="section-eyebrow">Blocks</span>
-              <h2 class="text-3xl font-semibold tracking-tight text-foreground">Ready-made page sections</h2>
-              <p>
-                Drop these compositions into marketing sites, dashboards, and onboarding flows. Each block uses the same component
-                primitives so you can iterate without leaving HTML.
-              </p>
-            </div>
-            <div class="blocks-grid">
-              <div class="card">
-                <div class="card-body space-y-6">
-                  <div class="flex flex-wrap items-center justify-between gap-4">
-                    <div>
-                      <span class="badge badge-info">Product update</span>
-                      <h3 class="mt-2 text-xl font-semibold">Announcing workspace analytics</h3>
-                      <p class="text-sm text-muted-foreground">
-                        Understand adoption at a glance with funnels, retention curves, and real-time collaboration metrics.
+                  <div class="space-y-4">
+                    <div class="rounded-2xl border border-border bg-background/80 p-6 shadow-sm">
+                      <h3 class="text-base font-semibold">Pricing card</h3>
+                      <p class="mt-2 text-sm text-muted-foreground">
+                        Crafted with Bootstrap markup and Tailwind tokens. Toggle for dark mode to preview instantly.
                       </p>
+                      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-xl border border-primary/20 bg-primary/10 p-4">
+                          <div class="text-xs font-semibold uppercase tracking-wide text-primary">Starter</div>
+                          <div class="mt-2 text-3xl font-semibold text-foreground">$19</div>
+                          <p class="mt-2 text-xs text-muted-foreground">Perfect for prototypes and side projects.</p>
+                          <button class="mt-4 w-full rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                            Choose plan
+                          </button>
+                        </div>
+                        <div class="rounded-xl border border-border bg-card/80 p-4 shadow-inner">
+                          <div class="text-xs font-semibold uppercase tracking-wide text-foreground/80">Enterprise</div>
+                          <div class="mt-2 text-3xl font-semibold text-foreground">Custom</div>
+                          <p class="mt-2 text-xs text-muted-foreground">Pair with dedicated support and design services.</p>
+                          <button class="mt-4 w-full rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:border-primary/40">
+                            Talk to sales
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <a class="btn btn-primary" href="#">See what's new</a>
                   </div>
-                  <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-xl border border-dashed p-4">
-                      <p class="text-xs text-muted-foreground uppercase tracking-wide">New dashboards</p>
-                      <p class="mt-2 text-sm font-medium">Funnel, retention, and cohort analysis out of the box.</p>
+                  <div class="rounded-2xl border border-border bg-background/60 p-6">
+                    <div class="flex items-center justify-between gap-4">
+                      <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground/90">Developer ready</h3>
+                        <p class="mt-1 text-xs text-muted-foreground">Copy snippets or launch Bootstrap JS demos instantly.</p>
+                      </div>
+                      <span class="rounded-full bg-success/10 px-3 py-1 text-xs font-semibold text-success">Copy & play</span>
                     </div>
-                    <div class="rounded-xl border border-dashed p-4">
-                      <p class="text-xs text-muted-foreground uppercase tracking-wide">Collaboration</p>
-                      <p class="mt-2 text-sm font-medium">Mention teammates and share saved views instantly.</p>
-                    </div>
+                    <pre class="relative mt-4 overflow-hidden rounded-2xl border border-border bg-slate-950/80 p-5 text-xs leading-6 text-slate-200">
+<code>&lt;div class="card shadow-sm rounded-3xl"&gt;
+  &lt;div class="card-body space-y-3"&gt;
+    &lt;h3 class="fs-5 fw-semibold"&gt;Meet aeroUI&lt;/h3&gt;
+    &lt;p class="text-muted"&gt;Drop in Tailwind tokens without abandoning Bootstrap.&lt;/p&gt;
+    &lt;button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#demoModal"&gt;
+      Launch example
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+                      <button
+                        type="button"
+                        class="copy-trigger absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-white backdrop-blur hover:bg-white/20"
+                        data-copy="&lt;div class=&quot;card shadow-sm rounded-3xl&quot;&gt;&#10;  &lt;div class=&quot;card-body space-y-3&quot;&gt;&#10;    &lt;h3 class=&quot;fs-5 fw-semibold&quot;&gt;Meet aeroUI&lt;/h3&gt;&#10;    &lt;p class=&quot;text-muted&quot;&gt;Drop in Tailwind tokens without abandoning Bootstrap.&lt;/p&gt;&#10;    &lt;button class=&quot;btn btn-primary rounded-pill&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#demoModal&quot;&gt;&#10;      Launch example&#10;    &lt;/button&gt;&#10;  &lt;/div&gt;&#10;&lt;/div&gt;"
+                      >
+                        Copy HTML
+                      </button>
+                    </pre>
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-body space-y-5">
-                  <div class="d-flex items-center gap-3">
-                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full soft-primary-chip">
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-                      </svg>
+            </div>
+          </div>
+        </section>
+
+        <section id="components" class="border-b border-border/60 bg-background py-20">
+          <div class="mx-auto max-w-6xl px-6">
+            <div class="mb-12 flex flex-col gap-4 text-center">
+              <span class="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                Components
+              </span>
+              <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Preview ready-made UI essentials</h2>
+              <p class="mx-auto max-w-2xl text-base text-muted-foreground">
+                Every component ships with semantic Bootstrap markup enriched by Tailwind tokens. Explore interactive previews and drop them straight into your project.
+              </p>
+            </div>
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <article class="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider">
+                  <span class="text-primary">Navigation</span>
+                  <span class="rounded-full bg-secondary px-2 py-1 text-secondary-foreground">02 variants</span>
+                </div>
+                <div class="rounded-xl border border-border bg-background p-4">
+                  <div class="flex items-center justify-between gap-4 text-sm font-medium">
+                    <span>Brand</span>
+                    <div class="flex items-center gap-3 text-muted-foreground">
+                      <span>Docs</span>
+                      <span>Components</span>
+                      <span>Blocks</span>
+                    </div>
+                    <button class="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">Get aeroUI</button>
+                  </div>
+                </div>
+                <p class="text-sm text-muted-foreground">
+                  Accessible navbars with collapse states, CTA-ready buttons, and sticky header presets.
+                </p>
+              </article>
+              <article class="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider">
+                  <span class="text-primary">Forms</span>
+                  <span class="rounded-full bg-secondary px-2 py-1 text-secondary-foreground">06 controls</span>
+                </div>
+                <div class="space-y-3 rounded-xl border border-border bg-background p-4">
+                  <label class="flex flex-col gap-1 text-xs font-medium text-muted-foreground">
+                    Email
+                    <input class="rounded-lg border border-border/80 bg-background px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="you@aeroui.dev" />
+                  </label>
+                  <div class="flex items-center justify-between text-xs text-muted-foreground">
+                    <label class="flex items-center gap-2 font-medium text-foreground">
+                      <input type="checkbox" class="h-4 w-4 rounded border-border text-primary focus:ring-primary/40" />
+                      Remember me
+                    </label>
+                    <a href="#" class="font-medium text-primary hover:text-primary/80">Forgot?</a>
+                  </div>
+                  <button class="w-full rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+                    Sign in
+                  </button>
+                </div>
+                <p class="text-sm text-muted-foreground">
+                  Form controls with focus rings, validation states, and dark-mode support baked in.
+                </p>
+              </article>
+              <article class="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider">
+                  <span class="text-primary">Feedback</span>
+                  <span class="rounded-full bg-secondary px-2 py-1 text-secondary-foreground">Toast + Alerts</span>
+                </div>
+                <div class="space-y-3 rounded-xl border border-border bg-background p-4">
+                  <div class="flex items-start gap-3 rounded-lg border border-success/40 bg-success/10 p-3 text-sm text-success">
+                    <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-success text-success-foreground">
+                      ✓
                     </span>
                     <div>
-                      <h3 class="text-lg font-semibold">Security checklist</h3>
-                      <p class="text-sm text-muted-foreground">Embed compliance progress to reassure enterprise buyers.</p>
+                      <p class="font-semibold text-success-foreground">Deployment live</p>
+                      <p class="text-xs text-success-foreground/80">Your docs site is up — share the link with your team.</p>
                     </div>
                   </div>
-                  <ul class="space-y-3 text-sm">
-                    <li class="d-flex items-center justify-between rounded-lg border border-border bg-background p-3">
-                      <span>SSO &amp; SCIM provisioning</span>
-                      <span class="badge badge-success">Done</span>
-                    </li>
-                    <li class="d-flex items-center justify-between rounded-lg border border-border bg-background p-3">
-                      <span>Granular audit logs</span>
-                      <span class="badge badge-warning">In progress</span>
-                    </li>
-                    <li class="d-flex items-center justify-between rounded-lg border border-border bg-background p-3">
-                      <span>Data residency controls</span>
-                      <span class="badge badge-secondary">Planned</span>
-                    </li>
-                  </ul>
-                  <div class="rounded-lg border border-dashed bg-background p-4 text-sm text-muted-foreground">
-                    Drop this block into onboarding journeys, pricing pages, or as a persistent dashboard module.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body space-y-5">
-                  <div class="d-flex items-start justify-between gap-4">
+                  <div class="flex items-start gap-3 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning-foreground">
+                    <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-warning text-warning-foreground">!</span>
                     <div>
-                      <h3 class="text-lg font-semibold">Pricing teaser</h3>
-                      <p class="text-sm text-muted-foreground">
-                        Highlight your most popular plan while keeping alternatives easy to scan.
-                      </p>
-                    </div>
-                    <span class="badge badge-secondary">Popular</span>
-                  </div>
-                  <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-lg border border-border bg-background p-5">
-                      <p class="text-xs uppercase tracking-wide text-muted-foreground">Growth</p>
-                      <p class="mt-3 text-3xl font-semibold text-foreground">$49</p>
-                      <p class="text-sm text-muted-foreground">Unlimited projects, 5 teammates</p>
-                      <button class="btn btn-primary btn-sm mt-4 w-full">Start free trial</button>
-                    </div>
-                    <div class="rounded-lg border border-dashed soft-background p-5">
-                      <p class="text-xs uppercase tracking-wide text-muted-foreground">Enterprise</p>
-                      <p class="mt-3 text-3xl font-semibold text-foreground">Custom</p>
-                      <p class="text-sm text-muted-foreground">Dedicated support, white-glove onboarding</p>
-                      <button class="btn btn-outline btn-sm mt-4 w-full">Contact sales</button>
+                      <p class="font-semibold">Payment method expiring</p>
+                      <p class="text-xs text-warning-foreground/80">Update billing to keep automations running.</p>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-body space-y-5">
-                  <div class="d-flex items-center gap-3">
-                    <img
-                      src="https://avatars.githubusercontent.com/u/9919?v=4"
-                      alt="Customer avatar"
-                      class="h-12 w-12 rounded-full border border-border"
-                    />
+                <p class="text-sm text-muted-foreground">
+                  Alerts, badges, and toasts tuned for Bootstrap JS behaviors and Tailwind theming.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="blocks" class="border-b border-border/60 bg-muted/40 py-20">
+          <div class="mx-auto max-w-6xl px-6">
+            <div class="mb-10 flex flex-col gap-4 text-center">
+              <span class="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                Blocks
+              </span>
+              <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Ready-made layouts to launch faster</h2>
+              <p class="mx-auto max-w-2xl text-base text-muted-foreground">
+                Combine hero sections, feature grids, pricing slices, and blog layouts that all inherit aeroUI tokens.
+              </p>
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2">
+              <div class="space-y-6 rounded-3xl border border-border bg-background p-8 shadow-lg shadow-primary/10">
+                <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <span>Hero + CTA</span>
+                  <span class="rounded-full bg-primary/10 px-3 py-1 text-primary">New</span>
+                </div>
+                <h3 class="text-2xl font-semibold text-foreground">Launch pages that narrate your value prop clearly.</h3>
+                <p class="text-sm text-muted-foreground">
+                  Layer gradients, blur effects, and icon badges without writing custom CSS. Everything is composed using Tailwind classes with JIT compilation so unused styles disappear from production builds.
+                </p>
+                <div class="rounded-2xl border border-border bg-card/80 p-6">
+                  <div class="flex flex-wrap items-center justify-between gap-4 text-sm font-medium">
                     <div>
-                      <p class="text-sm text-muted-foreground">Customer highlight</p>
-                      <h3 class="text-lg font-semibold">“We shipped our redesign in a weekend.”</h3>
+                      <p class="text-xs uppercase tracking-wider text-muted-foreground">Hero stats</p>
+                      <p class="text-lg font-semibold text-foreground">12k teams rely on aeroUI</p>
+                    </div>
+                    <button class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow hover:bg-primary/90">
+                      Copy block
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="grid gap-6">
+                <div class="rounded-3xl border border-border bg-background p-6 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span>Feature grid</span>
+                    <span class="rounded-full bg-secondary px-2 py-1 text-secondary-foreground">4 items</span>
+                  </div>
+                  <div class="mt-6 grid gap-6 sm:grid-cols-2">
+                    <div class="space-y-2">
+                      <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">1</div>
+                      <h4 class="text-base font-semibold text-foreground">Tokens first</h4>
+                      <p class="text-sm text-muted-foreground">Design decisions driven by CSS variables for instant re-theming.</p>
+                    </div>
+                    <div class="space-y-2">
+                      <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">2</div>
+                      <h4 class="text-base font-semibold text-foreground">Bootstrap JS ready</h4>
+                      <p class="text-sm text-muted-foreground">Tooltips, modals, and collapses styled out of the box.</p>
+                    </div>
+                    <div class="space-y-2">
+                      <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">3</div>
+                      <h4 class="text-base font-semibold text-foreground">Composable</h4>
+                      <p class="text-sm text-muted-foreground">Drop in cards, navbars, and tables that share the same DNA.</p>
+                    </div>
+                    <div class="space-y-2">
+                      <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">4</div>
+                      <h4 class="text-base font-semibold text-foreground">Dark mode aware</h4>
+                      <p class="text-sm text-muted-foreground">Tokens swap instantly thanks to Tailwind's utility pipeline.</p>
                     </div>
                   </div>
-                  <blockquote class="rounded-lg border border-dashed bg-background p-4 text-sm text-muted-foreground">
-                    “The markup stayed exactly the same, but the visuals feel like a bespoke Tailwind build. Our team saved weeks
-                    of iteration thanks to aeroUI.”
-                  </blockquote>
-                  <div class="d-flex items-center justify-between text-sm text-muted-foreground">
-                    <span>Leah Kim, Product Design Lead</span>
-                    <span class="badge badge-info">Fintech</span>
+                </div>
+                <div class="rounded-3xl border border-border bg-background p-6 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span>Content layouts</span>
+                    <span class="rounded-full bg-secondary px-2 py-1 text-secondary-foreground">Docs, Blog, Changelog</span>
+                  </div>
+                  <div class="mt-6 space-y-4 text-sm text-muted-foreground">
+                    <div class="rounded-2xl border border-border/80 bg-card/70 p-4">
+                      <p class="text-xs uppercase tracking-wider text-primary">Docs pages</p>
+                      <p class="mt-1 text-base font-semibold text-foreground">Two-column documentation layout</p>
+                      <p class="mt-2 text-xs text-muted-foreground">Sticky sidebar with scrollspy-ready anchors, optimized for MDX exports.</p>
+                    </div>
+                    <div class="rounded-2xl border border-border/80 bg-card/70 p-4">
+                      <p class="text-xs uppercase tracking-wider text-primary">Blog index</p>
+                      <p class="mt-1 text-base font-semibold text-foreground">Showcase product changelogs</p>
+                      <p class="mt-2 text-xs text-muted-foreground">Feed cards with tag pills, author avatars, and publish dates.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -627,134 +351,166 @@
           </div>
         </section>
 
-        <section class="py-20">
-          <div class="container grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div class="space-y-4">
-              <span class="section-eyebrow">Why aeroUI</span>
-              <h2 class="text-3xl font-semibold tracking-tight text-foreground">Minimal setup, major glow-up</h2>
-              <p>
-                Keep your existing Bootstrap behaviour while adopting Tailwind's utility-first workflow. No rewrites, no new APIs —
-                just drop in the CSS and ship.
+        <section id="docs" class="bg-background py-20">
+          <div class="mx-auto max-w-6xl px-6">
+            <div class="mb-12 flex flex-col gap-4 text-center">
+              <span class="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                Documentation
+              </span>
+              <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Everything you need to build fast</h2>
+              <p class="mx-auto max-w-2xl text-base text-muted-foreground">
+                Start with a CLI quickstart, browse tokens, or copy production-ready components. Each page is organized like modern component libraries for minimal friction.
               </p>
-              <ul class="space-y-3 text-sm text-muted-foreground">
-                <li class="d-flex items-start gap-3">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full soft-primary-chip">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-                    </svg>
-                  </span>
-                  <span>
-                    <strong class="text-foreground">Bootstrap compatible.</strong> Works with <code>bootstrap.bundle.min.js</code>
-                    so dropdowns, modals, and accordions behave exactly as expected.
-                  </span>
-                </li>
-                <li class="d-flex items-start gap-3">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full soft-primary-chip">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-                    </svg>
-                  </span>
-                  <span>
-                    <strong class="text-foreground">shadcn tokens built-in.</strong> Customise via CSS variables or Tailwind's
-                    theme extension for full design control.
-                  </span>
-                </li>
-                <li class="d-flex items-start gap-3">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full soft-primary-chip">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-                    </svg>
-                  </span>
-                  <span>
-                    <strong class="text-foreground">Single source file.</strong> Tailwind handles purging and extension so you can
-                    add, remove, or tweak components quickly.
-                  </span>
-                </li>
-              </ul>
             </div>
-            <div class="grid gap-6">
-              <div class="rounded-2xl border border-border soft-background p-6 shadow-sm">
-                <h3 class="text-lg font-semibold">Install &amp; build</h3>
-                <p class="mt-2 text-sm text-muted-foreground">
-                  Run the Tailwind CLI alongside your Bootstrap project to generate a purged build tailored to your markup.
-                </p>
-                <div class="code-block mt-4">
-                  <button class="btn btn-outline btn-sm copy-button" data-copy="snippet-install">Copy</button>
-                  <pre id="snippet-install">npm install
-npm run dev</pre>
+            <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+              <div class="space-y-6 rounded-3xl border border-border bg-card p-8 shadow-sm">
+                <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <span>Quickstart</span>
+                  <span class="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">CLI</span>
                 </div>
+                <pre class="relative overflow-hidden rounded-2xl border border-border bg-slate-950/85 p-6 text-sm leading-6 text-slate-200">
+<code>npx @aeroui/cli init my-app
+cd my-app
+npm run dev</code>
+                  <button
+                    type="button"
+                    class="copy-trigger absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-white backdrop-blur hover:bg-white/20"
+                    data-copy="npx @aeroui/cli init my-app&#10;cd my-app&#10;npm run dev"
+                  >
+                    Copy command
+                  </button>
+                </pre>
+                <p class="text-sm text-muted-foreground">
+                  Use Tailwind CLI JIT compilation for instant feedback. Every utility class you author in your templates is compiled on demand, so you never ship unused CSS.
+                </p>
               </div>
-              <div class="rounded-2xl border border-border soft-background p-6 shadow-sm">
-                <h3 class="text-lg font-semibold">Import the layer</h3>
-                <p class="mt-2 text-sm text-muted-foreground">
-                  Keep your Tailwind source clean with a single import that exposes every aeroUI component.
-                </p>
-                <div class="code-block mt-4">
-                  <button class="btn btn-outline btn-sm copy-button" data-copy="snippet-import">Copy</button>
-                  <pre id="snippet-import">/* tailwind.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import "./aeroui.css";
-</pre>
-                </div>
+              <div class="space-y-6">
+                <article class="flex flex-col gap-4 rounded-3xl border border-border bg-background p-6 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span>Design tokens</span>
+                    <span class="rounded-full bg-primary/10 px-3 py-1 text-primary">Figma ready</span>
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    Colors, typography, and elevations map directly to CSS variables so you can sync UI kits with production styles effortlessly.
+                  </p>
+                  <a class="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80" href="#">
+                    Explore tokens
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="m7.5 5.5 5 5-5 5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </article>
+                <article class="flex flex-col gap-4 rounded-3xl border border-border bg-background p-6 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span>Starter templates</span>
+                    <span class="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">Next.js + Vite</span>
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    Deploy to GitHub Pages or Vercel with optimized bundling. Tailwind's purge configuration keeps CSS sizes lean even as you scale.
+                  </p>
+                  <a class="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80" href="#">
+                    View templates
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="m7.5 5.5 5 5-5 5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </article>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <footer class="border-t bg-background py-10">
-        <div class="container flex flex-col gap-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="font-semibold text-foreground">aeroUI</p>
-            <p>Tailwind-authored design layer for Bootstrap interactions.</p>
+
+      <footer class="border-t border-border/70 bg-background/90">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="m12 4 6.928 4v8L12 20l-6.928-4V8L12 4Z" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-sm font-semibold text-foreground">aeroUI</p>
+              <p class="text-xs text-muted-foreground">Tailwind-authored visuals for Bootstrap builders.</p>
+            </div>
           </div>
-          <div class="flex flex-wrap items-center gap-4">
-            <a class="hover:text-foreground" href="#docs">Docs</a>
-            <a class="hover:text-foreground" href="#components">Components</a>
-            <a class="hover:text-foreground" href="#blocks">Blocks</a>
-            <a class="hover:text-foreground" href="https://github.com/">GitHub</a>
-            <a class="hover:text-foreground" href="README.md">Readme</a>
+          <div class="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+            <a class="hover:text-primary" href="#">Docs</a>
+            <a class="hover:text-primary" href="#">Components</a>
+            <a class="hover:text-primary" href="#">Blocks</a>
+            <a class="hover:text-primary" href="#">Support</a>
           </div>
-          <p>MIT License · Built with ❤️ by aeroUI contributors</p>
+          <p class="text-xs text-muted-foreground">© <span id="year"></span> aeroUI. Crafted with Tailwind CSS JIT.</p>
         </div>
       </footer>
     </div>
 
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-3xl border border-border bg-background">
+          <div class="modal-header border-border">
+            <h5 class="modal-title text-sm font-semibold">Bootstrap interaction demo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body space-y-3 text-sm text-muted-foreground">
+            <p>Because aeroUI keeps Bootstrap markup intact, you can still lean on the JS behaviors you already know.</p>
+            <ul class="list-disc space-y-1 pl-5 text-xs">
+              <li>Use Tailwind CLI for instant class feedback.</li>
+              <li>Keep semantic HTML and data attributes untouched.</li>
+              <li>Enjoy theming, dark mode, and responsive tokens automatically.</li>
+            </ul>
+          </div>
+          <div class="modal-footer border-border">
+            <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary rounded-pill">Explore docs</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-      (function () {
-        const root = document.documentElement;
-        const toggle = document.querySelector('[data-theme-toggle]');
-        const storageKey = 'aeroui-theme';
-        const storedPreference = localStorage.getItem(storageKey);
-        if (storedPreference === 'dark' || (!storedPreference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          root.classList.add('dark');
+      const root = document.documentElement;
+      const page = document.querySelector("body > div");
+      const toggleButton = document.getElementById("theme-toggle");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const saved = localStorage.getItem("aeroui-theme");
+
+      function setTheme(mode) {
+        if (!page) return;
+        page.dataset.theme = mode;
+        if (mode === "dark") {
+          root.classList.add("dark");
+        } else {
+          root.classList.remove("dark");
         }
-        toggle === null || toggle === void 0 ? void 0 : toggle.addEventListener('click', function () {
-          const isDark = root.classList.toggle('dark');
-          localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+        localStorage.setItem("aeroui-theme", mode);
+      }
+
+      setTheme(saved || (prefersDark.matches ? "dark" : "light"));
+
+      toggleButton?.addEventListener("click", () => {
+        const next = page?.dataset.theme === "dark" ? "light" : "dark";
+        setTheme(next);
+      });
+
+      document.querySelectorAll(".copy-trigger").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const payload = btn.getAttribute("data-copy");
+          if (!payload) return;
+          try {
+            await navigator.clipboard.writeText(payload);
+            const original = btn.textContent;
+            btn.textContent = "Copied";
+            setTimeout(() => {
+              btn.textContent = original;
+            }, 2000);
+          } catch (err) {
+            console.error("Copy failed", err);
+          }
         });
-        document.querySelectorAll('[data-copy]').forEach(function (button) {
-          button.addEventListener('click', function () {
-            var target = document.getElementById(button.getAttribute('data-copy'));
-            if (!target) {
-              return;
-            }
-            var text = target.textContent.trim();
-            navigator.clipboard.writeText(text).then(function () {
-              var original = button.textContent;
-              button.textContent = 'Copied!';
-              button.classList.add('btn-success');
-              setTimeout(function () {
-                button.textContent = original;
-                button.classList.remove('btn-success');
-              }, 1800);
-            });
-          });
-        });
-      })();
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
