@@ -57,13 +57,13 @@
           <div class="mx-auto grid w-full max-w-6xl gap-12 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:px-8">
             <div class="space-y-6">
               <span class="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-                Tailwind-authored Bootstrap UI kit
+                Bootstrap semantics · Tailwind build · shadcn polish
               </span>
               <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
                 Build polished Bootstrap experiences with Tailwind-calibrated tokens.
               </h1>
               <p class="max-w-xl text-lg leading-relaxed text-muted-foreground">
-                aeroUI ships precompiled CSS so you can drop components into any Bootstrap 5 project. Copy the markup, include the stylesheet, and publish beautiful interfaces without a build pipeline.
+                aeroUI pairs Bootstrap&rsquo;s semantic class names with Tailwind utility recipes and shadcn/ui tokens. Copy the markup, compile <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">src/aeroui.css</code> with your Tailwind pipeline, and ship an optimised stylesheet that matches your project.
               </p>
               <div class="flex flex-wrap gap-4">
                 <a class="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow transition hover:bg-primary/90" href="docs.html">
@@ -83,22 +83,29 @@
               </div>
               <div class="space-y-5">
                 <div>
-                  <h2 class="text-base font-semibold text-foreground">Drop-in copy + paste</h2>
-                  <p class="mt-2 text-sm text-muted-foreground">No npm, npx, or bundlers. Copy the markup, reference <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">assets/aeroui.css</code>, and ship.</p>
+                  <h2 class="text-base font-semibold text-foreground">Tailwind-powered authoring</h2>
+                  <p class="mt-2 text-sm text-muted-foreground">Copy the markup, add <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">src/aeroui.css</code> to your Tailwind build, and let the compiler generate a Bootstrap-friendly bundle for your project.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-muted/40 p-4">
-                  <pre class="overflow-x-auto text-xs text-muted-foreground"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="assets/aeroui.css"&gt;
-&lt;script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                  <pre class="overflow-x-auto text-xs text-muted-foreground"><code># tailwind.config.js
+content: [
+  "./resources/views/**/*.blade.php",
+  "./node_modules/bootstrap/dist/js/**/*.js",
+  "./vendor/aeroui/**/*.html"
+],
+
+# vite.config.js / tailwind CLI output
+import "./resources/css/aeroui.css";
+</code></pre>
                 </div>
                 <div class="grid gap-3 sm:grid-cols-2">
                   <div class="rounded-2xl border border-border bg-background/60 p-4">
                     <p class="text-sm font-semibold text-foreground">Bootstrap friendly</p>
-                    <p class="mt-1 text-xs text-muted-foreground">Tokens align with the Bootstrap scale so you can mix utilities without overrides.</p>
+                    <p class="mt-1 text-xs text-muted-foreground">Semantic class names stay intact so Bootstrap&rsquo;s JavaScript and data attributes continue to work.</p>
                   </div>
                   <div class="rounded-2xl border border-border bg-background/60 p-4">
-                    <p class="text-sm font-semibold text-foreground">Themeable</p>
-                    <p class="mt-1 text-xs text-muted-foreground">Switch between light &amp; dark or extend the Tailwind config when you need custom palettes.</p>
+                    <p class="text-sm font-semibold text-foreground">Tailwind utility core</p>
+                    <p class="mt-1 text-xs text-muted-foreground">Compose Bootstrap components with Tailwind utilities and shadcn/ui tokens directly in your build.</p>
                   </div>
                 </div>
               </div>
@@ -114,7 +121,7 @@
               </span>
               <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Opinionated utilities, endless composition</h2>
               <p class="mx-auto max-w-3xl text-base text-muted-foreground">
-                Every component is crafted with Tailwind semantics and compiled into Bootstrap-ready CSS. Mix and match tokens with existing Bootstrap utilities and keep shipping without a pipeline rewrite.
+                Every component is crafted with Tailwind semantics, Bootstrap structure, and shadcn tokens. Run the Tailwind compiler in your stack to generate CSS that reflects exactly the components you use while keeping Bootstrap utilities in play.
               </p>
             </div>
             <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -143,15 +150,15 @@
                 <div class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M6.5 5a1.5 1.5 0 0 0-1.415 2H2.5a.5.5 0 0 0 0 1h2.585A1.5 1.5 0 1 0 6.5 5ZM17.5 10h-2.585a1.5 1.5 0 1 0 0 1H17.5a.5.5 0 0 0 0-1Z" /></svg>
                 </div>
-                <h3 class="mt-5 text-lg font-semibold text-foreground">Copy once, reuse forever</h3>
-                <p class="mt-2 text-sm text-muted-foreground">Blocks and components are organised by layout type so you can duplicate patterns quickly.</p>
+                <h3 class="mt-5 text-lg font-semibold text-foreground">Copy once, compile everywhere</h3>
+                <p class="mt-2 text-sm text-muted-foreground">Drop the markup into any Bootstrap project, then run your Tailwind build to generate site-specific CSS.</p>
               </article>
               <article class="rounded-3xl border border-border bg-card p-6">
                 <div class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a.75.75 0 0 1 .75.75V10h4.75a.75.75 0 0 1 0 1.5h-5.5A.75.75 0 0 1 9.25 10V2.75A.75.75 0 0 1 10 2Z" /></svg>
                 </div>
                 <h3 class="mt-5 text-lg font-semibold text-foreground">Launch faster</h3>
-                <p class="mt-2 text-sm text-muted-foreground">Drop the CSS next to Bootstrap and iterate on copy, not configuration.</p>
+                <p class="mt-2 text-sm text-muted-foreground">Bootstrap&rsquo;s JavaScript, Tailwind utilities, and shadcn design tokens work together in a single build step.</p>
               </article>
               <article class="rounded-3xl border border-border bg-card p-6">
                 <div class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">

@@ -50,7 +50,7 @@
             </span>
             <h1 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Project documentation</h1>
             <p class="text-base leading-relaxed text-muted-foreground">
-              This guide shows how to integrate aeroUI into an existing Bootstrap build without a package manager. Every snippet in the repository is copy-ready, and the compiled CSS is all you need to ship production interfaces.
+              This guide shows how to combine Bootstrap&rsquo;s semantic HTML, Tailwind utilities, and shadcn/ui tokens using the aeroUI source file. Copy the markup you need, add <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/aeroui.css</code> to your Tailwind build, and compile a stylesheet that fits your project.
             </p>
             <div class="grid gap-4 sm:grid-cols-2">
               <div class="rounded-3xl border border-border bg-card p-6 text-sm text-muted-foreground">
@@ -73,31 +73,44 @@
           <div class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-semibold text-foreground">Setup</h2>
             <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-              aeroUI is distributed as vanilla HTML and a single CSS file. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">assets/aeroui.css</code> into your project (adjust the path to match your structure) and include it after Bootstrap&rsquo;s stylesheet.
+              aeroUI ships as Tailwind source. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/aeroui.css</code> into your project, register it with your Tailwind configuration, and let your build tool emit the final CSS that pairs with Bootstrap.
             </p>
             <div class="mt-6 space-y-6">
               <article class="rounded-3xl border border-border bg-card p-6">
-                <h3 class="text-lg font-semibold text-foreground">1. Include the CSS</h3>
+                <h3 class="text-lg font-semibold text-foreground">1. Add aeroUI to Tailwind</h3>
                 <p class="mt-2 text-sm text-muted-foreground">
-                  Insert the aeroUI stylesheet after Bootstrap. The cascade ensures our tokens override the defaults.
+                  Copy the source file into your project (for example <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">resources/css/aeroui.css</code>) and include it in <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">tailwind.config.js</code> so the compiler can see your Bootstrap templates.
                 </p>
-                <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="./assets/aeroui.css"&gt;
+                <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>// tailwind.config.js
+module.exports = {
+  content: [
+    "./resources/views/**/*.blade.php",
+    "./public/**/*.html",
+  ],
+  theme: { extend: {} },
+  plugins: [],
+};
+
+// resources/css/app.css
+@import "./aeroui.css";
+</code></pre>
+              </article>
+
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">2. Compile your stylesheet</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  Run the Tailwind CLI, Vite, Mix, or your preferred build tool to generate the CSS that mixes Bootstrap semantics with Tailwind utilities.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>npx tailwindcss -i ./resources/css/app.css -o ./public/build/aeroui.css --minify</code></pre>
+              </article>
+
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">3. Load Bootstrap and the output</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  Reference your compiled CSS next to Bootstrap and keep including <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">bootstrap.bundle.min.js</code> for interactivity. The cascade ensures aeroUI styling overrides Bootstrap defaults while preserving behaviour.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;link rel="stylesheet" href="/build/aeroui.css"&gt;
 &lt;script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
-              </article>
-
-              <article class="rounded-3xl border border-border bg-card p-6">
-                <h3 class="text-lg font-semibold text-foreground">2. Paste markup</h3>
-                <p class="mt-2 text-sm text-muted-foreground">
-                  Copy components from <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/components</code> or the Blocks directory. The markup is standard Bootstrap 5 so you can use existing grid, form, and utility classes alongside aeroUI tokens.
-                </p>
-              </article>
-
-              <article class="rounded-3xl border border-border bg-card p-6">
-                <h3 class="text-lg font-semibold text-foreground">3. Enable JavaScript behaviour (optional)</h3>
-                <p class="mt-2 text-sm text-muted-foreground">
-                  Components that rely on Bootstrap interactivity, such as dropdowns or tabs, only need the Bootstrap bundle script. No npm scripts or bundlers are necessary.
-                </p>
               </article>
             </div>
           </div>
@@ -116,13 +129,13 @@
             </div>
             <div class="mt-6 space-y-6 text-sm text-muted-foreground">
               <p>
-                Browse <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/components</code> for reusable UI such as headers, pricing sections, forms, and dashboards. Each snippet is designed to be copied into Bootstrap templates without additional build steps.
+                Browse <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/components</code> for reusable UI such as headers, pricing sections, forms, and dashboards. Each snippet drops into Bootstrap templates, and your Tailwind build picks up the selectors automatically.
               </p>
               <p>
                 Utilities like <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">text-muted-foreground</code> or <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">bg-card</code> are authored in Tailwind but compiled into the distributed CSS. You can layer them with Bootstrap utilities for layout tweaks.
               </p>
               <p>
-                When you need to compose more complex experiences, stack blocks together—hero, feature grid, pricing, testimonials—to create a shadcn-inspired landing page without writing extra CSS.
+                When you need to compose more complex experiences, stack blocks together—hero, feature grid, pricing, testimonials—to create a shadcn-inspired landing page without hand-writing extra CSS.
               </p>
             </div>
           </div>
@@ -135,7 +148,7 @@
               <article class="rounded-3xl border border-border bg-card p-6">
                 <h3 class="text-lg font-semibold text-foreground">Rebuild the CSS</h3>
                 <p class="mt-2 text-sm text-muted-foreground">
-                  Duplicate <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">tailwind.config.js</code>, tweak colors or spacing, then run <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">npm run build</code>. The output overwrites <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code>.
+                  Duplicate <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">tailwind.config.js</code>, tweak colours or spacing, then run <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">npm run build</code>. Point the output to your project&rsquo;s public directory (for example <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">public/build/aeroui.css</code>).
                 </p>
               </article>
               <article class="rounded-3xl border border-border bg-card p-6">
@@ -165,7 +178,7 @@
             <h2 class="text-2xl font-semibold text-foreground">Keeping aeroUI updated</h2>
             <div class="mt-6 space-y-5 text-sm text-muted-foreground">
               <p>
-                Because aeroUI is file-based, updates are as simple as replacing <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code> with the latest release and copying new snippets into your project.
+                Because aeroUI is file-based, updates are as simple as pulling the latest <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/aeroui.css</code>, re-running your Tailwind build, and copying new snippets into your project.
               </p>
               <p>
                 For version control, commit the stylesheet to your repository so that deployments stay deterministic.
