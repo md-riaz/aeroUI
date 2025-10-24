@@ -1,0 +1,899 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   aeroUI Token System and Base Resets
+   ===================================================================== */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 223 47% 11%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 217.2 91.2% 59.8%;
+  }
+
+  *,
+  ::before,
+  ::after {
+    @apply box-border;
+  }
+
+  html {
+    @apply h-full scroll-smooth;
+  }
+
+  body {
+    @apply m-0 min-h-full bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply bg-transparent text-inherit;
+  }
+
+  button {
+    @apply border-0;
+  }
+
+  button:focus,
+  [type="button"]:focus,
+  [type="submit"]:focus {
+    @apply outline-none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold text-[hsl(var(--foreground))] tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed text-[hsl(var(--muted-foreground))];
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* =====================================================================
+   Layout Utilities (Bootstrap compatible API)
+   ===================================================================== */
+@layer components {
+  .container {
+    @apply w-full px-4 mx-auto;
+  }
+  @screen sm {
+    .container {
+      max-width: 540px;
+    }
+  }
+  @screen md {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @screen lg {
+    .container {
+      max-width: 960px;
+    }
+  }
+  @screen xl {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  @screen 2xl {
+    .container {
+      max-width: 1320px;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+  }
+
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+  }
+
+  .col {
+    @apply flex-[0_0_auto] w-full;
+  }
+
+  .col-auto {
+    @apply flex-[0_0_auto] w-auto;
+  }
+
+  .col-6 {
+    @apply flex-[0_0_auto] w-1/2;
+  }
+
+  .col-4 {
+    @apply flex-[0_0_auto] w-1/3;
+  }
+
+  .col-3 {
+    @apply flex-[0_0_auto] w-1/4;
+  }
+
+  .g-0 {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+
+  .g-3 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  .g-4 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+  }
+}
+
+/* =====================================================================
+   Buttons & Button Groups
+   ===================================================================== */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius)] border border-transparent px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))];
+  }
+
+  .btn:disabled,
+  .btn.disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary))]/90;
+  }
+
+  .btn-secondary {
+    @apply bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/80;
+  }
+
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-600/90;
+  }
+
+  .btn-warning {
+    @apply bg-amber-500 text-slate-900 hover:bg-amber-500/90;
+  }
+
+  .btn-info {
+    @apply bg-cyan-500 text-slate-900 hover:bg-cyan-500/90;
+  }
+
+  .btn-outline-primary {
+    @apply border border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))];
+  }
+
+  .btn-outline-secondary {
+    @apply border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))];
+  }
+
+  .btn-outline {
+    @apply border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))];
+  }
+
+  .btn-link {
+    @apply border-0 bg-transparent p-0 text-[hsl(var(--primary))] underline underline-offset-4 hover:no-underline;
+  }
+
+  .btn-danger {
+    @apply bg-[hsl(var(--destructive))] text-[hsl(var(--destructive-foreground))] hover:bg-[hsl(var(--destructive))]/90;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))];
+  }
+
+  .btn-sm {
+    @apply px-3 py-1 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-5 py-3 text-base;
+  }
+
+  .btn-group {
+    @apply relative inline-flex align-middle;
+  }
+
+  .btn-group > .btn {
+    @apply rounded-none;
+  }
+
+  .btn-group > .btn:first-child {
+    @apply rounded-l-[var(--radius)];
+  }
+
+  .btn-group > .btn:last-child {
+    @apply rounded-r-[var(--radius)];
+  }
+}
+
+/* =====================================================================
+   Forms
+   ===================================================================== */
+@layer components {
+  .form-label {
+    @apply mb-2 block text-sm font-medium text-[hsl(var(--foreground))];
+  }
+
+  .form-control {
+    @apply block w-full rounded-[calc(var(--radius)-0.25rem)] border border-[hsl(var(--input))] bg-[hsl(var(--background))] px-3 py-2 text-sm text-[hsl(var(--foreground))] shadow-sm transition focus:border-[hsl(var(--ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--ring))]/60;
+  }
+
+  .form-control:disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  .form-control::placeholder {
+    @apply text-[hsl(var(--muted-foreground))];
+  }
+
+  .form-select {
+    @apply form-control pr-8;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23667788'%3e%3cpath d='M4 6l4 4 4-4' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    appearance: none;
+  }
+
+  .input-group {
+    @apply flex w-full items-stretch;
+  }
+
+  .input-group-text {
+    @apply inline-flex items-center rounded-l-[calc(var(--radius)-0.25rem)] border border-[hsl(var(--input))] bg-[hsl(var(--muted))] px-3 text-sm font-medium text-[hsl(var(--muted-foreground))];
+  }
+
+  .input-group > .form-control {
+    @apply rounded-l-none;
+  }
+}
+
+/* =====================================================================
+   Cards
+   ===================================================================== */
+@layer components {
+  .card {
+    @apply rounded-[calc(var(--radius)+0.5rem)] border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-sm;
+  }
+
+  .card-header {
+    @apply flex items-center justify-between gap-2 border-b border-[hsl(var(--border))] px-5 py-4;
+  }
+
+  .card-body {
+    @apply p-5 text-[hsl(var(--muted-foreground))];
+  }
+
+  .card-footer {
+    @apply border-t border-[hsl(var(--border))] px-5 py-4;
+  }
+}
+
+/* =====================================================================
+   Alerts & Badges
+   ===================================================================== */
+@layer components {
+  .alert {
+    @apply relative flex w-full items-start gap-3 rounded-[calc(var(--radius)+0.25rem)] border px-4 py-3 text-sm shadow-sm;
+  }
+
+  .alert-primary {
+    @apply border-[hsl(var(--primary))]/30 bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))];
+  }
+
+  .alert-success {
+    @apply border-green-300 bg-green-50 text-green-800;
+  }
+
+  .alert-danger {
+    @apply border-red-300 bg-red-50 text-red-800;
+  }
+
+  .alert-warning {
+    @apply border-amber-300 bg-amber-50 text-amber-800;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-transparent px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))];
+  }
+
+  .badge-secondary {
+    @apply bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))];
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .badge-warning {
+    @apply bg-amber-100 text-amber-800;
+  }
+
+  .badge-danger {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-info {
+    @apply bg-cyan-100 text-cyan-800;
+  }
+
+  .badge-outline {
+    @apply border-[hsl(var(--border))] bg-transparent text-[hsl(var(--foreground))];
+    background-color: transparent !important;
+  }
+
+  .badge-outline.badge-primary {
+    @apply border-[hsl(var(--primary))] text-[hsl(var(--primary))];
+  }
+
+  .badge-outline.badge-secondary {
+    @apply border-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))];
+  }
+}
+
+/* =====================================================================
+   Dropdowns
+   ===================================================================== */
+@layer components {
+  .dropdown,
+  .dropup,
+  .dropend,
+  .dropstart {
+    @apply relative inline-flex;
+  }
+
+  .dropdown-menu {
+    @apply absolute z-[1000] hidden min-w-[10rem] rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--popover))] py-2 text-[hsl(var(--popover-foreground))] shadow-lg;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-menu.show {
+    @apply block;
+  }
+
+  .dropdown-item {
+    @apply block w-full cursor-pointer px-4 py-2 text-left text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))];
+  }
+
+  .dropdown-divider {
+    @apply my-2 border-t border-[hsl(var(--border))];
+  }
+
+  .dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .dropend .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+
+  .dropstart .dropdown-menu {
+    top: 0;
+    right: 100%;
+    left: auto;
+    margin-top: 0;
+    margin-right: 0.5rem;
+  }
+}
+
+/* =====================================================================
+   Modal & Overlays
+   ===================================================================== */
+@layer components {
+  .modal {
+    @apply fixed inset-0 z-[1055] hidden overflow-y-auto overflow-x-hidden outline-none;
+  }
+
+  .modal.show {
+    @apply block;
+  }
+
+  .modal-dialog {
+    @apply relative mx-auto flex w-auto max-w-2xl p-4; 
+    pointer-events: none;
+  }
+
+  .modal-dialog-centered {
+    @apply min-h-screen items-center;
+  }
+
+  .modal-content {
+    @apply relative flex w-full flex-col rounded-[calc(var(--radius)+0.5rem)] border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-2xl outline-none;
+    pointer-events: auto;
+  }
+
+  .modal-header {
+    @apply flex items-center justify-between gap-2 border-b border-[hsl(var(--border))] px-6 py-4;
+  }
+
+  .modal-body {
+    @apply flex-1 px-6 py-4 text-[hsl(var(--muted-foreground))];
+  }
+
+  .modal-footer {
+    @apply flex flex-wrap items-center justify-end gap-3 border-t border-[hsl(var(--border))] px-6 py-4;
+  }
+
+  .modal-backdrop {
+    @apply fixed inset-0 z-[1050] bg-black/50;
+  }
+
+  .fade {
+    @apply transition-opacity duration-150 ease-linear;
+  }
+
+  .fade:not(.show) {
+    @apply opacity-0;
+  }
+
+  .btn-close {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-full text-[hsl(var(--muted-foreground))] transition hover:bg-[hsl(var(--muted))];
+  }
+}
+
+/* =====================================================================
+   Collapse & Accordion
+   ===================================================================== */
+@layer components {
+  .collapse:not(.show) {
+    @apply hidden;
+  }
+
+  .collapsing {
+    @apply overflow-hidden transition-[height] duration-300 ease-in-out;
+    height: 0;
+  }
+
+  .accordion {
+    @apply rounded-[calc(var(--radius)+0.25rem)] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-sm;
+  }
+
+  .accordion-item {
+    @apply border-b border-[hsl(var(--border))];
+  }
+
+  .accordion-button {
+    @apply flex w-full items-center justify-between gap-3 bg-transparent px-5 py-4 text-left text-sm font-medium text-[hsl(var(--foreground))] transition hover:bg-[hsl(var(--muted))];
+  }
+
+  .accordion-button:focus {
+    @apply outline-none ring-2 ring-[hsl(var(--ring))] ring-offset-2 ring-offset-[hsl(var(--background))];
+  }
+
+  .accordion-button:not(.collapsed) {
+    @apply text-[hsl(var(--foreground))];
+  }
+
+  .accordion-body {
+    @apply px-5 py-4 text-[hsl(var(--muted-foreground))];
+  }
+}
+
+/* =====================================================================
+   Offcanvas
+   ===================================================================== */
+@layer components {
+  .offcanvas {
+    @apply fixed bottom-0 top-0 z-[1045] hidden w-80 max-w-full flex-col overflow-y-auto border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-2xl transition-transform duration-300 ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .offcanvas.show {
+    @apply visible;
+    transform: translateX(0);
+  }
+
+  .offcanvas.offcanvas-end {
+    transform: translateX(100%);
+    right: 0;
+    left: auto;
+  }
+
+  .offcanvas.offcanvas-end.show {
+    transform: translateX(0);
+  }
+
+  .offcanvas.offcanvas-top {
+    @apply h-64 w-full;
+    transform: translateY(-100%);
+  }
+
+  .offcanvas.offcanvas-top.show {
+    transform: translateY(0);
+  }
+
+  .offcanvas.offcanvas-bottom {
+    @apply h-64 w-full;
+    transform: translateY(100%);
+  }
+
+  .offcanvas.offcanvas-bottom.show {
+    transform: translateY(0);
+  }
+
+  .offcanvas-header {
+    @apply flex items-center justify-between gap-3 border-b border-[hsl(var(--border))] px-5 py-4;
+  }
+
+  .offcanvas-body {
+    @apply flex-1 space-y-3 px-5 py-4;
+  }
+}
+
+/* =====================================================================
+   Navigation (Tabs & Pills)
+   ===================================================================== */
+@layer components {
+  .nav {
+    @apply flex flex-wrap items-center gap-2;
+  }
+
+  .nav-tabs {
+    @apply border-b border-[hsl(var(--border))];
+  }
+
+  .nav-tabs .nav-link {
+    @apply inline-flex items-center gap-2 border-b-2 border-transparent px-4 py-2 text-sm font-medium text-[hsl(var(--muted-foreground))] transition;
+  }
+
+  .nav-tabs .nav-link:hover {
+    @apply text-[hsl(var(--foreground))];
+  }
+
+  .nav-tabs .nav-link.active {
+    @apply border-b-[hsl(var(--ring))] text-[hsl(var(--foreground))];
+  }
+
+  .nav-pills .nav-link {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-[hsl(var(--muted-foreground))] transition hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))];
+  }
+
+  .nav-pills .nav-link.active {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))];
+  }
+}
+
+/* =====================================================================
+   Tables & Progress
+   ===================================================================== */
+@layer components {
+  .table {
+    @apply min-w-full divide-y divide-[hsl(var(--border))];
+  }
+
+  .table > :not(caption) > * > * {
+    @apply px-4 py-3 align-middle text-sm;
+  }
+
+  .table tbody tr {
+    @apply divide-y divide-[hsl(var(--border))];
+  }
+
+  .table-hover tbody tr:hover {
+    @apply bg-[hsl(var(--muted))];
+  }
+
+  .progress {
+    @apply h-2 w-full overflow-hidden rounded-full bg-[hsl(var(--muted))];
+  }
+
+  .progress-bar {
+    @apply h-full rounded-full bg-[hsl(var(--primary))] text-xs text-white transition-all duration-300 ease-in-out;
+  }
+}
+
+/* =====================================================================
+   Breadcrumb, Pagination & List Group
+   ===================================================================== */
+@layer components {
+  .breadcrumb {
+    @apply flex flex-wrap items-center gap-2 rounded-[calc(var(--radius)-0.25rem)] bg-[hsl(var(--muted))] px-4 py-2 text-sm;
+  }
+
+  .breadcrumb-item {
+    @apply flex items-center gap-2 text-[hsl(var(--muted-foreground))];
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    @apply text-[hsl(var(--border))];
+  }
+
+  .breadcrumb-item.active {
+    @apply text-[hsl(var(--foreground))] font-medium;
+  }
+
+  .pagination {
+    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-3 py-2;
+  }
+
+  .page-item {
+    @apply inline-flex;
+  }
+
+  .page-link {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium text-[hsl(var(--muted-foreground))] transition hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))];
+  }
+
+  .page-item.active .page-link {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))];
+  }
+
+  .list-group {
+    @apply divide-y divide-[hsl(var(--border))] overflow-hidden rounded-[calc(var(--radius)+0.25rem)] border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-sm;
+  }
+
+  .list-group-item {
+    @apply px-4 py-3 text-[hsl(var(--foreground))];
+  }
+
+  .list-group-item-action {
+    @apply cursor-pointer transition hover:bg-[hsl(var(--muted))];
+  }
+
+  .list-group-item.active {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))];
+  }
+}
+
+/* =====================================================================
+   Spinners
+   ===================================================================== */
+@layer components {
+  .spinner-border,
+  .spinner-grow {
+    @apply inline-block align-middle;
+  }
+
+  .spinner-border {
+    @apply h-8 w-8 rounded-full border-4 border-[hsl(var(--muted))] border-t-[hsl(var(--primary))];
+    animation: spinner-border 0.75s linear infinite;
+  }
+
+  .spinner-border-sm {
+    @apply h-4 w-4 border-2;
+  }
+
+  .spinner-grow {
+    @apply h-8 w-8 rounded-full bg-[hsl(var(--primary))]/30;
+    animation: spinner-grow 0.75s linear infinite;
+  }
+
+  .spinner-border.text-primary {
+    border-top-color: hsl(var(--primary));
+  }
+
+  .spinner-grow.text-success {
+    @apply bg-green-500/40;
+  }
+}
+
+@layer base {
+  @keyframes spinner-border {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinner-grow {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+}
+
+/* =====================================================================
+   Utilities (subset for Bootstrap compatibility)
+   ===================================================================== */
+@layer utilities {
+  .d-flex {
+    @apply flex !important;
+  }
+
+  .d-none {
+    @apply hidden !important;
+  }
+
+  .d-inline-flex {
+    @apply inline-flex !important;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .justify-content-between {
+    @apply justify-between !important;
+  }
+
+  .align-items-center {
+    @apply items-center !important;
+  }
+
+  .w-100 {
+    @apply w-full !important;
+  }
+
+  .h-100 {
+    @apply h-full !important;
+  }
+
+  .text-right {
+    text-align: right !important;
+  }
+
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+
+  .mb-3 {
+    margin-bottom: 1rem !important;
+  }
+
+  .ms-auto {
+    @apply ml-auto !important;
+  }
+
+  .text-muted {
+    @apply text-[hsl(var(--muted-foreground))] !important;
+  }
+
+  .text-primary {
+    color: hsl(var(--primary)) !important;
+  }
+
+  .text-secondary {
+    color: hsl(var(--secondary-foreground)) !important;
+  }
+
+  .text-success {
+    color: #16a34a !important;
+  }
+
+  .text-warning {
+    color: #d97706 !important;
+  }
+
+  .text-danger {
+    color: #dc2626 !important;
+  }
+
+  .text-info {
+    color: #0ea5e9 !important;
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--primary)) !important;
+  }
+
+  .bg-secondary {
+    background-color: hsl(var(--secondary)) !important;
+  }
+
+  .bg-success {
+    background-color: #16a34a !important;
+  }
+
+  .bg-warning {
+    background-color: #f59e0b !important;
+  }
+
+  .bg-danger {
+    background-color: #dc2626 !important;
+  }
+
+  .bg-info {
+    background-color: #0ea5e9 !important;
+  }
+
+  .bg-muted {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  .fw-semibold {
+    @apply font-semibold !important;
+  }
+
+  .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.05) !important;
+  }
+
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1) !important;
+  }
+}
