@@ -46,8 +46,6 @@
 
     --radius: 0.75rem;
 
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
   }
 
   .dark {
@@ -148,7 +146,7 @@
 }
 
 /* =============================================================
-   Layout helpers (Bootstrap compatible)
+   Layout helpers
    ============================================================= */
 @layer components {
   .container {
@@ -185,50 +183,6 @@
     }
   }
 
-  .row {
-    @apply flex flex-wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) * -0.5);
-    margin-left: calc(var(--bs-gutter-x) * -0.5);
-  }
-
-  .row > * {
-    @apply w-full max-w-full flex-shrink-0;
-    margin-top: var(--bs-gutter-y);
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
-  }
-
-  .col {
-    @apply flex-1;
-  }
-
-  .col-auto {
-    @apply w-auto flex-none;
-  }
-
-  .col-6 {
-    @apply w-1/2 flex-none;
-  }
-
-  .col-4 {
-    @apply w-1/3 flex-none;
-  }
-
-  .g-0 {
-    --bs-gutter-x: 0;
-    --bs-gutter-y: 0;
-  }
-
-  .g-3 {
-    --bs-gutter-x: 1rem;
-    --bs-gutter-y: 1rem;
-  }
-
-  .g-4 {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 1.5rem;
-  }
 }
 
 /* =============================================================
@@ -835,134 +789,4 @@
   .toast-body {
     @apply text-sm text-muted-foreground;
   }
-}
-
-/* =============================================================
-   Bootstrap utility shims expressed via Tailwind
-   ============================================================= */
-@layer utilities {
-  .d-flex {
-    @apply flex;
-  }
-
-  .d-block {
-    @apply block;
-  }
-
-  .d-inline {
-    @apply inline;
-  }
-
-  .d-inline-flex {
-    @apply inline-flex;
-  }
-
-  .d-none {
-    @apply hidden;
-  }
-
-  .flex-column {
-    @apply flex-col;
-  }
-
-  .justify-content-center {
-    @apply justify-center;
-  }
-
-  .justify-content-between {
-    @apply justify-between;
-  }
-
-  .align-items-center {
-    @apply items-center;
-  }
-
-  .align-items-start {
-    @apply items-start;
-  }
-
-  .align-items-end {
-    @apply items-end;
-  }
-
-  .text-start {
-    text-align: left;
-  }
-
-  .text-end {
-    text-align: right;
-  }
-
-  .fw-semibold {
-    @apply font-semibold;
-  }
-
-  .fw-bold {
-    @apply font-bold;
-  }
-
-  .fw-medium {
-    @apply font-medium;
-  }
-
-  .fst-italic {
-    @apply italic;
-  }
-
-  .rounded {
-    border-radius: calc(var(--radius) - 4px);
-  }
-
-  .rounded-lg {
-    border-radius: var(--radius);
-  }
-
-  .rounded-pill {
-    border-radius: 9999px;
-  }
-
-  .shadow-sm {
-    box-shadow: 0 1px 2px 0 hsl(var(--foreground) / 0.08);
-  }
-
-  .shadow {
-    box-shadow: 0 10px 15px -3px hsl(var(--foreground) / 0.08), 0 4px 6px -4px hsl(var(--foreground) / 0.08);
-  }
-
-  .shadow-lg {
-    box-shadow: 0 20px 25px -5px hsl(var(--foreground) / 0.08), 0 10px 10px -5px hsl(var(--foreground) / 0.08);
-  }
-
-  .w-100 {
-    @apply w-full;
-  }
-
-  .h-100 {
-    @apply h-full;
-  }
-
-  .min-vh-100 {
-    @apply min-h-screen;
-  }
-
-  .ms-auto {
-    @apply ml-auto;
-  }
-
-  .me-auto {
-    @apply mr-auto;
-  }
-
-  .text-body-secondary {
-    @apply text-muted-foreground;
-  }
-
-  .bg-body {
-    @apply bg-background;
-  }
-
-  .bg-body-secondary {
-    @apply bg-muted;
-  }
-
 }
