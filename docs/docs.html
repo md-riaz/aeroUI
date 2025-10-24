@@ -10,10 +10,10 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%233b82f6'/%3E%3Cpath fill='white' d='M10.4 23.4a1.2 1.2 0 0 1-1.1-1.7l5.2-12c.4-.9 1.9-.9 2.3 0l5.2 12a1.2 1.2 0 0 1-1.1 1.7h-2.1a1.2 1.2 0 0 1-1.1-.7l-.9-2.1h-3.5l-.9 2.1a1.2 1.2 0 0 1-1.1.7zm6.2-6.2-1.2-2.8-1.2 2.8z'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="../dist/aeroui.css" />
+    <link rel="stylesheet" href="assets/aeroui.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body class="bg-background text-foreground antialiased">
+  <body id="top" class="bg-background text-foreground antialiased">
     <div class="flex min-h-screen flex-col" data-theme="light" data-site-root>
       <header class="border-b border-border/80 bg-background/80">
         <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -30,6 +30,7 @@
             <a class="text-muted-foreground transition hover:text-foreground" href="index.html">Overview</a>
             <a class="text-muted-foreground transition hover:text-foreground" href="blocks.html">Blocks</a>
             <a class="text-muted-foreground transition hover:text-foreground" href="#setup">Usage</a>
+            <a class="text-muted-foreground transition hover:text-foreground" href="#customising">Customising</a>
           </nav>
           <a
             href="https://github.com/md-riaz/aeroUI"
@@ -43,12 +44,26 @@
       <main class="flex-1">
         <section class="border-b border-border/80 bg-background">
           <div class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 lg:px-8">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Start here
+            </span>
             <h1 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Project documentation</h1>
             <p class="text-base leading-relaxed text-muted-foreground">
               This guide shows how to integrate aeroUI into an existing Bootstrap build without a package manager. Every snippet in the repository is copy-ready, and the compiled CSS is all you need to ship production interfaces.
             </p>
-            <div class="rounded-3xl border border-border bg-card p-6 text-sm text-muted-foreground">
-              <p>Need live sections? Visit the <a class="font-semibold text-primary hover:text-primary/80" href="blocks.html">Blocks directory</a> for marketing layouts you can paste into your pages.</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl border border-border bg-card p-6 text-sm text-muted-foreground">
+                <p class="font-semibold text-foreground">Need an overview?</p>
+                <p class="mt-2">
+                  Visit the <a class="font-semibold text-primary hover:text-primary/80" href="index.html">landing page</a> to discover featured blocks, token philosophy, and quick links.
+                </p>
+              </div>
+              <div class="rounded-3xl border border-border bg-card p-6 text-sm text-muted-foreground">
+                <p class="font-semibold text-foreground">Looking for components?</p>
+                <p class="mt-2">
+                  Jump to the <a class="font-semibold text-primary hover:text-primary/80" href="blocks.html">Blocks directory</a> for marketing layouts you can paste into your pages.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -57,7 +72,7 @@
           <div class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-semibold text-foreground">Setup</h2>
             <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-              aeroUI is distributed as vanilla HTML and a single CSS file. Place <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">dist/aeroui.css</code> in your project and reference it after Bootstrap&rsquo;s stylesheet.
+              aeroUI is distributed as vanilla HTML and a single CSS file. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">assets/aeroui.css</code> into your project (adjust the path to match your structure) and include it after Bootstrap&rsquo;s stylesheet.
             </p>
             <div class="mt-6 space-y-6">
               <article class="rounded-3xl border border-border bg-card p-6">
@@ -66,14 +81,14 @@
                   Insert the aeroUI stylesheet after Bootstrap. The cascade ensures our tokens override the defaults.
                 </p>
                 <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="/assets/css/aeroui.css"&gt;
-</code></pre>
+&lt;link rel="stylesheet" href="./assets/aeroui.css"&gt;
+&lt;script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
               </article>
 
               <article class="rounded-3xl border border-border bg-card p-6">
                 <h3 class="text-lg font-semibold text-foreground">2. Paste markup</h3>
                 <p class="mt-2 text-sm text-muted-foreground">
-                  Copy components from <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/</code> or the demo files. The markup is standard Bootstrap 5 so you can use existing grid, form, and utility classes alongside aeroUI tokens.
+                  Copy components from <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/components</code> or the Blocks directory. The markup is standard Bootstrap 5 so you can use existing grid, form, and utility classes alongside aeroUI tokens.
                 </p>
               </article>
 
@@ -82,8 +97,6 @@
                 <p class="mt-2 text-sm text-muted-foreground">
                   Components that rely on Bootstrap interactivity, such as dropdowns or tabs, only need the Bootstrap bundle script. No npm scripts or bundlers are necessary.
                 </p>
-                <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-</code></pre>
               </article>
             </div>
           </div>
@@ -91,17 +104,57 @@
 
         <section id="components" class="border-b border-border/80 bg-background">
           <div class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-semibold text-foreground">Component reference</h2>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <h2 class="text-2xl font-semibold text-foreground">Component reference</h2>
+              <a class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/50 hover:text-primary" href="blocks.html">
+                Browse blocks
+                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="m7.5 5.5 5 5-5 5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
             <div class="mt-6 space-y-6 text-sm text-muted-foreground">
               <p>
-                Browse <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/components</code> for reusable UI such as headers, pricing sections, and forms. Each snippet is designed to be copied into Bootstrap templates without additional build steps.
+                Browse <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/components</code> for reusable UI such as headers, pricing sections, forms, and dashboards. Each snippet is designed to be copied into Bootstrap templates without additional build steps.
               </p>
               <p>
                 Utilities like <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">text-muted-foreground</code> or <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">bg-card</code> are authored in Tailwind but compiled into the distributed CSS. You can layer them with Bootstrap utilities for layout tweaks.
               </p>
               <p>
-                When you need to customise tokens (for example, changing brand colours), duplicate the Tailwind config and rebuild the CSS with <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">npm run build</code>. The distributed CSS keeps working even if you skip this step.
+                When you need to compose more complex experiences, stack blocks together—hero, feature grid, pricing, testimonials—to create a shadcn-inspired landing page without writing extra CSS.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="customising" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-semibold text-foreground">Customising aeroUI</h2>
+            <div class="mt-6 grid gap-6 sm:grid-cols-2">
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">Rebuild the CSS</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  Duplicate <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">tailwind.config.js</code>, tweak colors or spacing, then run <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">npm run build</code>. The output overwrites <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code>.
+                </p>
+              </article>
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">Extend tokens</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  Add custom CSS variables or override existing ones by layering a small stylesheet after aeroUI. Because everything compiles to CSS variables, you can change palettes without editing every component.
+                </p>
+              </article>
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">Maintain consistency</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  Commit the generated CSS alongside your project to keep deployments deterministic. Replace the file when new releases ship.
+                </p>
+              </article>
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">Dark mode ready</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  Toggle the <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">data-theme</code> attribute to instantly switch between light and dark palettes without additional setup.
+                </p>
+              </article>
             </div>
           </div>
         </section>
@@ -111,7 +164,7 @@
             <h2 class="text-2xl font-semibold text-foreground">Keeping aeroUI updated</h2>
             <div class="mt-6 space-y-5 text-sm text-muted-foreground">
               <p>
-                Because aeroUI is file-based, updates are as simple as replacing <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">dist/aeroui.css</code> with the latest release and copying new snippets into your project.
+                Because aeroUI is file-based, updates are as simple as replacing <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code> with the latest release and copying new snippets into your project.
               </p>
               <p>
                 For version control, commit the stylesheet to your repository so that deployments stay deterministic.

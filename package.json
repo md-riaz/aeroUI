@@ -4,8 +4,8 @@
   "description": "aeroUI component layer with Bootstrap API and shadcn-inspired visuals",
   "license": "MIT",
   "scripts": {
-    "build": "tailwindcss -i ./src/aeroui.css -o ./dist/aeroui.css --minify",
-    "dev": "tailwindcss -i ./src/aeroui.css -o ./dist/aeroui.css --watch"
+    "build": "tailwindcss -i ./src/aeroui.css -o ./docs/assets/aeroui.css --minify",
+    "dev": "tailwindcss -i ./src/aeroui.css -o ./docs/assets/aeroui.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.13"
