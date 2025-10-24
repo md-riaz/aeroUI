@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MosaicUI Demo - Bootstrap Shim CSS</title>
+    <!-- Stylesheet: Expects bs-shim.css to be in the same directory as this demo file -->
     <link rel="stylesheet" href="bs-shim.css">
     <style>
         /* Additional styling for demo purposes */
@@ -266,13 +267,13 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radioGroup" id="radio1" checked>
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radio1" value="option1" checked>
                     <label class="form-check-label" for="radio1">
                         Radio option 1
                     </label>
                 </div>
                 <div class="form-check mb-3">
-                    <input class="form-check-input" type="radio" name="radioGroup" id="radio2">
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radio2" value="option2">
                     <label class="form-check-label" for="radio2">
                         Radio option 2
                     </label>
@@ -512,11 +513,13 @@
                         if (parent) {
                             const parentEl = document.querySelector(parent);
                             if (parentEl) {
+                                // Close other open panels
                                 parentEl.querySelectorAll('.collapse.show').forEach(openCollapse => {
                                     if (openCollapse !== target) {
                                         openCollapse.classList.remove('show');
                                     }
                                 });
+                                // Update all buttons to collapsed state
                                 parentEl.querySelectorAll('.accordion-button').forEach(btn => {
                                     if (btn !== this) {
                                         btn.classList.add('collapsed');
