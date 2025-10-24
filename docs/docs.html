@@ -72,7 +72,7 @@
           <div class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-semibold text-foreground">Setup</h2>
             <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-              aeroUI is distributed as vanilla HTML and a single CSS file. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">dist/aeroui.css</code> into your project (the docs reference it as <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">assets/aeroui.css</code>) and include it after Bootstrap&rsquo;s stylesheet.
+              aeroUI is distributed as vanilla HTML and a single CSS file. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">assets/aeroui.css</code> into your project (adjust the path to match your structure) and include it after Bootstrap&rsquo;s stylesheet.
             </p>
             <div class="mt-6 space-y-6">
               <article class="rounded-3xl border border-border bg-card p-6">
@@ -81,7 +81,7 @@
                   Insert the aeroUI stylesheet after Bootstrap. The cascade ensures our tokens override the defaults.
                 </p>
                 <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="/path/to/aeroui.css"&gt;
+&lt;link rel="stylesheet" href="./assets/aeroui.css"&gt;
 &lt;script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
               </article>
 
@@ -134,7 +134,7 @@
               <article class="rounded-3xl border border-border bg-card p-6">
                 <h3 class="text-lg font-semibold text-foreground">Rebuild the CSS</h3>
                 <p class="mt-2 text-sm text-muted-foreground">
-                  Duplicate <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">tailwind.config.js</code>, tweak colors or spacing, then run <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">npm run build</code>. The output overwrites <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">dist/aeroui.css</code>.
+                  Duplicate <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">tailwind.config.js</code>, tweak colors or spacing, then run <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">npm run build</code>. The output overwrites <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code>.
                 </p>
               </article>
               <article class="rounded-3xl border border-border bg-card p-6">
@@ -152,7 +152,7 @@
               <article class="rounded-3xl border border-border bg-card p-6">
                 <h3 class="text-lg font-semibold text-foreground">Dark mode ready</h3>
                 <p class="mt-2 text-sm text-muted-foreground">
-                  Toggle the <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground" data-code="true">data-theme</code> attribute to instantly switch between light and dark palettes without additional setup.
+                  Toggle the <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">data-theme</code> attribute to instantly switch between light and dark palettes without additional setup.
                 </p>
               </article>
             </div>
@@ -164,7 +164,7 @@
             <h2 class="text-2xl font-semibold text-foreground">Keeping aeroUI updated</h2>
             <div class="mt-6 space-y-5 text-sm text-muted-foreground">
               <p>
-                Because aeroUI is file-based, updates are as simple as replacing <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">dist/aeroui.css</code> with the latest release and copying new snippets into your project.
+                Because aeroUI is file-based, updates are as simple as replacing <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code> with the latest release and copying new snippets into your project.
               </p>
               <p>
                 For version control, commit the stylesheet to your repository so that deployments stay deterministic.
