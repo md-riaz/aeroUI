@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aeroUI Demo - Tailwind Palette with Bootstrap JS</title>
-    <!-- aeroUI: Tailwind-powered Bootstrap API with Tailwind palette styling -->
+    <title>aeroUI Demo - shadcn tokens with Bootstrap JS</title>
+    <!-- aeroUI: Bootstrap semantics rendered with shadcn design tokens -->
     <link rel="stylesheet" href="dist/aeroui.css">
 </head>
 <body class="py-10">
@@ -12,7 +12,7 @@
         <header class="card">
             <div class="card-body space-y-3">
                 <h1 class="text-3xl font-bold">aeroUI Demo</h1>
-                <p class="text-muted">A showcase of Bootstrap-compatible components with Tailwind-powered styling. aeroUI bridges Bootstrap's proven data-API with a modern palette and a single Tailwind-authored stylesheet.</p>
+                <p class="text-muted">A showcase of Bootstrap-compatible components with Tailwind-powered styling. aeroUI bridges Bootstrap's proven data-API with the shadcn/ui aesthetic, a shared token map, and a single Tailwind-authored stylesheet.</p>
             </div>
         </header>
 
@@ -20,7 +20,7 @@
         <section class="card">
             <div class="card-body space-y-6">
                 <div>
-                    <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Buttons</h2>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Buttons</h2>
                     <h3 class="mt-6 text-lg font-medium">Basic Buttons</h3>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-6">
@@ -55,28 +55,28 @@
         <!-- Grid System -->
         <section class="card">
             <div class="card-body space-y-6">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Grid System</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Grid System</h2>
                 <div class="row">
-                    <div class="col rounded-lg border border-slate-200 bg-slate-100 p-6 text-center">Column 1</div>
-                    <div class="col rounded-lg border border-slate-200 bg-slate-100 p-6 text-center">Column 2</div>
-                    <div class="col rounded-lg border border-slate-200 bg-slate-100 p-6 text-center">Column 3</div>
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 1</div>
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 2</div>
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 3</div>
                 </div>
                 <div class="row">
-                    <div class="col rounded-lg border border-slate-200 bg-slate-100 p-6 text-center">Full Width Column</div>
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Full Width Column</div>
                 </div>
             </div>
         </section>
 
         <!-- Cards -->
         <section class="space-y-6">
-            <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Cards</h2>
+            <h2 class="text-2xl font-semibold pb-2 border-b border-border">Cards</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">Card Header</h5>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">This is a card with header, body, and footer sections. Perfect for organising content with a modern Tailwind-inspired aesthetic.</p>
+                        <p class="card-text">This is a card with header, body, and footer sections. Perfect for organising content with the polished shadcn aesthetic.</p>
                     </div>
                     <div class="card-footer">
                         <button class="btn btn-primary">Action</button>
@@ -96,7 +96,7 @@
         <!-- Forms -->
         <section class="card">
             <div class="card-body space-y-6">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Forms</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Forms</h2>
                 <form class="space-y-6">
                     <div>
                         <label for="exampleInput" class="form-label">Email Address</label>
@@ -147,10 +147,10 @@
         <!-- Alerts -->
         <section class="card">
             <div class="card-body space-y-6">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Alerts</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Alerts</h2>
                 <div class="space-y-4">
                     <div class="alert alert-primary">
-                        <strong>Primary:</strong> This is a primary alert with Tailwind styling.
+                        <strong>Primary:</strong> This is a primary alert with shadcn styling.
                     </div>
                     <div class="alert alert-success">
                         <strong>Success!</strong> Your operation completed successfully.
@@ -175,7 +175,7 @@
         <!-- Badges -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Badges</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Badges</h2>
                 <div class="flex flex-wrap gap-2">
                     <span class="badge badge-primary">Primary</span>
                     <span class="badge badge-secondary">Secondary</span>
@@ -191,7 +191,7 @@
         <!-- Breadcrumb -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Breadcrumb</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Breadcrumb</h2>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" class="text-primary hover:underline">Home</a></li>
@@ -205,7 +205,7 @@
         <!-- List Group -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">List Group</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">List Group</h2>
                 <div class="max-w-md">
                     <ul class="list-group">
                         <li class="list-group-item active">Active item</li>
@@ -220,7 +220,7 @@
         <!-- Pagination -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Pagination</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Pagination</h2>
                 <nav>
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="#">«</a></li>
@@ -238,7 +238,7 @@
         <!-- Progress Bars -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Progress Bars</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Progress Bars</h2>
                 <div class="space-y-4">
                     <div>
                         <div class="flex justify-between mb-1 text-sm">
@@ -284,7 +284,7 @@
         <section class="card">
             <div class="card-body space-y-6">
                 <div>
-                    <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Navigation</h2>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Navigation</h2>
                     <h3 class="mt-6 text-lg font-medium">Tabs</h3>
                 </div>
                 <ul class="nav nav-tabs mb-6">
@@ -323,7 +323,7 @@
         <!-- Spinners -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Spinners</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Spinners</h2>
                 <div class="flex gap-8 items-center">
                     <div>
                         <div class="spinner-border text-primary mb-2" role="status">
@@ -351,7 +351,7 @@
         <section class="card">
             <div class="card-body space-y-6">
                 <div>
-                    <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Collapse & Accordion</h2>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Collapse & Accordion</h2>
                     <h3 class="mt-6 text-lg font-medium">Simple Collapse</h3>
                 </div>
                 <button class="btn btn-primary mb-4" data-bs-toggle="collapse" data-bs-target="#collapseExample">
@@ -360,7 +360,7 @@
                 <div class="collapse mb-6" id="collapseExample">
                     <div class="card">
                         <div class="card-body">
-                            <p class="text-muted mb-0">This is the collapsed content. It appears and disappears when you click the toggle button above, demonstrating Bootstrap JS behaviour with Tailwind styling.</p>
+                        <p class="text-muted mb-0">This is the collapsed content. It appears and disappears when you click the toggle button above, demonstrating Bootstrap JS behaviour with shadcn styling.</p>
                         </div>
                     </div>
                 </div>
@@ -375,7 +375,7 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                aeroUI is a component layer that keeps Bootstrap's JavaScript interactivity while applying Tailwind-inspired visuals. It uses Tailwind utilities inside a single CSS file for flexible, themeable components.
+                                aeroUI is a component layer that keeps Bootstrap's JavaScript interactivity while applying shadcn visuals. It uses Tailwind utilities inside a single CSS file for flexible, token-driven components.
                             </div>
                         </div>
                     </div>
@@ -387,7 +387,7 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                aeroUI compiles a single aeroui.css file with the Tailwind CLI. Structural classes for Bootstrap JS and visual styling live together, so Bootstrap's data-API works seamlessly with a modern Tailwind palette.
+                                aeroUI compiles a single aeroui.css file with the Tailwind CLI. Structural classes for Bootstrap JS and visual styling live together, so Bootstrap's data-API works seamlessly with the shadcn token palette.
                             </div>
                         </div>
                     </div>
@@ -399,7 +399,7 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Absolutely! Everything is composed with Tailwind utilities, so you can swap palettes or adjust spacing directly in the source file to match your brand.
+                                Absolutely! Everything is composed with Tailwind utilities, so you can swap tokens or adjust spacing directly in the source file to match your brand.
                             </div>
                         </div>
                     </div>
@@ -410,7 +410,7 @@
         <!-- Tables -->
         <section class="card">
             <div class="card-body space-y-4">
-                <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Tables</h2>
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Tables</h2>
                 <div class="rounded-lg border overflow-hidden">
                     <table class="table">
                         <thead>
@@ -459,7 +459,7 @@
         <section class="card">
             <div class="card-body space-y-6">
                 <div>
-                    <h2 class="text-2xl font-semibold pb-2 border-b border-slate-200">Utility Classes</h2>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Utility Classes</h2>
                     <h3 class="mt-6 text-lg font-medium">Color System</h3>
                 </div>
                 <div class="flex flex-wrap gap-4 mb-6">
@@ -508,10 +508,10 @@
             <div class="card-body space-y-4">
                 <h3 class="text-2xl font-bold">aeroUI</h3>
                 <p class="text-muted">
-                    Bootstrap class API + Tailwind palette aesthetics
+                    Bootstrap class API + shadcn/ui aesthetics
                 </p>
                 <p class="text-sm text-muted">
-                    This demo showcases aeroUI components with Tailwind-first styling and Bootstrap JS interactivity. Built with Tailwind CSS and designed for PHP MVC applications.
+                    This demo showcases aeroUI components with shadcn-first styling and Bootstrap JS interactivity. Built with Tailwind CSS and designed for PHP MVC applications.
                 </p>
             </div>
         </footer>

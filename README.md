@@ -1,11 +1,11 @@
 # aeroUI
 
-aeroUI is a Tailwind-authored design layer that keeps Bootstrap's semantic HTML and data-API while applying a modern, neutral look. Every component is defined in a single `aeroui.css` source file using Tailwind's `@layer` and `@apply` syntax, so you can iterate quickly with the Tailwind CLI and avoid hand-writing longform CSS.
+aeroUI is a Tailwind-authored design layer that keeps Bootstrap's semantic HTML and data-API while applying the shadcn aesthetic. Every component is defined in a single `aeroui.css` source file using Tailwind's `@layer` and `@apply` syntax, backed by the same HSL design tokens that power shadcn/ui so you can iterate quickly with the Tailwind CLI and avoid hand-writing longform CSS.
 
 ## Key Goals
 
 - **Bootstrap API Compatibility** – Keep existing markup and behaviours powered by `bootstrap.bundle.min.js`.
-- **Tailwind Palette First** – Components pull from Tailwind's default colour system (`sky`, `slate`, `emerald`, `rose`, `amber`) instead of custom hex values.
+- **shadcn Token Parity** – Components inherit the exact shadcn HSL token set (`--background`, `--foreground`, `--primary`, ...) with both light and dark definitions so the visuals match the reference design system.
 - **Single CSS Source** – Author everything inside `src/aeroui.css` and compile with the Tailwind CLI.
 - **Utility Composition** – Classes are composed with Tailwind utilities through `@apply` inside `@layer` blocks.
 
@@ -86,16 +86,18 @@ Your existing Bootstrap markup continues to function:
 ```css
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500;
+    @apply inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
 
-  .btn-primary {
-    @apply bg-sky-600 hover:bg-sky-500;
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
   }
 }
 ```
 
 Override utilities in your application (or fork the source file) to customise colours, spacing, and typography to match your brand.
+
+The base layer exports the full shadcn token map (`--background`, `--foreground`, `--primary`, etc.) so you can theme components globally or on a per-component basis by overriding CSS variables.
 
 ## Component Coverage
 
