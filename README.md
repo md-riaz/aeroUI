@@ -2,12 +2,16 @@
 
 aeroUI is a Tailwind-authored design layer that keeps Bootstrap's semantic HTML and data-API while applying the shadcn aesthetic. Every component is defined in a single `aeroui.css` source file using Tailwind's `@layer` and `@apply` syntax, backed by the same HSL design tokens that power shadcn/ui so you can iterate quickly with the Tailwind CLI and avoid hand-writing longform CSS.
 
+Unlike Bootstrap's precompiled CSS bundles, aeroUI expects you to run a Tailwind-aware build (Tailwind CLI, Vite, etc.) inside your project so the generated stylesheet always reflects the markup you actually ship. The `dist/` output in this repo is only an example build; your application should compile its own CSS from `src/aeroui.css` so unused selectors can be shaken out and newly added components are captured automatically.
+
 ## Key Goals
 
 - **Bootstrap API Compatibility** – Keep existing markup and behaviours powered by `bootstrap.bundle.min.js`.
 - **shadcn Token Parity** – Components inherit the exact shadcn HSL token set (`--background`, `--foreground`, `--primary`, ...) with both light and dark definitions so the visuals match the reference design system.
 - **Single CSS Source** – Author everything inside `src/aeroui.css` and compile with the Tailwind CLI.
 - **Utility Composition** – Classes are composed with Tailwind utilities through `@apply` inside `@layer` blocks.
+
+> **Note**: aeroUI is not a drop-in replacement for every Bootstrap selector. It focuses on elements that are required for Bootstrap's JavaScript interactivity (modals, dropdowns, offcanvas, etc.) and augments them with Tailwind-authored styling. Layout primitives, grid utilities, and additional design choices are expected to be handled the “Tailwind way” within your project.
 
 ## Project Structure
 
@@ -46,14 +50,11 @@ The Tailwind source describes structural expectations (modals, dropdowns, offcan
 
 ## Using aeroUI in Your Project
 
-Include Bootstrap JS, then load the compiled CSS from the `dist/` folder (or your own build output location):
+1. **Integrate aeroUI into your Tailwind build** – Reference `src/aeroui.css` (copy it into your source tree or import it) and ensure your Tailwind/Vite pipeline scans the HTML, Blade, JSX, etc. where you author Bootstrap markup. The commands in `package.json` show the expected CLI flags if you prefer a standalone Tailwind process.
+2. **Bundle Bootstrap JavaScript** – Include `bootstrap.bundle.min.js` (via npm, CDN, or your preferred bundler) so data attributes continue to power interactive components.
+3. **Serve your generated CSS** – Point your app to the Tailwind build artifact produced on your machine or CI. The sample `dist/aeroui.css` is useful for demos but should not be treated as an immutable production asset.
 
-```html
-<link rel="stylesheet" href="/path/to/aeroui/dist/aeroui.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-```
-
-Your existing Bootstrap markup continues to function:
+Your existing Bootstrap markup continues to function once those pieces are in place:
 
 ```html
 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
