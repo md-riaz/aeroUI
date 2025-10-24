@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aeroUI Demo - shadcn tokens with Bootstrap JS</title>
+    <!-- aeroUI: Bootstrap semantics rendered with shadcn design tokens -->
+    <link rel="stylesheet" href="dist/aeroui.css">
+</head>
+<body class="py-10">
+    <div class="container space-y-8">
+        <header class="card">
+            <div class="card-body space-y-3">
+                <h1 class="text-3xl font-bold">aeroUI Demo</h1>
+                <p class="text-muted">A showcase of Bootstrap-compatible components with Tailwind-powered styling. aeroUI bridges Bootstrap's proven data-API with the shadcn/ui aesthetic, a shared token map, and a single Tailwind-authored stylesheet.</p>
+            </div>
+        </header>
+
+        <!-- Buttons Section -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <div>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Buttons</h2>
+                    <h3 class="mt-6 text-lg font-medium">Basic Buttons</h3>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <button class="btn btn-primary">Primary</button>
+                    <button class="btn btn-secondary">Secondary</button>
+                    <button class="btn btn-success">Success</button>
+                    <button class="btn btn-warning">Warning</button>
+                    <button class="btn btn-danger">Danger</button>
+                    <button class="btn btn-info">Info</button>
+                    <button class="btn btn-outline">Outline</button>
+                    <button class="btn btn-ghost">Ghost</button>
+                    <button class="btn btn-link">Link</button>
+                    <button class="btn btn-primary" disabled>Disabled</button>
+                </div>
+
+                <h3 class="text-lg font-medium">Button Sizes</h3>
+                <div class="flex flex-wrap items-center gap-2 mb-6">
+                    <button class="btn btn-primary btn-sm">Small</button>
+                    <button class="btn btn-primary">Default</button>
+                    <button class="btn btn-primary btn-lg">Large</button>
+                </div>
+
+                <h3 class="text-lg font-medium">Button Group</h3>
+                <div class="btn-group">
+                    <button class="btn btn-outline-primary">Left</button>
+                    <button class="btn btn-outline-primary">Middle</button>
+                    <button class="btn btn-outline-primary">Right</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid System -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Grid System</h2>
+                <div class="row">
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 1</div>
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 2</div>
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 3</div>
+                </div>
+                <div class="row">
+                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Full Width Column</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="space-y-6">
+            <h2 class="text-2xl font-semibold pb-2 border-b border-border">Cards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Card Header</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This is a card with header, body, and footer sections. Perfect for organising content with the polished shadcn aesthetic.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Action</button>
+                        <button class="btn btn-outline">Cancel</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Card</h5>
+                        <p class="card-text mb-4">A card with just a body section. Clean, minimal, and modern with soft shadows and rounded corners.</p>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Forms</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="exampleInput" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="exampleInput" placeholder="you@example.com">
+                        <p class="form-text mt-2">We'll never share your email with anyone else.</p>
+                    </div>
+                    <div>
+                        <label for="exampleSelect" class="form-label">Select Option</label>
+                        <select class="form-select" id="exampleSelect">
+                            <option>Choose an option...</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="exampleTextarea" class="form-label">Message</label>
+                        <textarea class="form-control" id="exampleTextarea" placeholder="Enter your message here..."></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check1">
+                        <label class="form-check-label" for="check1">
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radioGroup" id="radio1" value="option1" checked>
+                            <label class="form-check-label" for="radio1">
+                                Default radio option
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radioGroup" id="radio2" value="option2">
+                            <label class="form-check-label" for="radio2">
+                                Second radio option
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-outline">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Alerts -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Alerts</h2>
+                <div class="space-y-4">
+                    <div class="alert alert-primary">
+                        <strong>Primary:</strong> This is a primary alert with shadcn styling.
+                    </div>
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> Your operation completed successfully.
+                    </div>
+                    <div class="alert alert-warning">
+                        <strong>Warning:</strong> Please review this carefully.
+                    </div>
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> Something went wrong.
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Info:</strong> Here's some helpful information.
+                    </div>
+                    <div class="alert alert-dismissible alert-primary">
+                        <strong>Dismissible:</strong> Click the × to close this alert.
+                        <button type="button" class="btn-close absolute top-3 right-3" data-bs-dismiss="alert" aria-label="Close">×</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Badges</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-primary">Primary</span>
+                    <span class="badge badge-secondary">Secondary</span>
+                    <span class="badge badge-success">Success</span>
+                    <span class="badge badge-warning">Warning</span>
+                    <span class="badge badge-danger">Danger</span>
+                    <span class="badge badge-info">Info</span>
+                    <span class="badge badge-outline badge-primary">Outline</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Breadcrumb</h2>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="text-primary hover:underline">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-primary hover:underline">Library</a></li>
+                        <li class="breadcrumb-item active">Data</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- List Group -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">List Group</h2>
+                <div class="max-w-md">
+                    <ul class="list-group">
+                        <li class="list-group-item active">Active item</li>
+                        <li class="list-group-item list-group-item-action">Interactive item</li>
+                        <li class="list-group-item list-group-item-action">Another item</li>
+                        <li class="list-group-item list-group-item-action">Fourth item</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Pagination</h2>
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Progress Bars -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Progress Bars</h2>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span>Default</span>
+                            <span>25%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span class="text-success">Success</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span class="text-warning">Warning</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span class="text-danger">Danger</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <div>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Navigation</h2>
+                    <h3 class="mt-6 text-lg font-medium">Tabs</h3>
+                </div>
+                <ul class="nav nav-tabs mb-6">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#tab1">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab2">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab3">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#tab4">Disabled</a>
+                    </li>
+                </ul>
+
+                <h3 class="text-lg font-medium">Pills</h3>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#pill1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pill2">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pill3">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#pill4">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Spinners -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Spinners</h2>
+                <div class="flex gap-8 items-center">
+                    <div>
+                        <div class="spinner-border text-primary mb-2" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="text-sm text-muted">Border</p>
+                    </div>
+                    <div>
+                        <div class="spinner-border spinner-border-sm text-primary mb-2" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="text-sm text-muted">Small</p>
+                    </div>
+                    <div>
+                        <div class="spinner-grow text-success mb-2" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="text-sm text-muted">Grow</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collapse & Accordion -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <div>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Collapse & Accordion</h2>
+                    <h3 class="mt-6 text-lg font-medium">Simple Collapse</h3>
+                </div>
+                <button class="btn btn-primary mb-4" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                    Toggle Collapse
+                </button>
+                <div class="collapse mb-6" id="collapseExample">
+                    <div class="card">
+                        <div class="card-body">
+                        <p class="text-muted mb-0">This is the collapsed content. It appears and disappears when you click the toggle button above, demonstrating Bootstrap JS behaviour with shadcn styling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-medium">Accordion</h3>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                What is aeroUI?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                aeroUI is a component layer that keeps Bootstrap's JavaScript interactivity while applying shadcn visuals. It uses Tailwind utilities inside a single CSS file for flexible, token-driven components.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                How does it work?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                aeroUI compiles a single aeroui.css file with the Tailwind CLI. Structural classes for Bootstrap JS and visual styling live together, so Bootstrap's data-API works seamlessly with the shadcn token palette.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                Can I customize it?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Absolutely! Everything is composed with Tailwind utilities, so you can swap tokens or adjust spacing directly in the source file to match your brand.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tables -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Tables</h2>
+                <div class="rounded-lg border overflow-hidden">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Role</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-medium">John Doe</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td>Admin</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-ghost">Edit</button>
+                                    <button class="btn btn-sm btn-ghost text-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Jane Smith</td>
+                                <td><span class="badge badge-warning">Pending</span></td>
+                                <td>User</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-ghost">Edit</button>
+                                    <button class="btn btn-sm btn-ghost text-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Bob Johnson</td>
+                                <td><span class="badge badge-secondary">Inactive</span></td>
+                                <td>User</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-ghost">Edit</button>
+                                    <button class="btn btn-sm btn-ghost text-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Utility Classes Demo -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <div>
+                    <h2 class="text-2xl font-semibold pb-2 border-b border-border">Utility Classes</h2>
+                    <h3 class="mt-6 text-lg font-medium">Color System</h3>
+                </div>
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-primary mb-2"></div>
+                        <p class="text-xs text-muted">Primary</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-secondary mb-2"></div>
+                        <p class="text-xs text-muted">Secondary</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-success mb-2"></div>
+                        <p class="text-xs text-muted">Success</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-warning mb-2"></div>
+                        <p class="text-xs text-muted">Warning</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-danger mb-2"></div>
+                        <p class="text-xs text-muted">Danger</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-info mb-2"></div>
+                        <p class="text-xs text-muted">Info</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-lg bg-muted mb-2"></div>
+                        <p class="text-xs text-muted">Muted</p>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-medium">Text Colors</h3>
+                <p class="text-primary">This is primary text</p>
+                <p class="text-secondary">This is secondary text</p>
+                <p class="text-muted">This is muted text</p>
+                <p class="text-success">This is success text</p>
+                <p class="text-warning">This is warning text</p>
+                <p class="text-danger">This is danger text</p>
+                <p class="text-info">This is info text</p>
+            </div>
+        </section>
+
+        <footer class="card text-center">
+            <div class="card-body space-y-4">
+                <h3 class="text-2xl font-bold">aeroUI</h3>
+                <p class="text-muted">
+                    Bootstrap class API + shadcn/ui aesthetics
+                </p>
+                <p class="text-sm text-muted">
+                    This demo showcases aeroUI components with shadcn-first styling and Bootstrap JS interactivity. Built with Tailwind CSS and designed for PHP MVC applications.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple JavaScript for demo interactivity
+        // In production, use Bootstrap's JS or your preferred framework
+
+        // Collapse functionality
+        document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-bs-target');
+                const target = document.querySelector(targetId);
+                
+                if (target) {
+                    if (target.classList.contains('show')) {
+                        target.classList.remove('show');
+                        this.classList.add('collapsed');
+                    } else {
+                        // Handle accordion behavior
+                        const parent = this.getAttribute('data-bs-parent');
+                        if (parent) {
+                            const parentEl = document.querySelector(parent);
+                            if (parentEl) {
+                                // Close other open panels
+                                parentEl.querySelectorAll('.collapse.show').forEach(openCollapse => {
+                                    if (openCollapse !== target) {
+                                        openCollapse.classList.remove('show');
+                                    }
+                                });
+                                // Update all buttons to collapsed state
+                                parentEl.querySelectorAll('.accordion-button').forEach(btn => {
+                                    if (btn !== this) {
+                                        btn.classList.add('collapsed');
+                                    }
+                                });
+                            }
+                        }
+                        
+                        target.classList.add('show');
+                        this.classList.remove('collapsed');
+                    }
+                }
+            });
+        });
+
+        // Alert dismiss
+        document.querySelectorAll('[data-bs-dismiss="alert"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const alert = this.closest('.alert');
+                if (alert) {
+                    alert.style.display = 'none';
+                }
+            });
+        });
+
+        // Tab navigation (simple implementation)
+        document.querySelectorAll('.nav-tabs .nav-link, .nav-pills .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.classList.contains('disabled')) {
+                    e.preventDefault();
+                    const parent = this.closest('.nav');
+                    parent.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
