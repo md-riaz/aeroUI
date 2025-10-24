@@ -10,6 +10,8 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    --font-sans: "Inter", "SF Pro Display", "SFRounded", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
@@ -96,7 +98,13 @@
   }
 
   body {
-    @apply m-0 min-h-screen bg-background text-foreground antialiased font-sans;
+    @apply m-0 min-h-screen bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 0;
+  }
+
+  ::selection {
+    @apply bg-primary/20;
   }
 
   a {
@@ -317,6 +325,34 @@
     @apply bg-info text-info-foreground;
   }
 
+  .badge-outline {
+    @apply border border-border bg-transparent text-muted-foreground;
+  }
+
+  .badge-outline.badge-primary {
+    @apply border-primary/40 text-primary;
+  }
+
+  .badge-outline.badge-secondary {
+    @apply border-secondary-foreground/30 text-secondary-foreground;
+  }
+
+  .badge-outline.badge-success {
+    @apply border-success/40 text-success;
+  }
+
+  .badge-outline.badge-warning {
+    @apply border-warning/50 text-warning;
+  }
+
+  .badge-outline.badge-danger {
+    @apply border-destructive/40 text-destructive;
+  }
+
+  .badge-outline.badge-info {
+    @apply border-info/40 text-info;
+  }
+
   .alert {
     @apply relative flex w-full items-start gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground shadow-sm;
   }
@@ -475,7 +511,7 @@
   }
 
   .input-group {
-    @apply relative flex w-full items-stretch;
+    @apply relative flex w-full items-stretch overflow-hidden rounded-md border border-input bg-background;
   }
 
   .input-group > :not(:first-child) {
@@ -483,7 +519,26 @@
   }
 
   .input-group-text {
-    @apply inline-flex items-center rounded-l-md border border-input bg-muted px-3 text-sm text-muted-foreground;
+    @apply inline-flex items-center bg-muted px-3 text-sm text-muted-foreground;
+  }
+
+  .input-group .form-control {
+    @apply border-0 shadow-none focus-visible:ring-0;
+  }
+
+  .input-group .btn,
+  .input-group .form-control,
+  .input-group .form-select,
+  .input-group .input-group-text {
+    @apply rounded-none;
+  }
+
+  .input-group > :first-child {
+    @apply rounded-l-md;
+  }
+
+  .input-group > :last-child {
+    @apply rounded-r-md;
   }
 }
 
@@ -491,8 +546,75 @@
    Dropdowns & menus
    ============================================================= */
 @layer components {
+  .dropdown,
+  .dropup,
+  .dropend,
+  .dropstart {
+    @apply relative inline-flex;
+  }
+
+  .dropdown-toggle::after,
+  .dropup .dropdown-toggle::after,
+  .dropend .dropdown-toggle::after,
+  .dropstart .dropdown-toggle::before {
+    @apply ml-2 inline-block align-middle text-xs text-muted-foreground transition-transform;
+    content: "";
+    border: 0.3em solid transparent;
+  }
+
+  .dropdown-toggle::after {
+    border-top-color: currentColor;
+  }
+
+  .dropup .dropdown-toggle::after {
+    @apply ml-2;
+    border-bottom-color: currentColor;
+  }
+
+  .dropstart .dropdown-toggle::before {
+    margin-right: 0.25rem;
+    border-right-color: currentColor;
+  }
+
+  .dropend .dropdown-toggle::after {
+    margin-left: 0.25rem;
+    border-left-color: currentColor;
+  }
+
   .dropdown-menu {
-    @apply z-50 min-w-[12rem] rounded-lg border border-border bg-popover p-2 text-sm text-popover-foreground shadow-lg;
+    @apply hidden origin-top-right;
+  }
+
+  .dropdown-menu {
+    @apply absolute z-50 min-w-[12rem] rounded-lg border border-border bg-popover p-2 text-sm text-popover-foreground shadow-lg;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    transform-origin: left top;
+  }
+
+  .dropdown-menu.show {
+    @apply block;
+    animation: aeroui-dropdown-in 0.18s ease-out;
+  }
+
+  .dropup .dropdown-menu {
+    bottom: calc(100% + 0.5rem);
+    top: auto;
+    transform-origin: center bottom;
+  }
+
+  .dropstart .dropdown-menu {
+    left: auto;
+    right: calc(100% + 0.5rem);
+    top: 0;
+    transform-origin: right top;
+  }
+
+  .dropend .dropdown-menu {
+    left: calc(100% + 0.5rem);
+    right: auto;
+    top: 0;
+    transform-origin: left top;
   }
 
   .dropdown-item {
@@ -599,6 +721,33 @@
    Navigation (tabs & pills)
    ============================================================= */
 @layer components {
+  .navbar {
+    @apply relative flex w-full items-center justify-between gap-4 rounded-lg border border-border bg-card px-4 py-3 text-sm text-card-foreground shadow-sm;
+  }
+
+  .navbar-brand {
+    @apply text-base font-semibold text-foreground;
+  }
+
+  .navbar-nav {
+    @apply flex items-center gap-1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-nav .nav-link {
+    @apply rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground;
+  }
+
+  .navbar-nav .nav-link.active {
+    @apply bg-primary text-primary-foreground shadow;
+  }
+
+  .navbar-toggler {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-muted text-muted-foreground transition hover:bg-muted/80 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
   .nav {
     @apply flex flex-wrap gap-2;
   }
@@ -779,7 +928,7 @@
    ============================================================= */
 @layer components {
   .toast {
-    @apply pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm text-card-foreground shadow-lg;
+    @apply pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm text-card-foreground shadow-lg opacity-0 translate-y-2 transition-all duration-200;
   }
 
   .toast-header {
@@ -788,5 +937,161 @@
 
   .toast-body {
     @apply text-sm text-muted-foreground;
+  }
+
+  .toast.show {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@keyframes aeroui-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =============================================================
+   Tooltips & popovers
+   ============================================================= */
+@layer components {
+  .tooltip {
+    @apply pointer-events-none absolute z-50 max-w-xs rounded-md border border-border bg-popover px-3 py-1.5 text-xs font-medium text-popover-foreground opacity-0 shadow-lg transition-all duration-150;
+    left: 50%;
+    --aeroui-tooltip-translate-x: -50%;
+    --aeroui-tooltip-translate-y: 0.25rem;
+    --aeroui-tooltip-scale: 0.98;
+    transform-origin: center top;
+    transform: translate3d(var(--aeroui-tooltip-translate-x), var(--aeroui-tooltip-translate-y), 0) scale(var(--aeroui-tooltip-scale));
+  }
+
+  .tooltip.show {
+    @apply opacity-100;
+    --aeroui-tooltip-translate-y: 0;
+    --aeroui-tooltip-scale: 1;
+  }
+
+  .tooltip .tooltip-inner {
+    @apply text-center text-xs font-medium text-popover-foreground;
+  }
+
+  .tooltip[data-placement="top"] {
+    top: calc(100% + 0.5rem);
+  }
+
+  .tooltip[data-placement="bottom"] {
+    top: auto;
+    bottom: calc(100% + 0.5rem);
+    transform-origin: center bottom;
+    --aeroui-tooltip-translate-y: -0.25rem;
+    --aeroui-tooltip-scale: 0.98;
+  }
+
+  .tooltip[data-placement="left"] {
+    left: auto;
+    right: calc(100% + 0.5rem);
+    top: 50%;
+    transform-origin: right center;
+    --aeroui-tooltip-translate-x: 0.25rem;
+    --aeroui-tooltip-translate-y: -50%;
+  }
+
+  .tooltip[data-placement="right"] {
+    left: calc(100% + 0.5rem);
+    top: 50%;
+    transform-origin: left center;
+    --aeroui-tooltip-translate-x: -0.25rem;
+    --aeroui-tooltip-translate-y: -50%;
+  }
+
+  .tooltip .tooltip-arrow,
+  .popover .popover-arrow {
+    @apply absolute block h-2 w-2 border border-border bg-popover;
+    transform: rotate(45deg);
+  }
+
+  .tooltip[data-placement="top"] .tooltip-arrow,
+  .popover[data-placement="top"] .popover-arrow {
+    bottom: -0.35rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .tooltip[data-placement="bottom"] .tooltip-arrow,
+  .popover[data-placement="bottom"] .popover-arrow {
+    top: -0.35rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .tooltip[data-placement="left"] .tooltip-arrow,
+  .popover[data-placement="left"] .popover-arrow {
+    right: -0.35rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .tooltip[data-placement="right"] .tooltip-arrow,
+  .popover[data-placement="right"] .popover-arrow {
+    left: -0.35rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .popover {
+    @apply absolute z-50 w-64 rounded-lg border border-border bg-popover text-sm text-popover-foreground opacity-0 shadow-xl transition-all duration-150;
+    --aeroui-popover-translate-x: -50%;
+    --aeroui-popover-translate-y: 0.4rem;
+    --aeroui-popover-scale: 0.97;
+    left: 50%;
+    transform-origin: center top;
+    transform: translate3d(var(--aeroui-popover-translate-x), var(--aeroui-popover-translate-y), 0) scale(var(--aeroui-popover-scale));
+  }
+
+  .popover.show {
+    @apply opacity-100;
+    --aeroui-popover-translate-y: 0;
+    --aeroui-popover-scale: 1;
+  }
+
+  .popover[data-placement="top"] {
+    top: calc(100% + 0.75rem);
+  }
+
+  .popover[data-placement="bottom"] {
+    top: auto;
+    bottom: calc(100% + 0.75rem);
+    transform-origin: center bottom;
+    --aeroui-popover-translate-y: -0.4rem;
+  }
+
+  .popover[data-placement="left"] {
+    left: auto;
+    right: calc(100% + 0.75rem);
+    top: 50%;
+    transform-origin: right center;
+    --aeroui-popover-translate-x: 0.4rem;
+    --aeroui-popover-translate-y: -50%;
+  }
+
+  .popover[data-placement="right"] {
+    left: calc(100% + 0.75rem);
+    top: 50%;
+    transform-origin: left center;
+    --aeroui-popover-translate-x: -0.4rem;
+    --aeroui-popover-translate-y: -50%;
+  }
+
+  .popover-header {
+    @apply border-b border-border px-4 py-2 text-sm font-semibold text-foreground;
+  }
+
+  .popover-body {
+    @apply px-4 py-3 text-sm text-muted-foreground;
   }
 }

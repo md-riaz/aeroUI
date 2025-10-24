@@ -16,6 +16,24 @@
             </div>
         </header>
 
+        <!-- Navbar showcase -->
+        <nav class="navbar flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center gap-3">
+                <span class="navbar-brand">aeroUI</span>
+                <span class="badge badge-outline badge-info">Preview</span>
+            </div>
+            <ul class="navbar-nav flex-wrap gap-1">
+                <li><a class="nav-link active" href="#">Dashboard</a></li>
+                <li><a class="nav-link" href="#">Library</a></li>
+                <li><a class="nav-link" href="#">Customers</a></li>
+                <li><a class="nav-link" href="#">Settings</a></li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+                <button type="button" class="btn btn-outline">Docs</button>
+                <button type="button" class="btn btn-primary">Download</button>
+            </div>
+        </nav>
+
         <!-- Buttons Section -->
         <section class="card">
             <div class="card-body space-y-6">
@@ -48,6 +66,37 @@
                     <button class="btn btn-outline-primary">Left</button>
                     <button class="btn btn-outline-primary">Middle</button>
                     <button class="btn btn-outline-primary">Right</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dropdowns -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Dropdowns & Menus</h2>
+                <div class="flex flex-wrap gap-6">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button">Action</button>
+                            <button class="dropdown-item" type="button">Another action</button>
+                            <button class="dropdown-item" type="button">Something else</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" type="button">Separated link</button>
+                        </div>
+                    </div>
+                    <div class="dropup">
+                        <button class="btn btn-outline dropdown-toggle" data-bs-toggle="dropdown">
+                            Dropup menu
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button">Item one</button>
+                            <button class="dropdown-item" type="button">Item two</button>
+                            <button class="dropdown-item" type="button">Item three</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -115,6 +164,15 @@
                     <div>
                         <label for="exampleTextarea" class="form-label">Message</label>
                         <textarea class="form-control" id="exampleTextarea" placeholder="Enter your message here..."></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label" for="inputGroup">Username lookup</label>
+                        <div class="input-group">
+                            <span class="input-group-text">@</span>
+                            <input type="text" id="inputGroup" class="form-control" placeholder="username" aria-label="username">
+                            <button class="btn btn-outline" type="button">Check</button>
+                        </div>
+                        <p class="form-text">Input groups stay perfectly aligned with the shadcn aesthetic.</p>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="check1">
@@ -347,6 +405,30 @@
             </div>
         </section>
 
+        <!-- Tooltips & Popovers -->
+        <section class="card">
+            <div class="card-body space-y-6">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Tooltips & Popovers</h2>
+                <div class="flex flex-wrap items-center gap-10">
+                    <div class="relative inline-flex flex-col items-center gap-2">
+                        <button class="btn btn-outline" data-demo-toggle="tooltip">Hover tooltip</button>
+                        <div class="tooltip" data-placement="top" role="tooltip">
+                            <div class="tooltip-inner">Shadcn-style tooltip</div>
+                            <div class="tooltip-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="relative inline-flex flex-col items-center gap-2">
+                        <button class="btn btn-secondary" data-demo-toggle="popover">Click popover</button>
+                        <div class="popover" data-placement="top" role="tooltip">
+                            <div class="popover-arrow"></div>
+                            <div class="popover-header">Popover title</div>
+                            <div class="popover-body">Rich content popovers keep Bootstrap interactions but inherit shadcn/ui tokens.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Collapse & Accordion -->
         <section class="card">
             <div class="card-body space-y-6">
@@ -404,6 +486,19 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Overlays -->
+        <section class="card">
+            <div class="card-body space-y-4">
+                <h2 class="text-2xl font-semibold pb-2 border-b border-border">Modals, Offcanvas & Toasts</h2>
+                <div class="flex flex-wrap gap-3">
+                    <button class="btn btn-primary" data-demo-toggle="modal" data-target="#demoModal">Launch modal</button>
+                    <button class="btn btn-secondary" data-demo-toggle="offcanvas" data-target="#demoOffcanvas">Open offcanvas</button>
+                    <button class="btn btn-outline" data-demo-toggle="toast" data-target="#demoToast">Show toast</button>
+                </div>
+                <p class="text-sm text-muted max-w-2xl">Each control reuses familiar Bootstrap data attributes while inheriting shadcn-styled surfaces, focus rings, and typography.</p>
             </div>
         </section>
 
@@ -517,6 +612,64 @@
         </footer>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="demoModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Product update</h5>
+                    <button type="button" class="btn-close" data-demo-dismiss="modal" aria-label="Close">×</button>
+                </div>
+                <div class="modal-body space-y-3">
+                    <p class="text-muted">This modal keeps Bootstrap semantics but renders with shadcn/ui textures and spacing.</p>
+                    <ul class="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                        <li>Soft surfaces and meaningful elevation</li>
+                        <li>Accessible focus management</li>
+                        <li>Custom tokens for dark mode parity</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline" data-demo-dismiss="modal">Dismiss</button>
+                    <button class="btn btn-primary">Confirm changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="demoOffcanvas" aria-hidden="true">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Notifications</h5>
+            <button type="button" class="btn-close" data-demo-dismiss="offcanvas" aria-label="Close">×</button>
+        </div>
+        <div class="offcanvas-body space-y-4">
+            <div class="flex items-start gap-3">
+                <span class="badge badge-success">New</span>
+                <div>
+                    <p class="font-medium text-sm text-foreground">Design tokens synced</p>
+                    <p class="text-sm text-muted">Tailwind build finished 2 minutes ago.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="badge badge-info">Update</span>
+                <div>
+                    <p class="font-medium text-sm text-foreground">Component library refreshed</p>
+                    <p class="text-sm text-muted">Shadcn parity achieved across modals, dropdowns, and overlays.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toastStack" class="fixed bottom-6 right-6 flex flex-col items-end gap-3"></div>
+    <div class="toast" id="demoToast" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+        <div class="toast-header">
+            <span class="font-semibold">Saved</span>
+            <button type="button" class="btn-close" data-demo-dismiss="toast" aria-label="Close">&times;</button>
+        </div>
+        <div class="toast-body">Your workspace now mirrors the shadcn/ui presentation.</div>
+    </div>
+
     <script>
         // Simple JavaScript for demo interactivity
         // In production, use Bootstrap's JS or your preferred framework
@@ -526,24 +679,21 @@
             button.addEventListener('click', function() {
                 const targetId = this.getAttribute('data-bs-target');
                 const target = document.querySelector(targetId);
-                
+
                 if (target) {
                     if (target.classList.contains('show')) {
                         target.classList.remove('show');
                         this.classList.add('collapsed');
                     } else {
-                        // Handle accordion behavior
                         const parent = this.getAttribute('data-bs-parent');
                         if (parent) {
                             const parentEl = document.querySelector(parent);
                             if (parentEl) {
-                                // Close other open panels
                                 parentEl.querySelectorAll('.collapse.show').forEach(openCollapse => {
                                     if (openCollapse !== target) {
                                         openCollapse.classList.remove('show');
                                     }
                                 });
-                                // Update all buttons to collapsed state
                                 parentEl.querySelectorAll('.accordion-button').forEach(btn => {
                                     if (btn !== this) {
                                         btn.classList.add('collapsed');
@@ -551,12 +701,45 @@
                                 });
                             }
                         }
-                        
+
                         target.classList.add('show');
                         this.classList.remove('collapsed');
                     }
                 }
             });
+        });
+
+        // Dropdowns
+        const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+        const closeDropdowns = () => {
+            dropdownToggles.forEach(toggle => {
+                const menu = toggle.nextElementSibling;
+                if (menu) {
+                    menu.classList.remove('show');
+                }
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        };
+
+        dropdownToggles.forEach(toggle => {
+            toggle.setAttribute('aria-haspopup', 'menu');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.addEventListener('click', event => {
+                event.preventDefault();
+                const menu = toggle.nextElementSibling;
+                const isOpen = menu?.classList.contains('show');
+                closeDropdowns();
+                if (menu && !isOpen) {
+                    menu.classList.add('show');
+                    toggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        document.addEventListener('click', event => {
+            if (!event.target.closest('.dropdown') && !event.target.closest('.dropup') && !event.target.closest('.dropstart') && !event.target.closest('.dropend')) {
+                closeDropdowns();
+            }
         });
 
         // Alert dismiss
@@ -579,6 +762,173 @@
                     this.classList.add('active');
                 }
             });
+        });
+
+        // Tooltips
+        document.querySelectorAll('[data-demo-toggle="tooltip"]').forEach(trigger => {
+            const tooltip = trigger.parentElement?.querySelector('.tooltip');
+            if (!tooltip) return;
+
+            const show = () => tooltip.classList.add('show');
+            const hide = () => tooltip.classList.remove('show');
+
+            trigger.addEventListener('mouseenter', show);
+            trigger.addEventListener('focus', show);
+            trigger.addEventListener('mouseleave', hide);
+            trigger.addEventListener('blur', hide);
+        });
+
+        // Popovers
+        const popoverPairs = [];
+        document.querySelectorAll('[data-demo-toggle="popover"]').forEach(trigger => {
+            const popover = trigger.parentElement?.querySelector('.popover');
+            if (!popover) return;
+
+            popoverPairs.push({ trigger, popover });
+
+            trigger.addEventListener('click', event => {
+                event.preventDefault();
+                const isOpen = popover.classList.contains('show');
+                popoverPairs.forEach(({ popover: p }) => p.classList.remove('show'));
+                if (!isOpen) {
+                    popover.classList.add('show');
+                }
+            });
+        });
+
+        document.addEventListener('click', event => {
+            const pair = popoverPairs.find(({ trigger }) => trigger.contains(event.target));
+            if (pair) return;
+            if (!event.target.closest('.popover')) {
+                popoverPairs.forEach(({ popover }) => popover.classList.remove('show'));
+            }
+        });
+
+        // Overlays (modals & offcanvas)
+        const overlayRegistry = new Set();
+        const ensureBackdrop = () => {
+            let backdrop = document.querySelector('.modal-backdrop');
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.className = 'modal-backdrop';
+                document.body.appendChild(backdrop);
+                requestAnimationFrame(() => backdrop.classList.add('show'));
+            }
+            return backdrop;
+        };
+
+        const removeBackdrop = () => {
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.classList.remove('show');
+                setTimeout(() => backdrop.remove(), 200);
+            }
+        };
+
+        const showOverlay = element => {
+            if (!element) return;
+            overlayRegistry.add(element);
+            element.classList.add('show');
+            element.setAttribute('aria-hidden', 'false');
+            if (element.classList.contains('modal')) {
+                element.setAttribute('aria-modal', 'true');
+            }
+            ensureBackdrop();
+            document.body.classList.add('overflow-hidden');
+        };
+
+        const hideOverlay = element => {
+            if (!element) return;
+            element.classList.remove('show');
+            element.setAttribute('aria-hidden', 'true');
+            if (element.classList.contains('modal')) {
+                element.removeAttribute('aria-modal');
+            }
+            overlayRegistry.delete(element);
+            if (!overlayRegistry.size) {
+                document.body.classList.remove('overflow-hidden');
+                removeBackdrop();
+            }
+        };
+
+        document.querySelectorAll('[data-demo-toggle="modal"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const selector = button.getAttribute('data-target');
+                const modal = document.querySelector(selector);
+                if (modal) {
+                    showOverlay(modal);
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-demo-dismiss="modal"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                hideOverlay(modal);
+            });
+        });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', event => {
+                if (event.target === modal) {
+                    hideOverlay(modal);
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-demo-toggle="offcanvas"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const selector = button.getAttribute('data-target');
+                const offcanvas = document.querySelector(selector);
+                if (offcanvas) {
+                    showOverlay(offcanvas);
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-demo-dismiss="offcanvas"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const offcanvas = button.closest('.offcanvas');
+                hideOverlay(offcanvas);
+            });
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeDropdowns();
+                popoverPairs.forEach(({ popover }) => popover.classList.remove('show'));
+                Array.from(overlayRegistry).forEach(overlay => hideOverlay(overlay));
+            }
+        });
+
+        // Toasts
+        const toastTemplate = document.getElementById('demoToast');
+        const toastStack = document.getElementById('toastStack');
+
+        const hideToast = toast => {
+            if (!toast) return;
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 220);
+        };
+
+        document.querySelectorAll('[data-demo-toggle="toast"]').forEach(button => {
+            button.addEventListener('click', () => {
+                if (!toastTemplate || !toastStack) return;
+                const toast = toastTemplate.cloneNode(true);
+                toast.removeAttribute('hidden');
+                toast.removeAttribute('id');
+                toastStack.appendChild(toast);
+                requestAnimationFrame(() => toast.classList.add('show'));
+
+                setTimeout(() => hideToast(toast), 4000);
+            });
+        });
+
+        toastStack?.addEventListener('click', event => {
+            const dismiss = event.target.closest('[data-demo-dismiss="toast"]');
+            if (dismiss) {
+                hideToast(dismiss.closest('.toast'));
+            }
         });
     </script>
 </body>
