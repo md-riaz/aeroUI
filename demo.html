@@ -56,13 +56,13 @@
         <section class="card">
             <div class="card-body space-y-6">
                 <h2 class="text-2xl font-semibold pb-2 border-b border-border">Grid System</h2>
-                <div class="row">
-                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 1</div>
-                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 2</div>
-                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Column 3</div>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 1</div>
+                    <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 2</div>
+                    <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 3</div>
                 </div>
-                <div class="row">
-                    <div class="col rounded-lg border border-border bg-muted p-6 text-center">Full Width Column</div>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="rounded-lg border border-border bg-muted p-6 text-center md:col-span-3">Full Width Column</div>
                 </div>
             </div>
         </section>
