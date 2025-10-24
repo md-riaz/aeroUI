@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>aeroUI — Components</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%233b82f6'/%3E%3Cpath fill='white' d='M10.4 23.4a1.2 1.2 0 0 1-1.1-1.7l5.2-12c.4-.9 1.9-.9 2.3 0l5.2 12a1.2 1.2 0 0 1-1.1 1.7h-2.1a1.2 1.2 0 0 1-1.1-.7l-.9-2.1h-3.5l-.9 2.1a1.2 1.2 0 0 1-1.1.7zm6.2-6.2-1.2-2.8-1.2 2.8z'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="assets/aeroui.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body id="top" class="bg-background text-foreground antialiased">
+    <div class="flex min-h-screen flex-col" data-theme="light" data-site-root>
+      <header class="border-b border-border/80 bg-background/80">
+        <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <a class="flex items-center gap-2 text-base font-semibold sm:text-lg" href="./">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="m12 4 6.928 4v8L12 20l-6.928-4V8L12 4Z" stroke-linejoin="round" stroke-linecap="round"></path>
+                <path d="m9.5 9.75 5 2.25-5 2.25" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            aeroUI Components
+          </a>
+          <nav class="hidden items-center gap-6 text-sm font-medium md:flex">
+            <a class="text-muted-foreground transition hover:text-foreground" href="index.html">Overview</a>
+            <a class="text-muted-foreground transition hover:text-foreground" href="docs.html">Docs</a>
+            <a class="text-muted-foreground transition hover:text-foreground" href="blocks.html">Blocks</a>
+          </nav>
+          <a
+            href="https://github.com/md-riaz/aeroUI"
+            class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+          >
+            GitHub
+          </a>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        <section class="border-b border-border/80 bg-background">
+          <div class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 lg:px-8">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Component gallery
+            </span>
+            <h1 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Preview and copy every aeroUI element</h1>
+            <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">
+              Explore polished Bootstrap components rendered with aeroUI&rsquo;s shadcn-inspired tokens. Each example pairs a live preview with copy-ready markup so you can drop the snippets straight into any project.
+            </p>
+            <div class="flex flex-wrap gap-3 text-xs font-semibold text-muted-foreground">
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#navigation">Navigation</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#buttons">Buttons</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#menus">Menus</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#layout">Layout</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#content">Content</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#forms">Forms</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#feedback">Feedback</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#overlays">Overlays</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#utilities">Utilities</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="navigation" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Navigation</h2>
+              <p class="text-sm text-muted-foreground">Structure primary navigation, breadcrumbs, and tabbed interfaces with cohesive styling.</p>
+            </div>
+
+            <article id="navbar" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Navbar</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Responsive header with branding, nav links, and call-to-action buttons.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <nav class="navbar flex flex-col gap-4 rounded-2xl border border-border bg-background px-4 py-4 md:flex-row md:items-center md:justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="navbar-brand">aeroUI</span>
+                    <span class="badge badge-outline badge-info">Preview</span>
+                  </div>
+                  <ul class="navbar-nav flex-wrap gap-1">
+                    <li><a class="nav-link active" href="#">Dashboard</a></li>
+                    <li><a class="nav-link" href="#">Library</a></li>
+                    <li><a class="nav-link" href="#">Customers</a></li>
+                    <li><a class="nav-link" href="#">Settings</a></li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <button type="button" class="btn btn-outline">Docs</button>
+                    <button type="button" class="btn btn-primary">Download</button>
+                  </div>
+                </nav>
+              </template>
+            </article>
+
+            <article id="tabs" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Tabs &amp; pills</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Toggle between sections with Bootstrap&rsquo;s tabbed navigation styles.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6 rounded-2xl border border-border bg-background p-6">
+                  <div>
+                    <h4 class="text-base font-semibold text-foreground">Tabs</h4>
+                    <ul class="nav nav-tabs mt-4" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="nav-dashboard-tab" data-bs-toggle="tab" data-bs-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="true">Dashboard</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-settings-tab" data-bs-toggle="tab" data-bs-target="#nav-settings" type="button" role="tab" aria-controls="nav-settings" aria-selected="false">Settings</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link disabled" type="button" aria-disabled="true">Disabled</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content rounded-b-xl border border-border/80 border-t-0 bg-muted/30 p-4 text-sm text-muted-foreground">
+                      <div class="tab-pane fade show active" id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Keep track of revenue, sessions, and engagement.</div>
+                      <div class="tab-pane fade" id="nav-settings" role="tabpanel" aria-labelledby="nav-settings-tab">Update billing details, theme preferences, and tokens.</div>
+                      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Manage your avatar, teams, and notification channels.</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-semibold text-foreground">Pills</h4>
+                    <ul class="nav nav-pills mt-4" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pill-home-tab" data-bs-toggle="pill" data-bs-target="#pill-home" type="button" role="tab" aria-controls="pill-home" aria-selected="true">Home</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pill-about-tab" data-bs-toggle="pill" data-bs-target="#pill-about" type="button" role="tab" aria-controls="pill-about" aria-selected="false">About</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pill-contact-tab" data-bs-toggle="pill" data-bs-target="#pill-contact" type="button" role="tab" aria-controls="pill-contact" aria-selected="false">Contact</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link disabled" type="button" aria-disabled="true">Disabled</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content mt-4 rounded-2xl border border-border bg-muted/30 p-4 text-sm text-muted-foreground">
+                      <div class="tab-pane fade show active" id="pill-home" role="tabpanel" aria-labelledby="pill-home-tab">Welcome back! Everything is synced with aeroUI tokens.</div>
+                      <div class="tab-pane fade" id="pill-about" role="tabpanel" aria-labelledby="pill-about-tab">Explore our roadmap, release cadence, and design resources.</div>
+                      <div class="tab-pane fade" id="pill-contact" role="tabpanel" aria-labelledby="pill-contact-tab">Reach out for enterprise plans and custom component work.</div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="breadcrumb" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Breadcrumb</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Guide users through hierarchical experiences with minimal markup.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <nav aria-label="Breadcrumb" class="rounded-2xl border border-border bg-background p-6">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="text-primary hover:underline">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-primary hover:underline">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                  </ol>
+                </nav>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="buttons" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Buttons</h2>
+              <p class="text-sm text-muted-foreground">Primary actions, alternate styles, and sizing mapped to Bootstrap&rsquo;s API.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Button styles</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Mix primary, outline, ghost, and link variants with disabled states.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6 rounded-2xl border border-border bg-background p-6">
+                  <div class="space-y-2">
+                    <h4 class="text-base font-semibold text-foreground">Basic buttons</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <button class="btn btn-primary">Primary</button>
+                      <button class="btn btn-secondary">Secondary</button>
+                      <button class="btn btn-success">Success</button>
+                      <button class="btn btn-warning">Warning</button>
+                      <button class="btn btn-danger">Danger</button>
+                      <button class="btn btn-info">Info</button>
+                      <button class="btn btn-outline">Outline</button>
+                      <button class="btn btn-ghost">Ghost</button>
+                      <button class="btn btn-link">Link</button>
+                      <button class="btn btn-primary" disabled>Disabled</button>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h4 class="text-base font-semibold text-foreground">Button sizes</h4>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <button class="btn btn-primary btn-sm">Small</button>
+                      <button class="btn btn-primary">Default</button>
+                      <button class="btn btn-primary btn-lg">Large</button>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h4 class="text-base font-semibold text-foreground">Button group</h4>
+                    <div class="btn-group" role="group" aria-label="Button group">
+                      <button class="btn btn-outline-primary" type="button">Left</button>
+                      <button class="btn btn-outline-primary" type="button">Middle</button>
+                      <button class="btn btn-outline-primary" type="button">Right</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="menus" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Menus &amp; dropdowns</h2>
+              <p class="text-sm text-muted-foreground">Bootstrap-triggered menus inherit aeroUI spacing, borders, and typography.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Dropdowns</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Standard dropdowns and dropups that stay accessible with Bootstrap&rsquo;s JS.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="flex flex-wrap items-start gap-6 rounded-2xl border border-border bg-background p-6">
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu">
+                      <button class="dropdown-item" type="button">Action</button>
+                      <button class="dropdown-item" type="button">Another action</button>
+                      <button class="dropdown-item" type="button">Something else</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">Separated link</button>
+                    </div>
+                  </div>
+                  <div class="dropup">
+                    <button class="btn btn-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropup menu
+                    </button>
+                    <div class="dropdown-menu">
+                      <button class="dropdown-item" type="button">Item one</button>
+                      <button class="dropdown-item" type="button">Item two</button>
+                      <button class="dropdown-item" type="button">Item three</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="layout" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Layout &amp; structure</h2>
+              <p class="text-sm text-muted-foreground">Use Bootstrap&rsquo;s grid with aeroUI surface treatments.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Grid system</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Responsive grid columns with muted backgrounds and rounded corners.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6 rounded-2xl border border-border bg-background p-6">
+                  <div class="row g-4">
+                    <div class="col-md-4">
+                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 1</div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 2</div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 3</div>
+                    </div>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-12">
+                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Full width column</div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="content" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Content displays</h2>
+              <p class="text-sm text-muted-foreground">Cards, tables, and lists inherit cohesive spacing and typography.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Cards</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Layered card styles for dashboards and marketing layouts.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="grid gap-6 rounded-2xl border border-border bg-background p-6 md:grid-cols-2">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title">Card header</h5>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">This is a card with header, body, and footer sections. Perfect for organising content with the polished shadcn aesthetic.</p>
+                    </div>
+                    <div class="card-footer flex gap-2">
+                      <button class="btn btn-primary">Action</button>
+                      <button class="btn btn-outline">Cancel</button>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Simple card</h5>
+                      <p class="card-text mb-4">A card with just a body section. Clean, minimal, and modern with soft shadows and rounded corners.</p>
+                      <button class="btn btn-primary">Get started</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Tables</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Responsive table with badges and action buttons.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="rounded-2xl border border-border bg-background p-6">
+                  <div class="overflow-x-auto rounded-lg border">
+                    <table class="table align-middle">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Role</th>
+                          <th scope="col" class="text-end">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="font-medium">John Doe</td>
+                          <td><span class="badge badge-success">Active</span></td>
+                          <td>Admin</td>
+                          <td class="text-end">
+                            <button class="btn btn-sm btn-ghost">Edit</button>
+                            <button class="btn btn-sm btn-ghost text-danger">Delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="font-medium">Jane Smith</td>
+                          <td><span class="badge badge-warning">Pending</span></td>
+                          <td>User</td>
+                          <td class="text-end">
+                            <button class="btn btn-sm btn-ghost">Edit</button>
+                            <button class="btn btn-sm btn-ghost text-danger">Delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="font-medium">Bob Johnson</td>
+                          <td><span class="badge badge-secondary">Inactive</span></td>
+                          <td>User</td>
+                          <td class="text-end">
+                            <button class="btn btn-sm btn-ghost">Edit</button>
+                            <button class="btn btn-sm btn-ghost text-danger">Delete</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">List group</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Stacked list with active and interactive states.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="rounded-2xl border border-border bg-background p-6">
+                  <ul class="list-group">
+                    <li class="list-group-item active" aria-current="true">Active item</li>
+                    <li class="list-group-item list-group-item-action" role="button">Interactive item</li>
+                    <li class="list-group-item list-group-item-action" role="button">Another item</li>
+                    <li class="list-group-item list-group-item-action" role="button">Fourth item</li>
+                  </ul>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="forms" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Forms</h2>
+              <p class="text-sm text-muted-foreground">Form controls, selects, and grouped inputs styled with aeroUI tokens.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Form elements</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Support text inputs, selects, checkboxes, and grouped controls.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <form class="space-y-6 rounded-2xl border border-border bg-background p-6">
+                  <div>
+                    <label for="componentsEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="componentsEmail" placeholder="you@example.com" />
+                    <p class="form-text mt-2">We'll never share your email with anyone else.</p>
+                  </div>
+                  <div>
+                    <label for="componentsSelect" class="form-label">Select option</label>
+                    <select class="form-select" id="componentsSelect">
+                      <option>Choose an option...</option>
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="componentsTextarea" class="form-label">Message</label>
+                    <textarea class="form-control" id="componentsTextarea" placeholder="Enter your message here..."></textarea>
+                  </div>
+                  <div>
+                    <label class="form-label" for="componentsInputGroup">Username lookup</label>
+                    <div class="input-group">
+                      <span class="input-group-text">@</span>
+                      <input type="text" id="componentsInputGroup" class="form-control" placeholder="username" aria-label="Username" />
+                      <button class="btn btn-outline" type="button">Check</button>
+                    </div>
+                    <p class="form-text">Input groups stay perfectly aligned with the shadcn aesthetic.</p>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="componentsCheck" />
+                    <label class="form-check-label" for="componentsCheck">
+                      I agree to the terms and conditions
+                    </label>
+                  </div>
+                  <div class="space-y-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="componentsRadios" id="componentsRadio1" value="option1" checked />
+                      <label class="form-check-label" for="componentsRadio1">
+                        Default radio option
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="componentsRadios" id="componentsRadio2" value="option2" />
+                      <label class="form-check-label" for="componentsRadio2">
+                        Second radio option
+                      </label>
+                    </div>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-outline">Cancel</button>
+                  </div>
+                </form>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="feedback" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Feedback &amp; indicators</h2>
+              <p class="text-sm text-muted-foreground">Communicate status with alerts, badges, progress, and spinners.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Alerts</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Informational banners including dismissible variants.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-4 rounded-2xl border border-border bg-background p-6">
+                  <div class="alert alert-primary" role="alert">
+                    <strong>Primary:</strong> This is a primary alert with shadcn styling.
+                  </div>
+                  <div class="alert alert-success" role="alert">
+                    <strong>Success!</strong> Your operation completed successfully.
+                  </div>
+                  <div class="alert alert-warning" role="alert">
+                    <strong>Warning:</strong> Please review this carefully.
+                  </div>
+                  <div class="alert alert-danger" role="alert">
+                    <strong>Error!</strong> Something went wrong.
+                  </div>
+                  <div class="alert alert-info" role="alert">
+                    <strong>Info:</strong> Here's some helpful information.
+                  </div>
+                  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <strong>Dismissible:</strong> Click the × to close this alert.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Badges</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Highlight statuses with solid and outline badge treatments.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="rounded-2xl border border-border bg-background p-6">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-primary">Primary</span>
+                    <span class="badge badge-secondary">Secondary</span>
+                    <span class="badge badge-success">Success</span>
+                    <span class="badge badge-warning">Warning</span>
+                    <span class="badge badge-danger">Danger</span>
+                    <span class="badge badge-info">Info</span>
+                    <span class="badge badge-outline badge-primary">Outline</span>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Pagination</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Accessible pagination with active states and subtle separators.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <nav class="rounded-2xl border border-border bg-background p-6" aria-label="Pagination">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#" aria-label="Previous">&laquo;</a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#" aria-label="Next">&raquo;</a></li>
+                  </ul>
+                </nav>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Progress bars</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Track completion with gradient-backed bars and context-aware colors.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-4 rounded-2xl border border-border bg-background p-6">
+                  <div>
+                    <div class="mb-1 flex justify-between text-sm">
+                      <span>Default</span>
+                      <span>25%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 25%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-1 flex justify-between text-sm">
+                      <span class="text-success">Success</span>
+                      <span>50%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-success" style="width: 50%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-1 flex justify-between text-sm">
+                      <span class="text-warning">Warning</span>
+                      <span>75%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-warning" style="width: 75%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-1 flex justify-between text-sm">
+                      <span class="text-danger">Danger</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-danger" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Spinners</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Animated indicators for asynchronous states.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="flex items-center gap-8 rounded-2xl border border-border bg-background p-6">
+                  <div class="text-center text-sm text-muted-foreground">
+                    <div class="spinner-border text-primary mb-2" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Border
+                  </div>
+                  <div class="text-center text-sm text-muted-foreground">
+                    <div class="spinner-border spinner-border-sm text-primary mb-2" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Small
+                  </div>
+                  <div class="text-center text-sm text-muted-foreground">
+                    <div class="spinner-grow text-success mb-2" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Grow
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="interactions" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Interactive helpers</h2>
+              <p class="text-sm text-muted-foreground">Tooltips, popovers, and collapsible panels adopt shadcn-inspired surfaces.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Tooltips &amp; popovers</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Hover and click affordances enhance calls to action.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="flex flex-wrap items-center gap-10 rounded-2xl border border-border bg-background p-6">
+                  <button class="btn btn-outline" data-bs-toggle="tooltip" data-bs-placement="top" title="Shadcn-style tooltip">Hover tooltip</button>
+                  <button class="btn btn-secondary" data-bs-toggle="popover" data-bs-placement="top" title="Popover title" data-bs-content="Rich content popovers keep Bootstrap interactions but inherit shadcn/ui tokens.">
+                    Click popover
+                  </button>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Collapse &amp; accordion</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Pair toggles with collapsible content for FAQ and disclosures.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6 rounded-2xl border border-border bg-background p-6">
+                  <div class="space-y-3">
+                    <h4 class="text-base font-semibold text-foreground">Simple collapse</h4>
+                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#componentsCollapse" aria-expanded="false" aria-controls="componentsCollapse">
+                      Toggle collapse
+                    </button>
+                    <div class="collapse" id="componentsCollapse">
+                      <div class="card mt-4">
+                        <div class="card-body">
+                          <p class="text-muted mb-0">This is the collapsed content. It appears and disappears when you click the toggle button above, demonstrating Bootstrap JS behaviour with shadcn styling.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="space-y-3">
+                    <h4 class="text-base font-semibold text-foreground">Accordion</h4>
+                    <div class="accordion" id="componentsAccordion">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="componentsHeadingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#componentsCollapseOne" aria-expanded="true" aria-controls="componentsCollapseOne">
+                            What is aeroUI?
+                          </button>
+                        </h2>
+                        <div id="componentsCollapseOne" class="accordion-collapse collapse show" aria-labelledby="componentsHeadingOne" data-bs-parent="#componentsAccordion">
+                          <div class="accordion-body">
+                            aeroUI is a component layer that keeps Bootstrap's JavaScript interactivity while applying shadcn visuals. It uses Tailwind utilities inside a single CSS file for flexible, token-driven components.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="componentsHeadingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#componentsCollapseTwo" aria-expanded="false" aria-controls="componentsCollapseTwo">
+                            How does it work?
+                          </button>
+                        </h2>
+                        <div id="componentsCollapseTwo" class="accordion-collapse collapse" aria-labelledby="componentsHeadingTwo" data-bs-parent="#componentsAccordion">
+                          <div class="accordion-body">
+                            aeroUI compiles a single aeroui.css file with the Tailwind CLI. Structural classes for Bootstrap JS and visual styling live together, so Bootstrap's data-API works seamlessly with the shadcn token palette.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="componentsHeadingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#componentsCollapseThree" aria-expanded="false" aria-controls="componentsCollapseThree">
+                            Can I customize it?
+                          </button>
+                        </h2>
+                        <div id="componentsCollapseThree" class="accordion-collapse collapse" aria-labelledby="componentsHeadingThree" data-bs-parent="#componentsAccordion">
+                          <div class="accordion-body">
+                            Absolutely! Everything is composed with Tailwind utilities, so you can swap tokens or adjust spacing directly in the source file to match your brand.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="overlays" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Overlays</h2>
+              <p class="text-sm text-muted-foreground">Modals, offcanvas menus, and toast notifications keep Bootstrap semantics.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Modals, offcanvas &amp; toasts</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Trigger overlays with Bootstrap&rsquo;s data attributes while retaining aeroUI polish.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-4 rounded-2xl border border-border bg-background p-6">
+                  <div class="flex flex-wrap gap-3">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#componentsModal">Launch modal</button>
+                    <button class="btn btn-secondary" data-bs-toggle="offcanvas" data-bs-target="#componentsOffcanvas" aria-controls="componentsOffcanvas">Open offcanvas</button>
+                    <button class="btn btn-outline" data-bs-toggle="toast" data-bs-target="#componentsToast">Show toast</button>
+                  </div>
+                  <p class="text-sm text-muted-foreground max-w-2xl">Each control reuses familiar Bootstrap data attributes while inheriting shadcn-styled surfaces, focus rings, and typography.</p>
+
+                  <div class="modal fade" id="componentsModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Product update</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body space-y-3">
+                          <p class="text-muted">This modal keeps Bootstrap semantics but renders with shadcn/ui textures and spacing.</p>
+                          <ul class="list-disc ps-4 text-sm text-muted-foreground space-y-1">
+                            <li>Soft surfaces and meaningful elevation</li>
+                            <li>Accessible focus management</li>
+                            <li>Custom tokens for dark mode parity</li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn btn-outline" data-bs-dismiss="modal">Dismiss</button>
+                          <button class="btn btn-primary">Confirm changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="componentsOffcanvas" aria-labelledby="componentsOffcanvasLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="componentsOffcanvasLabel">Notifications</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body space-y-4">
+                      <div class="flex items-start gap-3">
+                        <span class="badge badge-success">New</span>
+                        <div>
+                          <p class="font-medium text-sm text-foreground">Design tokens synced</p>
+                          <p class="text-sm text-muted">Tailwind build finished 2 minutes ago.</p>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3">
+                        <span class="badge badge-info">Update</span>
+                        <div>
+                          <p class="font-medium text-sm text-foreground">Component library refreshed</p>
+                          <p class="text-sm text-muted">Shadcn parity achieved across modals, dropdowns, and overlays.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="position-relative">
+                    <div id="componentsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="toast-header">
+                        <strong class="me-auto">Saved</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                      <div class="toast-body">Your workspace now mirrors the shadcn/ui presentation.</div>
+                    </div>
+                    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section id="utilities" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Utilities</h2>
+              <p class="text-sm text-muted-foreground">Color tokens and typography helpers mirror Tailwind semantics.</p>
+            </div>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Color system</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Preview swatches for every semantic color.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="flex flex-wrap gap-4 rounded-2xl border border-border bg-background p-6">
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-primary"></div>
+                    <p class="text-xs text-muted">Primary</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-secondary"></div>
+                    <p class="text-xs text-muted">Secondary</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-success"></div>
+                    <p class="text-xs text-muted">Success</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-warning"></div>
+                    <p class="text-xs text-muted">Warning</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-danger"></div>
+                    <p class="text-xs text-muted">Danger</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-info"></div>
+                    <p class="text-xs text-muted">Info</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-muted"></div>
+                    <p class="text-xs text-muted">Muted</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Typography helpers</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Text utilities maintain clarity across contexts.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-2 rounded-2xl border border-border bg-background p-6 text-sm">
+                  <p class="text-primary">This is primary text</p>
+                  <p class="text-secondary">This is secondary text</p>
+                  <p class="text-muted">This is muted text</p>
+                  <p class="text-success">This is success text</p>
+                  <p class="text-warning">This is warning text</p>
+                  <p class="text-danger">This is danger text</p>
+                  <p class="text-info">This is info text</p>
+                </div>
+              </template>
+            </article>
+          </div>
+        </section>
+
+        <section class="bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-border bg-card p-8 text-center">
+              <h3 class="text-2xl font-semibold text-foreground">aeroUI</h3>
+              <p class="mt-3 text-muted">Bootstrap class API + shadcn/ui aesthetics</p>
+              <p class="mt-4 text-sm text-muted-foreground">
+                This gallery showcases aeroUI components with shadcn-first styling and Bootstrap JS interactivity. Built with Tailwind CSS and designed for drop-in integrations.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-border/80 bg-background/80">
+        <div class="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-4 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <p>&copy; <span data-year></span> aeroUI. Built for Bootstrap + Tailwind workflows.</p>
+          <div class="flex gap-4">
+            <a class="transition hover:text-foreground" href="index.html">Overview</a>
+            <a class="transition hover:text-foreground" href="docs.html">Docs</a>
+            <a class="transition hover:text-foreground" href="blocks.html">Blocks</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const examples = document.querySelectorAll('[data-component-example]');
+
+        examples.forEach((example) => {
+          const template = example.querySelector('template[data-example]');
+          const preview = example.querySelector('[data-slot="preview"]');
+          const codeBlock = example.querySelector('[data-slot="code"] code');
+          const viewButtons = example.querySelectorAll('[data-view]');
+          const copyButton = example.querySelector('[data-copy]');
+
+          if (!template || !preview || !codeBlock) return;
+
+          const markup = template.innerHTML.trim();
+          preview.innerHTML = markup;
+          codeBlock.textContent = markup;
+
+          const slots = {
+            preview: preview,
+            code: example.querySelector('[data-slot="code"]'),
+          };
+
+          const setView = (view) => {
+            Object.entries(slots).forEach(([name, element]) => {
+              if (!element) return;
+              if (name === view) {
+                element.classList.remove('hidden');
+              } else {
+                element.classList.add('hidden');
+              }
+            });
+
+            viewButtons.forEach((button) => {
+              const isActive = button.dataset.view === view;
+              button.classList.toggle('bg-primary/10', isActive);
+              button.classList.toggle('text-primary', isActive);
+              button.classList.toggle('hover:bg-primary/20', isActive);
+              button.classList.toggle('px-3', true);
+              button.classList.toggle('py-1.5', true);
+              button.classList.toggle('rounded-full', true);
+              button.classList.toggle('transition', true);
+            });
+          };
+
+          setView('preview');
+
+          viewButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+              const view = button.dataset.view;
+              if (!view) return;
+              setView(view);
+            });
+          });
+
+          copyButton?.addEventListener('click', async () => {
+            const text = codeBlock.textContent ?? '';
+            try {
+              await navigator.clipboard.writeText(text.trim());
+              const original = copyButton.textContent;
+              copyButton.textContent = 'Copied!';
+              copyButton.classList.add('border-primary/60', 'text-primary');
+              setTimeout(() => {
+                copyButton.textContent = original;
+                copyButton.classList.remove('border-primary/60', 'text-primary');
+              }, 1500);
+            } catch (error) {
+              console.error('Failed to copy markup', error);
+            }
+          });
+        });
+
+        document.querySelectorAll('[data-year]').forEach((el) => {
+          el.textContent = new Date().getFullYear();
+        });
+
+        if (window.bootstrap) {
+          document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => {
+            window.bootstrap.Tooltip.getOrCreateInstance(el);
+          });
+
+          document.querySelectorAll('[data-bs-toggle="popover"]').forEach((el) => {
+            window.bootstrap.Popover.getOrCreateInstance(el);
+          });
+
+          document.querySelectorAll('[data-bs-toggle="toast"]').forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+              const target = trigger.getAttribute('data-bs-target');
+              if (!target) return;
+              const toastEl = document.querySelector(target);
+              if (!toastEl) return;
+              const container = toastEl.parentElement?.querySelector('.toast-container');
+              if (container) {
+                container.appendChild(toastEl);
+              }
+              const instance = window.bootstrap.Toast.getOrCreateInstance(toastEl);
+              instance.show();
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

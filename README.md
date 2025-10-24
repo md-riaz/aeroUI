@@ -18,8 +18,8 @@ Unlike Bootstrap's precompiled CSS bundles, aeroUI expects you to run a Tailwind
 ```
 aeroUI/
 ├── docs/assets/aeroui.css  # Generated CSS served to browsers and docs
+├── docs/components.html    # Showcase of supported components
 ├── src/aeroui.css          # Tailwind-authored source file
-├── demo.html               # Showcase of supported components
 ├── tailwind.config.js      # Tailwind content scan
 └── package.json            # Scripts for build/watch + Tailwind dependency
 ```
@@ -42,11 +42,11 @@ The Tailwind source describes structural expectations (modals, dropdowns, offcan
    npm run dev
    ```
 
-3. **Open the demo**
+3. **Open the docs and components gallery**
    ```bash
    python3 -m http.server
    ```
-   Navigate to `http://localhost:8000/demo.html` to explore all components wired to Bootstrap JS.
+   Navigate to `http://localhost:8000/docs/components.html` to explore every component wired to Bootstrap JS.
 
 ## Using aeroUI in Your Project
 
@@ -115,7 +115,7 @@ The single CSS layer implements the most common Bootstrap classes:
 - Alerts, badges, progress bar, table styling
 - Utility shims for common Bootstrap helpers (`.d-flex`, `.d-none`, `.text-center`, `.mt-3`, `.shadow-sm`, ...)
 
-Refer to `demo.html` for real-world markup examples that exercise each component and match the Bootstrap data-API triggers.
+Refer to `docs/components.html` for real-world markup examples that exercise each component and match the Bootstrap data-API triggers.
 
 ## Accessibility Notes
 
