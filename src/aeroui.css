@@ -447,6 +447,97 @@
 }
 
 /* =============================================================
+   Carousel
+   ============================================================= */
+@layer components {
+  .carousel {
+    @apply relative overflow-hidden rounded-2xl border border-border bg-card text-card-foreground shadow-lg;
+  }
+
+  .carousel-inner {
+    @apply relative w-full overflow-hidden;
+  }
+
+  .carousel-item {
+    @apply hidden w-full;
+  }
+
+  .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
+    @apply block;
+  }
+
+  .carousel-item > * {
+    @apply h-full w-full;
+  }
+
+  .carousel-caption {
+    @apply absolute inset-x-4 bottom-6 mx-auto max-w-xl rounded-xl bg-background/80 px-6 py-4 text-center text-sm text-muted-foreground shadow-lg backdrop-blur;
+  }
+
+  .carousel-indicators {
+    @apply absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    @apply h-2 w-8 cursor-pointer rounded-full border border-border/60 bg-background/60 transition hover:border-primary/60 hover:bg-primary/20;
+  }
+
+  .carousel-indicators .active {
+    @apply border-primary/70 bg-primary text-primary-foreground;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    @apply absolute top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/70 bg-background/80 text-foreground shadow-sm transition hover:bg-background;
+  }
+
+  .carousel-control-prev {
+    @apply left-4;
+  }
+
+  .carousel-control-next {
+    @apply right-4;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    @apply block h-4 w-4 bg-no-repeat bg-center;
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3e%3cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 19l-7-7 7-7'/%3e%3c/svg%3e");
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3e%3cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'/%3e%3c/svg%3e");
+  }
+
+  .carousel-item-next,
+  .carousel-item-prev,
+  .carousel-item.active {
+    transition: transform 0.6s ease;
+  }
+
+  .carousel-item-next.carousel-item-start,
+  .carousel-item-prev.carousel-item-end,
+  .carousel-item.active {
+    transform: translateX(0);
+  }
+
+  .carousel-item-next,
+  .carousel-item.active.carousel-item-end {
+    transform: translateX(100%);
+  }
+
+  .carousel-item-prev,
+  .carousel-item.active.carousel-item-start {
+    transform: translateX(-100%);
+  }
+}
+
+/* =============================================================
    Forms
    ============================================================= */
 @layer components {
