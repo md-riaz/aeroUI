@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>aeroUI &mdash; Tailwind-flavoured Bootstrap UI kit</title>
+    <title>aeroUI &mdash; Tailwind-first UI kit</title>
     <link
       rel="icon"
       type="image/svg+xml"
@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="assets/aeroui.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body id="top" class="bg-background text-foreground antialiased">
     <div class="flex min-h-screen flex-col" data-theme="light" data-site-root>
@@ -57,13 +56,13 @@
           <div class="mx-auto grid w-full max-w-6xl gap-12 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:px-8">
             <div class="space-y-6">
               <span class="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-                Bootstrap semantics · Tailwind build · shadcn polish
+                Tailwind utilities · shadcn polish
               </span>
               <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                Build polished Bootstrap experiences with Tailwind-calibrated tokens.
+                Build polished experiences with Tailwind-calibrated tokens.
               </h1>
               <p class="max-w-xl text-lg leading-relaxed text-muted-foreground">
-                aeroUI pairs Bootstrap&rsquo;s semantic class names with Tailwind utility recipes and shadcn/ui tokens. Copy the markup, compile <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">src/aeroui.css</code> with your Tailwind pipeline, and ship an optimised stylesheet that matches your project.
+                aeroUI ships ready-to-copy markup wired to Tailwind utility recipes and shadcn/ui tokens. Copy the markup, compile <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">src/aeroui.css</code> with your Tailwind pipeline, ship an optimised stylesheet that matches your project, and load <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">bootstrap.bundle.min.js</code> plus a slim jQuery helper to power interactive behaviours.
               </p>
               <div class="flex flex-wrap gap-4">
                 <a class="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow transition hover:bg-primary/90" href="docs.html">
@@ -84,13 +83,13 @@
               <div class="space-y-5">
                 <div>
                   <h2 class="text-base font-semibold text-foreground">Tailwind-powered authoring</h2>
-                  <p class="mt-2 text-sm text-muted-foreground">Copy the markup, add <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">src/aeroui.css</code> to your Tailwind build, and let the compiler generate a Bootstrap-friendly bundle for your project.</p>
+                  <p class="mt-2 text-sm text-muted-foreground">Copy the markup, add <code class="rounded bg-secondary px-1.5 py-0.5 text-xs text-foreground">src/aeroui.css</code> to your Tailwind build, and let the compiler generate a production-ready bundle for your project.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-muted/40 p-4">
                   <pre class="overflow-x-auto text-xs text-muted-foreground"><code># tailwind.config.js
 content: [
   "./resources/views/**/*.blade.php",
-  "./node_modules/bootstrap/dist/js/**/*.js",
+  "./resources/js/**/*.js",
   "./vendor/aeroui/**/*.html"
 ],
 
@@ -100,12 +99,12 @@ import "./resources/css/aeroui.css";
                 </div>
                 <div class="grid gap-3 sm:grid-cols-2">
                   <div class="rounded-2xl border border-border bg-background/60 p-4">
-                    <p class="text-sm font-semibold text-foreground">Bootstrap friendly</p>
-                    <p class="mt-1 text-xs text-muted-foreground">Semantic class names stay intact so Bootstrap&rsquo;s JavaScript and data attributes continue to work.</p>
+                    <p class="text-sm font-semibold text-foreground">Tailwind-native</p>
+                    <p class="mt-1 text-xs text-muted-foreground">Semantic class names and utility recipes keep your components consistent without extra CSS.</p>
                   </div>
                   <div class="rounded-2xl border border-border bg-background/60 p-4">
                     <p class="text-sm font-semibold text-foreground">Tailwind utility core</p>
-                    <p class="mt-1 text-xs text-muted-foreground">Compose Bootstrap components with Tailwind utilities and shadcn/ui tokens directly in your build.</p>
+                    <p class="mt-1 text-xs text-muted-foreground">Compose components with Tailwind utilities and shadcn/ui tokens directly in your build.</p>
                   </div>
                 </div>
               </div>
@@ -121,7 +120,7 @@ import "./resources/css/aeroui.css";
               </span>
               <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Opinionated utilities, endless composition</h2>
               <p class="mx-auto max-w-3xl text-base text-muted-foreground">
-                Every component is crafted with Tailwind semantics, Bootstrap structure, and shadcn tokens. Run the Tailwind compiler in your stack to generate CSS that reflects exactly the components you use while keeping Bootstrap utilities in play.
+                Every component is crafted with Tailwind semantics and shadcn tokens. Run the Tailwind compiler in your stack to generate CSS that reflects exactly the components you use, replacing Bootstrap&rsquo;s CSS utilities while continuing to rely on its bundled JavaScript (plus a little jQuery) for polished interactivity.
               </p>
             </div>
             <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -151,14 +150,14 @@ import "./resources/css/aeroui.css";
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M6.5 5a1.5 1.5 0 0 0-1.415 2H2.5a.5.5 0 0 0 0 1h2.585A1.5 1.5 0 1 0 6.5 5ZM17.5 10h-2.585a1.5 1.5 0 1 0 0 1H17.5a.5.5 0 0 0 0-1Z" /></svg>
                 </div>
                 <h3 class="mt-5 text-lg font-semibold text-foreground">Copy once, compile everywhere</h3>
-                <p class="mt-2 text-sm text-muted-foreground">Drop the markup into any Bootstrap project, then run your Tailwind build to generate site-specific CSS.</p>
+                <p class="mt-2 text-sm text-muted-foreground">Drop the markup into any Tailwind project, then run your build to generate site-specific CSS.</p>
               </article>
               <article class="rounded-3xl border border-border bg-card p-6">
                 <div class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a.75.75 0 0 1 .75.75V10h4.75a.75.75 0 0 1 0 1.5h-5.5A.75.75 0 0 1 9.25 10V2.75A.75.75 0 0 1 10 2Z" /></svg>
                 </div>
                 <h3 class="mt-5 text-lg font-semibold text-foreground">Launch faster</h3>
-                <p class="mt-2 text-sm text-muted-foreground">Bootstrap&rsquo;s JavaScript, Tailwind utilities, and shadcn design tokens work together in a single build step.</p>
+                <p class="mt-2 text-sm text-muted-foreground">Tailwind utilities and shadcn design tokens work together in a single build step.</p>
               </article>
               <article class="rounded-3xl border border-border bg-card p-6">
                 <div class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -205,7 +204,7 @@ import "./resources/css/aeroui.css";
                 <article class="group relative overflow-hidden rounded-3xl border border-border bg-card p-6">
                   <div class="absolute -right-16 top-6 h-32 w-32 rounded-full bg-primary/10 blur-3xl transition group-hover:scale-110"></div>
                   <h3 class="text-lg font-semibold text-foreground">Application scaffolds</h3>
-                  <p class="mt-2 text-sm text-muted-foreground">Onboarding checklists, profile settings, and dashboards that feel native to Bootstrap.</p>
+                  <p class="mt-2 text-sm text-muted-foreground">Onboarding checklists, profile settings, and dashboards that feel native to your Tailwind design system.</p>
                   <a class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80" href="blocks.html#application">Explore app UI</a>
                 </article>
               </div>
@@ -248,9 +247,9 @@ import "./resources/css/aeroui.css";
           <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
             <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
               <div>
-                <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Design tokens that sync with Bootstrap</h2>
+                <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Design tokens that sync with Tailwind</h2>
                 <p class="mt-4 text-base text-muted-foreground">
-                  Use the compiled CSS as-is or rebuild from the Tailwind source when you need deeper customisation. Variables mirror Tailwind&rsquo;s naming so you always know which token to reach for.
+                  Run your own Tailwind build to generate the aeroUI CSS that ships with your project. The compiled file powering this documentation site is only an example—rebuild from the Tailwind source so tokens stay aligned with the markup you actually deploy.
                 </p>
                 <div class="mt-8 grid gap-4 sm:grid-cols-2">
                   <div class="rounded-3xl border border-border bg-card p-6">
@@ -259,11 +258,11 @@ import "./resources/css/aeroui.css";
                   </div>
                   <div class="rounded-3xl border border-border bg-card p-6">
                     <h3 class="text-sm font-semibold text-foreground">Typography scale</h3>
-                    <p class="mt-2 text-sm text-muted-foreground">Tailwind-like font sizes and weights compiled into utility classes that work with Bootstrap typography.</p>
+                    <p class="mt-2 text-sm text-muted-foreground">Tailwind-like font sizes and weights compiled into utility classes that slot into any modern typography system.</p>
                   </div>
                   <div class="rounded-3xl border border-border bg-card p-6">
                     <h3 class="text-sm font-semibold text-foreground">Spacing rhythm</h3>
-                    <p class="mt-2 text-sm text-muted-foreground">Tokenised spacing utilities that align with rem-based Bootstrap spacing and flex utilities.</p>
+                    <p class="mt-2 text-sm text-muted-foreground">Tokenised spacing utilities that align with rem-based spacing and flex utilities.</p>
                   </div>
                   <div class="rounded-3xl border border-border bg-card p-6">
                     <h3 class="text-sm font-semibold text-foreground">Interactive states</h3>
@@ -305,7 +304,7 @@ import "./resources/css/aeroui.css";
             <div class="max-w-2xl space-y-4">
               <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Ship faster with an impressive landing page</h2>
               <p class="text-base text-muted-foreground">
-                Compose your next marketing site with curated blocks, carefully tuned typography, and accessible interactions. aeroUI gives you the building blocks to craft a shadcn-inspired experience that still feels at home in Bootstrap.
+                Compose your next marketing site with curated blocks, carefully tuned typography, and accessible interactions. aeroUI gives you the building blocks to craft a shadcn-inspired experience that feels cohesive in any Tailwind project.
               </p>
             </div>
             <div class="flex flex-wrap gap-4">
@@ -322,7 +321,7 @@ import "./resources/css/aeroui.css";
 
       <footer class="border-t border-border/80 bg-background/80">
         <div class="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-4 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>&copy; <span data-year></span> aeroUI. Built for Bootstrap + Tailwind workflows.</p>
+          <p>&copy; <span data-year></span> aeroUI. Built for Tailwind-first workflows.</p>
           <div class="flex flex-wrap gap-4">
             <a class="transition hover:text-foreground" href="components.html">Components</a>
             <a class="transition hover:text-foreground" href="docs.html">Docs</a>
@@ -333,6 +332,8 @@ import "./resources/css/aeroui.css";
       </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.querySelectorAll('[data-year]').forEach((el) => {
         el.textContent = new Date().getFullYear();
