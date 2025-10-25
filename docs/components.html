@@ -1194,29 +1194,28 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', async () => {
         const examples = document.querySelectorAll('[data-component-example]');
 
-        examples.forEach((example) => {
+        for (const example of examples) {
           const template = example.querySelector('template[data-example]');
           const preview = example.querySelector('[data-slot="preview"]');
           const codeBlock = example.querySelector('[data-slot="code"] code');
           const viewButtons = example.querySelectorAll('[data-view]');
           const copyButton = example.querySelector('[data-copy]');
 
-          if (!template || !preview || !codeBlock) return;
+          if (!template || !preview || !codeBlock) continue;
 
           const markup = template.innerHTML.trim();
           let formattedMarkup = markup;
 
           if (window.prettier && window.prettierPlugins) {
             try {
-              formattedMarkup = window.prettier
-                .format(markup, {
-                  parser: 'html',
-                  plugins: window.prettierPlugins,
-                })
-                .trim();
+              formattedMarkup = await window.prettier.format(markup, {
+                parser: 'html',
+                plugins: window.prettierPlugins,
+              });
+              formattedMarkup = formattedMarkup.trim();
             } catch (error) {
               console.error('Failed to format markup', error);
             }
@@ -1281,7 +1280,7 @@
               console.error('Failed to copy markup', error);
             }
           });
-        });
+        }
 
         document.querySelectorAll('[data-year]').forEach((el) => {
           el.textContent = new Date().getFullYear();
