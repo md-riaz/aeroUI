@@ -2,6 +2,8 @@
 
 aeroUI blends the best parts of Bootstrap, shadcn/ui, and Tailwind CSS into a single workflow. You author interfaces with Bootstrap's semantic class names and data attributes, layer on Tailwind utility recipes via `@apply`, and inherit shadcn's HSL design tokens for a modern aesthetic. Everything lives in one Tailwind source file so the CSS you ship is always tailored to your markup.
 
+> **Project Motto**: _Shadcn UI built on top of Tailwind CSS with the syntax, semantics, and interactive JavaScript plugins of Bootstrap—combining the best of both design systems in a single project._
+
 Because aeroUI is a Tailwind-authored layer—not a precompiled drop-in—you copy `src/aeroui.css` into your project and run it through your own Tailwind build (Tailwind CLI, Vite, Laravel Mix, etc.). That pipeline generates the production stylesheet alongside your application's markup so Bootstrap semantics, shadcn tokens, and Tailwind utilities stay in sync. The file at `docs/assets/aeroui.css` only illustrates the output used on the documentation site; compile your own build to guarantee accurate purging and future updates.
 
 ## Key Goals
@@ -10,6 +12,7 @@ Because aeroUI is a Tailwind-authored layer—not a precompiled drop-in—you co
 - **shadcn Token Parity** – Components inherit the exact shadcn HSL token set (`--background`, `--foreground`, `--primary`, ...) with both light and dark definitions so the visuals match the reference design system.
 - **Single CSS Source** – Author everything inside `src/aeroui.css` and compile with the Tailwind CLI or an equivalent build tool.
 - **Utility Composition** – Classes are composed with Tailwind utilities through `@apply` inside `@layer` blocks so you reuse the Tailwind mental model while keeping Bootstrap semantics.
+- **Unified Motto Alignment** – Every component and documentation example is crafted to honour the guiding motto of pairing Bootstrap semantics and interactivity with shadcn and Tailwind-powered styling.
 
 > **Note**: aeroUI is not a drop-in replacement for every Bootstrap selector. It focuses on elements that are required for Bootstrap's JavaScript interactivity (modals, dropdowns, offcanvas, etc.) and augments them with Tailwind-authored styling. Layout primitives, grid utilities, and additional design choices are expected to be handled the “Tailwind way” within your project.
 
