@@ -72,7 +72,7 @@
           <div class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-semibold text-foreground">Setup</h2>
             <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-              aeroUI ships as Tailwind source. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/aeroui.css</code> into your project, register it with your Tailwind configuration, and let your build tool emit the final CSS your app will ship.
+              aeroUI ships as Tailwind source. Copy <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/aeroui.css</code> into your project, register it with your Tailwind configuration, and let your build tool emit the final CSS your app will ship. Keep <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">bootstrap.bundle.min.js</code> and a lightweight jQuery include in place so existing JavaScript interactions continue to fire.
             </p>
             <div class="mt-6 space-y-6">
               <article class="rounded-3xl border border-border bg-card p-6">
@@ -109,6 +109,15 @@ module.exports = {
                   Reference the CSS emitted by your build as the primary stylesheet for your project. aeroUI is designed to replace legacy Bootstrap styles with Tailwind utility classes, so you no longer need to ship Bootstrap&rsquo;s CSS alongside it. The <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">docs/assets/aeroui.css</code> file that powers this site is a demo artifact, not a published distribution.
                 </p>
                 <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;link rel="stylesheet" href="/build/aeroui.css"&gt;</code></pre>
+              </article>
+
+              <article class="rounded-3xl border border-border bg-card p-6">
+                <h3 class="text-lg font-semibold text-foreground">4. Keep Bootstrap JS for interactivity</h3>
+                <p class="mt-2 text-sm text-muted-foreground">
+                  While aeroUI replaces the Bootstrap CSS layer, its interactive components still rely on Bootstrap&rsquo;s JavaScript bundle and a light sprinkle of jQuery helpers. Ship <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">bootstrap.bundle.min.js</code> alongside jQuery so data attributes, toggles, and other behaviours continue working.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-2xl bg-muted p-4 text-xs text-muted-foreground"><code>&lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
               </article>
             </div>
           </div>
@@ -202,6 +211,8 @@ module.exports = {
       </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.querySelectorAll('[data-year]').forEach((el) => {
         el.textContent = new Date().getFullYear();
