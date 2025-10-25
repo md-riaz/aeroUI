@@ -459,7 +459,7 @@
   }
 
   .carousel-item {
-    @apply hidden w-full duration-700 ease-in-out;
+    @apply hidden w-full;
   }
 
   .carousel-item.active,
