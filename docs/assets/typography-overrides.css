@@ -1,0 +1,13 @@
+/* Documentation-specific typography overrides */
+p {
+  color: hsl(var(--foreground));
+}
+
+.lead {
+  color: hsl(var(--foreground));
+}
+
+small,
+.text-muted {
+  color: hsl(var(--muted-foreground));
+}
