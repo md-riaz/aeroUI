@@ -101,9 +101,14 @@
             <div class="flex flex-wrap gap-3 text-xs font-semibold text-muted-foreground">
               <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#hero">Hero</a>
               <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#features">Features</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#stats">Stats</a>
               <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#pricing">Pricing</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#comparison">Comparison</a>
               <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#testimonials">Testimonials</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#faq">FAQ</a>
               <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#cta">CTA</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#blog">Blog</a>
+              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#onboarding">Onboarding</a>
               <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#application">Application</a>
             </div>
           </div>
@@ -136,14 +141,14 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-8 position-relative overflow-hidden">
-                    <div class="container text-center d-flex flex-column align-items-center gap-4">
-                      <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Bootstrap + Tailwind tokens</span>
-                      <h1 class="display-5 fw-semibold text-foreground">Build polished UIs with one Tailwind build</h1>
-                      <p class="lead text-muted-foreground">Copy the markup, compile aeroui.css with Tailwind, and ship responsive layouts with Bootstrap behaviour.</p>
-                      <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a class="btn btn-primary" href="#">Get started</a>
-                        <a class="btn btn-outline" href="#">Browse components</a>
+                  <section class="relative overflow-hidden py-16 sm:py-20">
+                    <div class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 text-center">
+                      <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Bootstrap + Tailwind tokens</span>
+                      <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Build polished UIs with one Tailwind build</h1>
+                      <p class="text-base leading-relaxed text-muted-foreground sm:text-lg">Copy the markup, compile aeroui.css with Tailwind, and ship responsive layouts with Bootstrap behaviour.</p>
+                      <div class="flex flex-wrap items-center justify-center gap-3">
+                        <a class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Get started</a>
+                        <a class="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Browse components</a>
                       </div>
                     </div>
                   </section>
@@ -166,21 +171,22 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-9">
-                    <div class="container">
-                      <div class="row align-items-center g-5">
-                        <div class="col-lg-6 space-y-3">
-                          <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Introducing aeroUI</span>
-                          <h1 class="display-5 fw-semibold text-foreground">Design systems, familiar Bootstrap semantics</h1>
-                          <p class="lead text-muted-foreground">Pair Tailwind-built aeroUI CSS with Bootstrap utilities to extend every block.</p>
-                          <div class="d-flex flex-wrap gap-3">
-                            <a class="btn btn-primary" href="#">Start building</a>
-                            <a class="btn btn-outline" href="#">View docs</a>
-                          </div>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-[1.05fr_0.95fr]">
+                      <div class="space-y-4">
+                        <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Introducing aeroUI</span>
+                        <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Design systems, familiar Bootstrap semantics</h1>
+                        <p class="text-base leading-relaxed text-muted-foreground sm:text-lg">Pair Tailwind-built aeroUI CSS with Bootstrap utilities to extend every block.</p>
+                        <div class="flex flex-wrap gap-3">
+                          <a class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Start building</a>
+                          <a class="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">View docs</a>
                         </div>
-                        <div class="col-lg-6">
-                          <div class="ratio ratio-16x9 rounded-4 border border-border bg-card d-flex align-items-center justify-content-center text-muted-foreground">Preview</div>
+                      </div>
+                      <div class="relative isolate overflow-hidden rounded-[calc(var(--radius)*2)] border border-border bg-gradient-to-br from-primary/5 via-primary/10 to-transparent p-2">
+                        <div class="relative aspect-[16/10] w-full overflow-hidden rounded-[calc(var(--radius)*2-0.5rem)] border border-border bg-card">
+                          <div class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-muted-foreground">Preview</div>
                         </div>
+                        <div class="pointer-events-none absolute -top-16 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl"></div>
                       </div>
                     </div>
                   </section>
@@ -217,23 +223,23 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-8">
-                    <div class="container text-center">
-                      <div class="row g-4">
-                        <div class="col-md-4">
-                          <div class="d-inline-flex rounded-3 border border-primary-subtle bg-primary-subtle text-primary fw-semibold px-3 py-2">01</div>
-                          <h3 class="h5 mt-3 text-foreground">Polished tokens</h3>
-                          <p class="text-muted-foreground small">Tailwind-authored utilities compiled into reusable CSS.</p>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-5xl px-4 text-center">
+                      <div class="grid gap-10 sm:grid-cols-3">
+                        <div class="flex flex-col items-center gap-3 text-center">
+                          <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">01</span>
+                          <h3 class="text-xl font-semibold tracking-tight text-foreground">Polished tokens</h3>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Tailwind-authored utilities compiled into reusable CSS.</p>
                         </div>
-                        <div class="col-md-4">
-                          <div class="d-inline-flex rounded-3 border border-primary-subtle bg-primary-subtle text-primary fw-semibold px-3 py-2">02</div>
-                          <h3 class="h5 mt-3 text-foreground">Bootstrap friendly</h3>
-                          <p class="text-muted-foreground small">Use familiar grid and flex utilities alongside aeroUI classes.</p>
+                        <div class="flex flex-col items-center gap-3 text-center">
+                          <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">02</span>
+                          <h3 class="text-xl font-semibold tracking-tight text-foreground">Bootstrap friendly</h3>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Use familiar grid and flex utilities alongside aeroUI classes.</p>
                         </div>
-                        <div class="col-md-4">
-                          <div class="d-inline-flex rounded-3 border border-primary-subtle bg-primary-subtle text-primary fw-semibold px-3 py-2">03</div>
-                          <h3 class="h5 mt-3 text-foreground">Tailwind build in the loop</h3>
-                          <p class="text-muted-foreground small">Run Tailwind once to generate the aeroUI CSS your layout actually uses.</p>
+                        <div class="flex flex-col items-center gap-3 text-center">
+                          <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">03</span>
+                          <h3 class="text-xl font-semibold tracking-tight text-foreground">Tailwind build in the loop</h3>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Run Tailwind once to generate the aeroUI CSS your layout actually uses.</p>
                         </div>
                       </div>
                     </div>
@@ -257,31 +263,159 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-9">
-                    <div class="container">
-                      <div class="row g-5 align-items-center">
-                        <div class="col-lg-5 space-y-3">
-                          <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Feature set</span>
-                          <h2 class="h3 text-foreground">Everything you need to launch faster</h2>
-                          <p class="text-muted-foreground">Combine components and blocks to assemble marketing sites in hours, not weeks.</p>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+                        <div class="space-y-4">
+                          <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Feature set</span>
+                          <h2 class="text-3xl font-semibold tracking-tight text-foreground">Everything you need to launch faster</h2>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Combine components and blocks to assemble marketing sites in hours, not weeks.</p>
                         </div>
-                        <div class="col-lg-7">
-                          <div class="row g-4">
-                            <div class="col-sm-6">
-                              <div class="card h-100 border-border">
-                                <div class="card-body space-y-2">
-                                  <h4 class="h6 text-foreground">Responsive by default</h4>
-                                  <p class="text-muted-foreground small">Every block is tuned for mobile, tablet, and desktop breakpoints.</p>
-                                </div>
-                              </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                          <article class="flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6 shadow-sm">
+                            <div class="space-y-2">
+                              <h3 class="text-lg font-semibold tracking-tight text-foreground">Responsive by default</h3>
+                              <p class="text-sm leading-relaxed text-muted-foreground">Every block is tuned for mobile, tablet, and desktop breakpoints.</p>
                             </div>
-                            <div class="col-sm-6">
-                              <div class="card h-100 border-border">
-                                <div class="card-body space-y-2">
-                                  <h4 class="h6 text-foreground">Accessible patterns</h4>
-                                  <p class="text-muted-foreground small">Headings, contrasts, and semantics follow best practices.</p>
-                                </div>
-                              </div>
+                          </article>
+                          <article class="flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6 shadow-sm">
+                            <div class="space-y-2">
+                              <h3 class="text-lg font-semibold tracking-tight text-foreground">Accessible patterns</h3>
+                              <p class="text-sm leading-relaxed text-muted-foreground">Headings, contrasts, and semantics follow best practices.</p>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="stats" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-foreground">Stats & metrics</h2>
+                <p class="mt-2 text-sm text-muted-foreground">Quantify traction with trustworthy numbers and contextual detail.</p>
+              </div>
+              <a class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" href="#top">Back to top</a>
+            </div>
+            <div class="mt-8 grid gap-8 lg:grid-cols-2">
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Metrics with supporting narrative</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Pair headline numbers with insight to spotlight momentum.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[0.85fr_1fr] lg:items-center">
+                      <div class="space-y-4">
+                        <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">By the numbers</span>
+                        <h2 class="text-3xl font-semibold tracking-tight text-foreground">Teams ship faster with aeroUI</h2>
+                        <p class="text-sm leading-relaxed text-muted-foreground">Our customers plug the block catalogue into existing Bootstrap builds and immediately accelerate delivery.</p>
+                        <ul class="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                          <li class="flex gap-2"><span aria-hidden="true">•</span><span>Metrics update automatically from your product analytics.</span></li>
+                          <li class="flex gap-2"><span aria-hidden="true">•</span><span>Narrative copy contextualises the story behind each spike.</span></li>
+                        </ul>
+                      </div>
+                      <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                          <div class="flex items-center justify-between gap-2">
+                            <span class="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Product teams onboarded</span>
+                            <span class="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">+24%</span>
+                          </div>
+                          <p class="text-4xl font-semibold tracking-tight text-foreground">312</p>
+                          <p class="text-sm leading-relaxed text-muted-foreground">New teams launched their design system with aeroUI last quarter.</p>
+                        </div>
+                        <div class="flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                          <div class="flex items-center justify-between gap-2">
+                            <span class="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Support CSAT</span>
+                            <span class="inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-3 py-1 text-xs font-semibold text-success">98%</span>
+                          </div>
+                          <p class="text-4xl font-semibold tracking-tight text-foreground">4.9/5</p>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Average satisfaction score from 150+ customer surveys.</p>
+                        </div>
+                        <div class="flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <path d="M4 12h3l2 7 4-14 2 7h5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <p class="text-4xl font-semibold tracking-tight text-foreground">7 days</p>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Median time from cloning the repo to a live marketing site.</p>
+                        </div>
+                        <div class="flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                          <div class="flex items-center justify-between gap-2">
+                            <span class="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Design debt reduced</span>
+                            <span class="inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-3 py-1 text-xs font-semibold text-success">-63%</span>
+                          </div>
+                          <p class="text-4xl font-semibold tracking-tight text-foreground">12 hrs</p>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Average design debt eliminated per sprint for growth teams.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Striped stat band</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Surface a handful of KPIs across a responsive pill-shaped rail.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="rounded-3xl border border-border bg-muted/40 p-6 sm:p-8 lg:p-10">
+                        <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                          <div class="space-y-3">
+                            <h3 class="text-2xl font-semibold tracking-tight text-foreground">Outcomes at a glance</h3>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Celebrate the success metrics that matter most to your stakeholders.</p>
+                          </div>
+                          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                            <div class="space-y-2">
+                              <span class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Launch cadence</span>
+                              <div class="text-3xl font-semibold tracking-tight text-foreground">2.5×</div>
+                              <span class="inline-flex w-fit items-center rounded-full border border-success/30 bg-success/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-success">Faster</span>
+                            </div>
+                            <div class="space-y-2">
+                              <span class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Time to value</span>
+                              <div class="text-3xl font-semibold tracking-tight text-foreground">4 days</div>
+                              <span class="inline-flex w-fit items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">From kickoff</span>
+                            </div>
+                            <div class="space-y-2">
+                              <span class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Accessibility score</span>
+                              <div class="text-3xl font-semibold tracking-tight text-foreground">AAA</div>
+                              <span class="inline-flex w-fit items-center rounded-full border border-info/30 bg-info/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-info">Lighthouse</span>
+                            </div>
+                            <div class="space-y-2">
+                              <span class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Weekly active editors</span>
+                              <div class="text-3xl font-semibold tracking-tight text-foreground">68</div>
+                              <span class="inline-flex w-fit items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Scale</span>
                             </div>
                           </div>
                         </div>
@@ -321,42 +455,39 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-8">
-                    <div class="container">
-                      <div class="row g-4 justify-content-center">
-                        <div class="col-md-5 col-lg-4">
-                          <div class="card h-100 border-border">
-                            <div class="card-body space-y-3">
-                              <h3 class="h5 text-foreground">Starter</h3>
-                              <p class="text-muted-foreground">Ideal for prototypes and hobby apps.</p>
-                              <p class="display-6 fw-semibold">
-                                $19<small class="fs-6 text-muted-foreground">/mo</small>
-                              </p>
-                              <ul class="list-unstyled small text-muted-foreground space-y-2">
-                                <li>✓ Unlimited components</li>
-                                <li>✓ Email support</li>
-                              </ul>
-                              <a class="btn btn-outline" href="#">Choose plan</a>
-                            </div>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-5xl px-4">
+                      <div class="grid gap-6 md:grid-cols-2">
+                        <article class="flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-6 shadow-sm">
+                          <div class="space-y-3">
+                            <h3 class="text-xl font-semibold tracking-tight text-foreground">Starter</h3>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Ideal for prototypes and hobby apps.</p>
+                            <p class="text-4xl font-semibold tracking-tight text-foreground">
+                              $19<span class="text-base font-normal text-muted-foreground">/mo</span>
+                            </p>
+                            <ul class="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                              <li class="flex items-start gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Unlimited components</span></li>
+                              <li class="flex items-start gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Email support</span></li>
+                            </ul>
                           </div>
-                        </div>
-                        <div class="col-md-5 col-lg-4">
-                          <div class="card h-100 border border-primary-subtle">
-                            <div class="card-body space-y-3">
-                              <h3 class="h5 text-foreground">Growth</h3>
-                              <p class="text-muted-foreground">Designed for teams shipping to production.</p>
-                              <p class="display-6 fw-semibold">
-                                $49<small class="fs-6 text-muted-foreground">/mo</small>
-                              </p>
-                              <ul class="list-unstyled small text-muted-foreground space-y-2">
-                                <li>✓ Everything in Starter</li>
-                                <li>✓ Advanced blocks</li>
-                                <li>✓ Priority support</li>
-                              </ul>
-                              <a class="btn btn-primary" href="#">Start free trial</a>
-                            </div>
+                          <a class="mt-6 inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Choose plan</a>
+                        </article>
+                        <article class="flex h-full flex-col justify-between rounded-3xl border border-primary/40 bg-primary/5 p-6 shadow-sm ring-1 ring-primary/20">
+                          <div class="space-y-3">
+                            <span class="inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Most popular</span>
+                            <h3 class="text-xl font-semibold tracking-tight text-foreground">Growth</h3>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Designed for teams shipping to production.</p>
+                            <p class="text-4xl font-semibold tracking-tight text-foreground">
+                              $49<span class="text-base font-normal text-muted-foreground">/mo</span>
+                            </p>
+                            <ul class="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                              <li class="flex items-start gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Everything in Starter</span></li>
+                              <li class="flex items-start gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Advanced blocks</span></li>
+                              <li class="flex items-start gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Priority support</span></li>
+                            </ul>
                           </div>
-                        </div>
+                          <a class="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Start free trial</a>
+                        </article>
                       </div>
                     </div>
                   </section>
@@ -379,47 +510,216 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-9">
-                    <div class="container text-center">
-                      <div class="d-inline-flex align-items-center gap-2 rounded-pill border border-border px-3 py-2 bg-background">
-                        <span class="text-muted-foreground small">Monthly</span>
-                        <div class="form-check form-switch m-0">
-                          <input class="form-check-input" type="checkbox" role="switch" checked />
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="flex flex-col items-center gap-8 text-center">
+                        <div class="inline-flex items-center gap-3 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-muted-foreground">
+                          <span>Monthly</span>
+                          <span class="relative inline-flex h-6 w-12 items-center rounded-full bg-primary/20 px-1">
+                            <span class="inline-flex h-5 w-5 translate-x-6 items-center justify-center rounded-full bg-primary text-[0.6rem] font-semibold text-primary-foreground transition">✓</span>
+                          </span>
+                          <span class="text-foreground">Yearly</span>
                         </div>
-                        <span class="text-muted-foreground small">Yearly</span>
+                        <div class="grid w-full gap-6 md:grid-cols-3">
+                          <article class="flex h-full flex-col items-center gap-4 rounded-3xl border border-border bg-card p-6 text-left shadow-sm">
+                            <div class="space-y-1 text-left">
+                              <h3 class="text-base font-semibold text-foreground">Basic</h3>
+                              <p class="text-3xl font-semibold tracking-tight text-foreground">$9<span class="text-sm font-normal text-muted-foreground">/mo</span></p>
+                            </div>
+                            <a class="mt-auto inline-flex w-full items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Pick plan</a>
+                          </article>
+                          <article class="flex h-full flex-col items-center gap-4 rounded-3xl border border-primary/40 bg-primary/5 p-6 text-left shadow-sm ring-1 ring-primary/20">
+                            <div class="space-y-1 text-left">
+                              <h3 class="text-base font-semibold text-foreground">Pro</h3>
+                              <p class="text-3xl font-semibold tracking-tight text-foreground">$29<span class="text-sm font-normal text-muted-foreground">/mo</span></p>
+                            </div>
+                            <a class="mt-auto inline-flex w-full items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Start now</a>
+                          </article>
+                          <article class="flex h-full flex-col items-center gap-4 rounded-3xl border border-border bg-card p-6 text-left shadow-sm">
+                            <div class="space-y-1 text-left">
+                              <h3 class="text-base font-semibold text-foreground">Enterprise</h3>
+                              <p class="text-3xl font-semibold tracking-tight text-foreground">Custom</p>
+                            </div>
+                            <a class="mt-auto inline-flex w-full items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Talk to us</a>
+                          </article>
+                        </div>
                       </div>
-                      <div class="row g-4 mt-5">
-                        <div class="col-md-4">
-                          <div class="card h-100 border-border">
-                            <div class="card-body space-y-3">
-                              <h3 class="h6 text-foreground">Basic</h3>
-                              <p class="display-6 fw-semibold">
-                                $9<small class="fs-6 text-muted-foreground">/mo</small>
-                              </p>
-                              <a class="btn btn-outline" href="#">Pick plan</a>
+                    </div>
+                  </section>
+                </template>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="comparison" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-foreground">Comparison layouts</h2>
+                <p class="mt-2 text-sm text-muted-foreground">Help buyers choose by contrasting plans, tiers, or approaches.</p>
+              </div>
+              <a class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" href="#top">Back to top</a>
+            </div>
+            <div class="mt-8 grid gap-8 lg:grid-cols-2">
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Feature comparison table</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Use a responsive table with badges and icons to communicate value.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full border-collapse text-left text-sm">
+                            <thead class="bg-muted/60 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                              <tr>
+                                <th scope="col" class="px-6 py-3 text-left">Feature</th>
+                                <th scope="col" class="px-6 py-3 text-center">Starter</th>
+                                <th scope="col" class="px-6 py-3 text-center">Growth</th>
+                                <th scope="col" class="px-6 py-3 text-center">Scale</th>
+                              </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border text-sm">
+                              <tr class="transition hover:bg-muted/40">
+                                <th scope="row" class="px-6 py-4 text-sm font-medium text-foreground">Design tokens</th>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-success/30 bg-success/10 text-success">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                      <path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </span>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-success/30 bg-success/10 text-success">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                      <path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </span>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-success/30 bg-success/10 text-success">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                      <path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr class="transition hover:bg-muted/40">
+                                <th scope="row" class="px-6 py-4 text-sm font-medium text-foreground">Blocks per release</th>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex items-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground">12</span>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Unlimited</span>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex items-center rounded-full border border-primary/70 bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">Unlimited</span>
+                                </td>
+                              </tr>
+                              <tr class="transition hover:bg-muted/40">
+                                <th scope="row" class="px-6 py-4 text-sm font-medium text-foreground">Audit support</th>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted/40 text-muted-foreground">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                      <path d="m7 7 10 10M7 17 17 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </span>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-success/30 bg-success/10 text-success">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                      <path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </span>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-success/30 bg-success/10 text-success">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                      <path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr class="transition hover:bg-muted/40">
+                                <th scope="row" class="px-6 py-4 text-sm font-medium text-foreground">Billing frequency</th>
+                                <td class="px-6 py-4 text-center text-xs text-muted-foreground">Monthly</td>
+                                <td class="px-6 py-4 text-center text-xs text-muted-foreground">Monthly / annual</td>
+                                <td class="px-6 py-4 text-center text-xs text-muted-foreground">Annual</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Side-by-side comparison cards</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Contrast two approaches with highlighted benefits and CTA buttons.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-6 lg:grid-cols-2">
+                        <article class="flex h-full flex-col overflow-hidden rounded-3xl border border-primary/40 bg-card shadow-sm">
+                          <div class="border-b border-primary/30 bg-primary/10 px-6 py-4">
+                            <span class="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">Recommended</span>
+                          </div>
+                          <div class="flex flex-1 flex-col gap-4 px-6 pb-6 pt-5">
+                            <div class="space-y-2">
+                              <h3 class="text-2xl font-semibold tracking-tight text-foreground">Component library</h3>
+                              <p class="text-sm leading-relaxed text-muted-foreground">Prebuilt blocks and layout scaffolds for marketing and product surfaces.</p>
+                            </div>
+                            <ul class="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                              <li class="flex gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Drag-and-drop hero, feature, and pricing sections.</span></li>
+                              <li class="flex gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Tailwind-authored tokens with Bootstrap semantics.</span></li>
+                              <li class="flex gap-2"><span aria-hidden="true" class="text-primary">✓</span><span>Automatic dark mode variants.</span></li>
+                            </ul>
+                            <div class="pt-2">
+                              <a class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Adopt aeroUI</a>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="card h-100 border border-primary-subtle bg-primary/5">
-                            <div class="card-body space-y-3">
-                              <h3 class="h6 text-foreground">Pro</h3>
-                              <p class="display-6 fw-semibold">
-                                $29<small class="fs-6 text-muted-foreground">/mo</small>
-                              </p>
-                              <a class="btn btn-primary" href="#">Start now</a>
-                            </div>
+                        </article>
+                        <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-6 shadow-sm">
+                          <div class="space-y-2">
+                            <h3 class="text-2xl font-semibold tracking-tight text-foreground">Build in-house</h3>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Spin up a custom design system from scratch with your own team.</p>
                           </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="card h-100 border-border">
-                            <div class="card-body space-y-3">
-                              <h3 class="h6 text-foreground">Enterprise</h3>
-                              <p class="display-6 fw-semibold">Custom</p>
-                              <a class="btn btn-outline" href="#">Talk to us</a>
-                            </div>
+                          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                            <li class="flex gap-2"><span aria-hidden="true">•</span><span>Requires dedicated design &amp; engineering bandwidth.</span></li>
+                            <li class="flex gap-2"><span aria-hidden="true">•</span><span>Maintain accessibility, theming, and docs yourself.</span></li>
+                            <li class="flex gap-2"><span aria-hidden="true">•</span><span>Slower time to production-ready release.</span></li>
+                          </ul>
+                          <div class="mt-auto pt-6">
+                            <a class="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Review effort</a>
                           </div>
-                        </div>
+                        </article>
                       </div>
                     </div>
                   </section>
@@ -456,37 +756,29 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-8">
-                    <div class="container">
-                      <div class="row g-4">
-                        <div class="col-md-6">
-                          <div class="card h-100 border-border">
-                            <div class="card-body space-y-3">
-                              <p class="text-muted-foreground">“aeroUI let us deliver a polished marketing site while keeping our Tailwind build and Bootstrap semantics aligned.”</p>
-                              <div class="d-flex align-items-center gap-3">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle border border-primary-subtle px-3 py-2 text-primary fw-semibold">AL</span>
-                                <div>
-                                  <h4 class="mb-0 text-sm fw-semibold text-foreground">Alex Lee</h4>
-                                  <span class="text-xs text-muted-foreground">Product Designer</span>
-                                </div>
-                              </div>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-6 md:grid-cols-2">
+                        <article class="flex h-full flex-col gap-4 rounded-3xl border border-border bg-card p-6 shadow-sm">
+                          <p class="text-sm leading-relaxed text-muted-foreground">“aeroUI let us deliver a polished marketing site while keeping our Tailwind build and Bootstrap semantics aligned.”</p>
+                          <div class="flex items-center gap-3">
+                            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">AL</span>
+                            <div class="space-y-1">
+                              <h4 class="text-sm font-semibold text-foreground">Alex Lee</h4>
+                              <span class="text-xs text-muted-foreground">Product Designer</span>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="card h-100 border-border">
-                            <div class="card-body space-y-3">
-                              <p class="text-muted-foreground">“The Tailwind-inspired tokens map perfectly to our Bootstrap layouts.”</p>
-                              <div class="d-flex align-items-center gap-3">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle border border-primary-subtle px-3 py-2 text-primary fw-semibold">JP</span>
-                                <div>
-                                  <h4 class="mb-0 text-sm fw-semibold text-foreground">Jordan Patel</h4>
-                                  <span class="text-xs text-muted-foreground">Engineering Lead</span>
-                                </div>
-                              </div>
+                        </article>
+                        <article class="flex h-full flex-col gap-4 rounded-3xl border border-border bg-card p-6 shadow-sm">
+                          <p class="text-sm leading-relaxed text-muted-foreground">“The Tailwind-inspired tokens map perfectly to our Bootstrap layouts.”</p>
+                          <div class="flex items-center gap-3">
+                            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">JP</span>
+                            <div class="space-y-1">
+                              <h4 class="text-sm font-semibold text-foreground">Jordan Patel</h4>
+                              <span class="text-xs text-muted-foreground">Engineering Lead</span>
                             </div>
                           </div>
-                        </div>
+                        </article>
                       </div>
                     </div>
                   </section>
@@ -509,14 +801,172 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-8">
-                    <div class="container text-center">
-                      <p class="text-muted-foreground small">Trusted by teams building with Bootstrap</p>
-                      <div class="row g-4 mt-3 align-items-center">
-                        <div class="col-6 col-md-3"><div class="rounded-3 border border-border py-3 text-muted-foreground">Orbit</div></div>
-                        <div class="col-6 col-md-3"><div class="rounded-3 border border-border py-3 text-muted-foreground">Pulse</div></div>
-                        <div class="col-6 col-md-3"><div class="rounded-3 border border-border py-3 text-muted-foreground">North</div></div>
-                        <div class="col-6 col-md-3"><div class="rounded-3 border border-border py-3 text-muted-foreground">Lane</div></div>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-4xl px-4 text-center">
+                      <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Trusted by teams building with Bootstrap</p>
+                      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                        <div class="rounded-2xl border border-border bg-card py-4 text-sm font-semibold text-muted-foreground">Orbit</div>
+                        <div class="rounded-2xl border border-border bg-card py-4 text-sm font-semibold text-muted-foreground">Pulse</div>
+                        <div class="rounded-2xl border border-border bg-card py-4 text-sm font-semibold text-muted-foreground">North</div>
+                        <div class="rounded-2xl border border-border bg-card py-4 text-sm font-semibold text-muted-foreground">Lane</div>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-foreground">FAQ accordions</h2>
+                <p class="mt-2 text-sm text-muted-foreground">Answer common questions with interactive accordions and helpful CTAs.</p>
+              </div>
+              <a class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" href="#top">Back to top</a>
+            </div>
+            <div class="mt-8 grid gap-8 lg:grid-cols-2">
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Classic accordion</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Leverage Bootstrap's accordion component to handle disclosure UX.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                        <div class="space-y-4">
+                          <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Knowledge base</span>
+                          <h2 class="text-3xl font-semibold tracking-tight text-foreground">Everything you need to know</h2>
+                          <p class="text-sm leading-relaxed text-muted-foreground">These answers cover the top implementation questions we hear from teams migrating to aeroUI.</p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                          <div class="accordion flex flex-col gap-4" id="faqAccordionOne">
+                            <div class="accordion-item overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                              <h2 class="accordion-header" id="faqOneHeadingOne">
+                                <button class="accordion-button flex w-full items-center justify-between gap-3 bg-transparent px-6 py-4 text-left text-sm font-semibold text-foreground transition hover:bg-muted" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneCollapseOne" aria-expanded="true" aria-controls="faqOneCollapseOne">
+                                  How do I compile aeroui.css?
+                                </button>
+                              </h2>
+                              <div id="faqOneCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeadingOne" data-bs-parent="#faqAccordionOne">
+                                <div class="accordion-body border-t border-border px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+                                  Run <code class="text-primary">npx tailwindcss -i src/aeroui.css -o public/aeroui.css</code> so Tailwind extracts the utilities referenced throughout your project.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                              <h2 class="accordion-header" id="faqOneHeadingTwo">
+                                <button class="accordion-button collapsed flex w-full items-center justify-between gap-3 bg-transparent px-6 py-4 text-left text-sm font-semibold text-foreground transition hover:bg-muted" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneCollapseTwo" aria-expanded="false" aria-controls="faqOneCollapseTwo">
+                                  Does the library work with Bootstrap JavaScript?
+                                </button>
+                              </h2>
+                              <div id="faqOneCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqOneHeadingTwo" data-bs-parent="#faqAccordionOne">
+                                <div class="accordion-body border-t border-border px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+                                  Yes. Blocks use Bootstrap data attributes so dropdowns, accordions, modals, and toasts work out of the box with <code class="text-primary">bootstrap.bundle.js</code>.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                              <h2 class="accordion-header" id="faqOneHeadingThree">
+                                <button class="accordion-button collapsed flex w-full items-center justify-between gap-3 bg-transparent px-6 py-4 text-left text-sm font-semibold text-foreground transition hover:bg-muted" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneCollapseThree" aria-expanded="false" aria-controls="#faqOneCollapseThree">
+                                  Can I extend the Tailwind tokens?
+                                </button>
+                              </h2>
+                              <div id="faqOneCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqOneHeadingThree" data-bs-parent="#faqAccordionOne">
+                                <div class="accordion-body border-t border-border px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+                                  Absolutely. Tailwind's config controls the CSS variables referenced throughout aeroUI, so you can layer on custom palettes or tweak spacing to match your brand.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">FAQ with contact CTA</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Split the layout into a reassurance card and rich accordion content.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+                        <div class="flex h-full flex-col rounded-3xl border border-primary/30 bg-card p-6 shadow-sm">
+                          <span class="w-fit rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">Need a human?</span>
+                          <h3 class="text-2xl font-semibold tracking-tight text-foreground">Talk with our team</h3>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Prefer a walkthrough instead of the docs? Schedule a pairing session and we'll guide your rollout.</p>
+                          <div class="mt-4 flex flex-col gap-2">
+                            <a class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Book a call</a>
+                            <a class="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Email support</a>
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                          <div class="accordion flex flex-col gap-4" id="faqAccordionTwo">
+                            <div class="accordion-item overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                              <h2 class="accordion-header" id="faqTwoHeadingOne">
+                                <button class="accordion-button flex w-full items-center justify-between gap-3 bg-transparent px-6 py-4 text-left text-sm font-semibold text-foreground transition hover:bg-muted" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoCollapseOne" aria-expanded="true" aria-controls="faqTwoCollapseOne">
+                                  What browsers are supported?
+                                </button>
+                              </h2>
+                              <div id="faqTwoCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqTwoHeadingOne" data-bs-parent="#faqAccordionTwo">
+                                <div class="accordion-body border-t border-border px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+                                  We validate components in the latest versions of Chrome, Edge, Firefox, and Safari. Progressive enhancement ensures solid experiences elsewhere.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                              <h2 class="accordion-header" id="faqTwoHeadingTwo">
+                                <button class="accordion-button collapsed flex w-full items-center justify-between gap-3 bg-transparent px-6 py-4 text-left text-sm font-semibold text-foreground transition hover:bg-muted" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoCollapseTwo" aria-expanded="false" aria-controls="faqTwoCollapseTwo">
+                                  How opinionated are the styles?
+                                </button>
+                              </h2>
+                              <div id="faqTwoCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeadingTwo" data-bs-parent="#faqAccordionTwo">
+                                <div class="accordion-body border-t border-border px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+                                  Tokens lean toward shadcn-inspired neutrals. Update CSS variables or extend Tailwind's theme to align everything with your brand palette.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                              <h2 class="accordion-header" id="faqTwoHeadingThree">
+                                <button class="accordion-button collapsed flex w-full items-center justify-between gap-3 bg-transparent px-6 py-4 text-left text-sm font-semibold text-foreground transition hover:bg-muted" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoCollapseThree" aria-expanded="false" aria-controls="#faqTwoCollapseThree">
+                                  Do you support multi-brand setups?
+                                </button>
+                              </h2>
+                              <div id="faqTwoCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqTwoHeadingThree" data-bs-parent="#faqAccordionTwo">
+                                <div class="accordion-body border-t border-border px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+                                  Yes. Compose multiple Tailwind configs or override CSS variables per project to tailor the same markup for regional or brand-specific experiences.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </section>
@@ -553,18 +1003,16 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-5">
-                    <div class="container">
-                      <div class="p-4 p-lg-5 rounded-4 border border-border bg-gradient-banner">
-                        <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
-                          <div>
-                            <h2 class="h4 text-foreground">Ready to launch with aeroUI?</h2>
-                            <p class="text-muted-foreground small">Grab the CSS, drop it after Bootstrap, and paste in any block.</p>
-                          </div>
-                          <div class="d-flex flex-wrap gap-3">
-                            <a class="btn btn-primary" href="#">Download CSS</a>
-                            <a class="btn btn-outline" href="#">View docs</a>
-                          </div>
+                  <section class="py-12 sm:py-16">
+                    <div class="mx-auto max-w-5xl px-4">
+                      <div class="flex flex-col gap-6 rounded-[calc(var(--radius)*2)] border border-border bg-gradient-banner p-6 text-primary-foreground shadow-lg sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+                        <div class="space-y-2">
+                          <h2 class="text-2xl font-semibold tracking-tight">Ready to launch with aeroUI?</h2>
+                          <p class="text-sm leading-relaxed text-primary-foreground/80">Grab the CSS, drop it after Bootstrap, and paste in any block.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                          <a class="inline-flex items-center justify-center rounded-full bg-primary-foreground px-5 py-2.5 text-sm font-semibold text-primary shadow-sm transition hover:bg-primary-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" href="#">Download CSS</a>
+                          <a class="inline-flex items-center justify-center rounded-full border border-primary-foreground/40 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" href="#">View docs</a>
                         </div>
                       </div>
                     </div>
@@ -588,19 +1036,312 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-5">
-                    <div class="container">
-                      <div class="rounded-4 border border-border bg-card p-4 p-lg-5">
-                        <div class="row g-3 align-items-center">
-                          <div class="col-lg-8">
-                            <h3 class="h4 text-foreground">Stay up to date</h3>
-                            <p class="text-muted-foreground small mb-0">Join the newsletter for new blocks, patterns, and release notes.</p>
+                  <section class="py-12 sm:py-16">
+                    <div class="mx-auto max-w-5xl px-4">
+                      <div class="flex flex-col gap-6 rounded-[calc(var(--radius)*2)] border border-border bg-card p-6 shadow-sm sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+                        <div class="space-y-2">
+                          <h3 class="text-2xl font-semibold tracking-tight text-foreground">Stay up to date</h3>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Join the newsletter for new blocks, patterns, and release notes.</p>
+                        </div>
+                        <form class="flex w-full flex-col gap-3 sm:flex-row sm:items-center lg:w-auto">
+                          <input class="w-full rounded-full border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/70 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-background" type="email" placeholder="Email address" />
+                          <button class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="submit">Notify me</button>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="blog" class="border-b border-border/80 bg-background">
+          <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-foreground">Blog grids</h2>
+                <p class="mt-2 text-sm text-muted-foreground">Curate editorial content with image-forward cards and post metadata.</p>
+              </div>
+              <a class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" href="#top">Back to top</a>
+            </div>
+            <div class="mt-8 grid gap-8 lg:grid-cols-2">
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Featured editorial grid</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Spotlight a hero story while listing supporting articles alongside.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+                        <article class="flex h-full flex-col overflow-hidden rounded-3xl border border-primary/30 bg-card shadow-sm">
+                          <div class="relative aspect-[16/9] w-full bg-gradient-banner"></div>
+                          <div class="flex flex-1 flex-col gap-4 px-6 pb-6 pt-5">
+                            <span class="w-fit rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">Case study</span>
+                            <h3 class="text-2xl font-semibold tracking-tight text-foreground">How Supersonic shipped a new marketing site in 48 hours</h3>
+                            <p class="text-sm leading-relaxed text-muted-foreground">The design team paired aeroUI blocks with Bootstrap modals to launch a polished product tour in record time.</p>
+                            <div class="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                              <span>By Maya Patel</span>
+                              <span aria-hidden="true">•</span>
+                              <span>7 min read</span>
+                            </div>
                           </div>
-                          <div class="col-lg-4">
-                            <form class="d-flex flex-column flex-lg-row gap-2">
-                              <input class="form-control" type="email" placeholder="Email address" />
-                              <button class="btn btn-primary" type="submit">Notify me</button>
-                            </form>
+                        </article>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                          <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                            <span class="w-fit rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Playbook</span>
+                            <h4 class="text-lg font-semibold tracking-tight text-foreground">Ten launch-day QA checks</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Ensure accessible colour contrast, keyboard coverage, and robust analytics.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">April 2 • 5 min read</div>
+                          </article>
+                          <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                            <span class="w-fit rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Changelog</span>
+                            <h4 class="text-lg font-semibold tracking-tight text-foreground">Spring 2024 release</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Fresh CTA layouts, improved docs search, and accessible accordions.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">March 26 • 4 min read</div>
+                          </article>
+                          <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                            <span class="w-fit rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Guides</span>
+                            <h4 class="text-lg font-semibold tracking-tight text-foreground">Mapping tokens to Bootstrap</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Align Tailwind variables with Bootstrap utilities for consistent spacing.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">March 12 • 6 min read</div>
+                          </article>
+                          <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                            <span class="w-fit rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Community</span>
+                            <h4 class="text-lg font-semibold tracking-tight text-foreground">Inside the #aero-builders Slack</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">See how teams remix blocks, trade feedback, and share production wins.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">March 5 • 8 min read</div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Blog list with filters</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Combine tag filters and cards to help visitors explore content themes.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="flex flex-wrap items-center justify-between gap-4 pb-6">
+                        <h3 class="text-lg font-semibold tracking-tight text-foreground">Latest stories</h3>
+                        <div class="flex flex-wrap gap-2">
+                          <button type="button" class="inline-flex items-center rounded-full border border-primary/60 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background">All</button>
+                          <button type="button" class="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background">Design systems</button>
+                          <button type="button" class="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background">Changelog</button>
+                          <button type="button" class="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background">Playbooks</button>
+                        </div>
+                      </div>
+                      <div class="grid gap-4 sm:grid-cols-2">
+                        <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                          <div class="flex items-center gap-3 text-xs text-muted-foreground">
+                            <span>April 9, 2024</span>
+                            <span aria-hidden="true">•</span>
+                            <span>Design systems</span>
+                          </div>
+                          <h4 class="text-xl font-semibold tracking-tight text-foreground">Why we pair Bootstrap semantics with Tailwind builds</h4>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Blend the best of both worlds: accessible markup with modern utility-first styling.</p>
+                          <div class="mt-auto pt-2">
+                            <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary/80" href="#">Read article</a>
+                          </div>
+                        </article>
+                        <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                          <div class="flex items-center gap-3 text-xs text-muted-foreground">
+                            <span>March 29, 2024</span>
+                            <span aria-hidden="true">•</span>
+                            <span>Changelog</span>
+                          </div>
+                          <h4 class="text-xl font-semibold tracking-tight text-foreground">Introducing comparison tables and FAQ accordions</h4>
+                          <p class="text-sm leading-relaxed text-muted-foreground">See the newest blocks that make your evaluation pages more persuasive.</p>
+                          <div class="mt-auto pt-2">
+                            <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary/80" href="#">See what shipped</a>
+                          </div>
+                        </article>
+                        <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                          <div class="flex items-center gap-3 text-xs text-muted-foreground">
+                            <span>March 18, 2024</span>
+                            <span aria-hidden="true">•</span>
+                            <span>Playbooks</span>
+                          </div>
+                          <h4 class="text-xl font-semibold tracking-tight text-foreground">From whiteboard to live landing page in an afternoon</h4>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Use the hero, stats, and CTA blocks together for fast experimental campaigns.</p>
+                          <div class="mt-auto pt-2">
+                            <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary/80" href="#">Get the steps</a>
+                          </div>
+                        </article>
+                        <article class="flex h-full flex-col rounded-3xl border border-border bg-card p-5 shadow-sm">
+                          <div class="flex items-center gap-3 text-xs text-muted-foreground">
+                            <span>March 6, 2024</span>
+                            <span aria-hidden="true">•</span>
+                            <span>Guides</span>
+                          </div>
+                          <h4 class="text-xl font-semibold tracking-tight text-foreground">Ship your onboarding flow with timeline blocks</h4>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Explain each step with narrative copy and visual progress states.</p>
+                          <div class="mt-auto pt-2">
+                            <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary/80" href="#">Build your flow</a>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="onboarding" class="border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-foreground">Onboarding timelines</h2>
+                <p class="mt-2 text-sm text-muted-foreground">Map the journey from kickoff to launch with narrative-rich milestones.</p>
+              </div>
+              <a class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" href="#top">Back to top</a>
+            </div>
+            <div class="mt-8 grid gap-8 lg:grid-cols-2">
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Milestone timeline</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Use a vertical sequence to communicate progress and next actions.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+                        <div class="space-y-4">
+                          <span class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Implementation plan</span>
+                          <h3 class="text-3xl font-semibold tracking-tight text-foreground">Launch in four guided steps</h3>
+                          <p class="text-sm leading-relaxed text-muted-foreground">Set expectations with stakeholders and call out owner, timeline, and deliverables for every milestone.</p>
+                        </div>
+                        <ol class="space-y-6">
+                          <li class="flex gap-4">
+                            <div class="relative flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">1</div>
+                            <div class="flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <h4 class="text-lg font-semibold tracking-tight text-foreground">Clone the starter kit</h4>
+                              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Kick off by duplicating the repo and installing dependencies locally.</p>
+                              <div class="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-muted/60 px-3 py-1.5 text-xs text-foreground">
+                                <span class="text-muted-foreground">Command</span>
+                                <code class="text-foreground">npx degit md-riaz/aeroUI my-app</code>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="flex gap-4">
+                            <div class="relative flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">2</div>
+                            <div class="flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <h4 class="text-lg font-semibold tracking-tight text-foreground">Run the Tailwind build</h4>
+                              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Compile aeroui.css so Bootstrap semantics inherit shadcn-inspired styling.</p>
+                              <div class="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
+                                <span>Tip</span>
+                                <code class="text-primary">npm run build</code>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="flex gap-4">
+                            <div class="relative flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">3</div>
+                            <div class="flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <h4 class="text-lg font-semibold tracking-tight text-foreground">Assemble launch pages</h4>
+                              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Drop in hero, stats, FAQ, and CTA blocks to assemble your marketing story.</p>
+                              <ul class="mt-3 space-y-1 text-sm leading-relaxed text-muted-foreground">
+                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Swap copy and brand assets.</span></li>
+                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Configure analytics, SEO, and forms.</span></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="flex gap-4">
+                            <div class="relative flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">4</div>
+                            <div class="flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <h4 class="text-lg font-semibold tracking-tight text-foreground">Ship & iterate</h4>
+                              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Launch, gather feedback, and recompile the CSS whenever you introduce new blocks.</p>
+                            </div>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </section>
+                </template>
+              </article>
+              <article data-component-example class="flex h-full flex-col rounded-3xl border border-border bg-card">
+                <div class="border-b border-border/80 px-6 py-5">
+                  <h3 class="text-lg font-semibold text-foreground">Horizontal onboarding steps</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">Highlight ownership, duration, and success criteria for each stage.</p>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                  <div class="flex items-center gap-2">
+                    <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                    <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                  </div>
+                  <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                    Copy markup
+                  </button>
+                </div>
+                <div data-slot="preview" class="px-6 py-6"></div>
+                <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+                <template data-example>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="rounded-3xl border border-border bg-card p-6 shadow-sm">
+                        <div class="grid gap-6 lg:grid-cols-4">
+                          <div class="flex h-full flex-col gap-3 rounded-2xl border border-border bg-background p-5">
+                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">1</span>
+                            <h4 class="text-base font-semibold text-foreground">Discovery</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Audit existing brand assets, colour palettes, and component inventory.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">Owner: Design lead • Duration: 2 days</div>
+                          </div>
+                          <div class="flex h-full flex-col gap-3 rounded-2xl border border-border bg-background p-5">
+                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">2</span>
+                            <h4 class="text-base font-semibold text-foreground">Configuration</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Map tokens into Tailwind config and align Bootstrap utilities.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">Owner: Front-end engineer • Duration: 1 day</div>
+                          </div>
+                          <div class="flex h-full flex-col gap-3 rounded-2xl border border-border bg-background p-5">
+                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">3</span>
+                            <h4 class="text-base font-semibold text-foreground">Validation</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Review accessibility, responsive behavior, and analytics events.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">Owner: QA specialist • Duration: 1 day</div>
+                          </div>
+                          <div class="flex h-full flex-col gap-3 rounded-2xl border border-border bg-background p-5">
+                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">4</span>
+                            <h4 class="text-base font-semibold text-foreground">Launch</h4>
+                            <p class="text-sm leading-relaxed text-muted-foreground">Deploy to production, announce updates, and monitor key metrics.</p>
+                            <div class="mt-auto text-xs text-muted-foreground">Owner: Product marketing • Duration: ongoing</div>
                           </div>
                         </div>
                       </div>
@@ -639,36 +1380,32 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-8">
-                    <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="col-lg-6">
-                          <div class="card border-border">
-                            <div class="card-body space-y-3">
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="d-inline-flex rounded-circle bg-primary/10 text-primary fw-semibold px-3 py-2">1</div>
-                                <div>
-                                  <h3 class="h6 text-foreground">Create your workspace</h3>
-                                  <p class="text-muted-foreground small">Give your workspace a name and upload a brand logo.</p>
-                                </div>
-                              </div>
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="d-inline-flex rounded-circle bg-primary/10 text-primary fw-semibold px-3 py-2">2</div>
-                                <div>
-                                  <h3 class="h6 text-foreground">Invite your team</h3>
-                                  <p class="text-muted-foreground small">Send invites to collaborators and assign permissions.</p>
-                                </div>
-                              </div>
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="d-inline-flex rounded-circle bg-primary/10 text-primary fw-semibold px-3 py-2">3</div>
-                                <div>
-                                  <h3 class="h6 text-foreground">Launch a project</h3>
-                                  <p class="text-muted-foreground small">Pick a template and assign tasks to keep momentum.</p>
-                                </div>
-                              </div>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-4xl px-4">
+                      <div class="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <ol class="space-y-5">
+                          <li class="flex gap-4">
+                            <span class="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">1</span>
+                            <div class="space-y-1">
+                              <h3 class="text-lg font-semibold tracking-tight text-foreground">Create your workspace</h3>
+                              <p class="text-sm leading-relaxed text-muted-foreground">Give your workspace a name and upload a brand logo.</p>
                             </div>
-                          </div>
-                        </div>
+                          </li>
+                          <li class="flex gap-4">
+                            <span class="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">2</span>
+                            <div class="space-y-1">
+                              <h3 class="text-lg font-semibold tracking-tight text-foreground">Invite your team</h3>
+                              <p class="text-sm leading-relaxed text-muted-foreground">Send invites to collaborators and assign permissions.</p>
+                            </div>
+                          </li>
+                          <li class="flex gap-4">
+                            <span class="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">3</span>
+                            <div class="space-y-1">
+                              <h3 class="text-lg font-semibold tracking-tight text-foreground">Launch a project</h3>
+                              <p class="text-sm leading-relaxed text-muted-foreground">Pick a template and assign tasks to keep momentum.</p>
+                            </div>
+                          </li>
+                        </ol>
                       </div>
                     </div>
                   </section>
@@ -691,37 +1428,34 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-9">
-                    <div class="container">
-                      <div class="row g-5">
-                        <div class="col-lg-3">
-                          <div class="list-group list-group-flush border border-border rounded-3">
-                            <a class="list-group-item list-group-item-action active" href="#">Profile</a>
-                            <a class="list-group-item list-group-item-action" href="#">Notifications</a>
-                            <a class="list-group-item list-group-item-action" href="#">Billing</a>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                        <nav class="flex flex-col gap-2 rounded-3xl border border-border bg-card p-4 shadow-sm">
+                          <a class="inline-flex items-center justify-between rounded-2xl bg-primary/10 px-3 py-2 text-sm font-semibold text-primary" href="#">
+                            <span>Profile</span>
+                            <span aria-hidden="true" class="text-xs">•</span>
+                          </a>
+                          <a class="inline-flex items-center justify-between rounded-2xl px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Notifications</a>
+                          <a class="inline-flex items-center justify-between rounded-2xl px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                        </nav>
+                        <form class="flex h-full flex-col rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                          <h2 class="text-lg font-semibold tracking-tight text-foreground">Profile</h2>
+                          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                            <label class="flex flex-col gap-2 text-sm text-muted-foreground">
+                              <span>Name</span>
+                              <input class="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-background" id="settingsName" type="text" placeholder="First Last" />
+                            </label>
+                            <label class="flex flex-col gap-2 text-sm text-muted-foreground">
+                              <span>Email</span>
+                              <input class="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-background" id="settingsEmail" type="email" placeholder="you@example.com" />
+                            </label>
                           </div>
-                        </div>
-                        <div class="col-lg-9">
-                          <div class="card border-border">
-                            <div class="card-body space-y-4">
-                              <h2 class="h5 text-foreground">Profile</h2>
-                              <div class="row g-3">
-                                <div class="col-md-6">
-                                  <label class="form-label text-sm text-muted-foreground" for="settingsName">Name</label>
-                                  <input class="form-control" id="settingsName" type="text" placeholder="First Last" />
-                                </div>
-                                <div class="col-md-6">
-                                  <label class="form-label text-sm text-muted-foreground" for="settingsEmail">Email</label>
-                                  <input class="form-control" id="settingsEmail" type="email" placeholder="you@example.com" />
-                                </div>
-                              </div>
-                              <div class="d-flex justify-content-end gap-3">
-                                <button class="btn btn-outline" type="button">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Save changes</button>
-                              </div>
-                            </div>
+                          <div class="mt-8 flex justify-end gap-3">
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">Cancel</button>
+                            <button class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="submit">Save changes</button>
                           </div>
-                        </div>
+                        </form>
                       </div>
                     </div>
                   </section>
@@ -745,112 +1479,97 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-9">
-                    <div class="container">
-                      <div class="row g-0 rounded-4 border border-border overflow-hidden">
-                        <aside class="col-lg-3 border-end border-border bg-muted/40 p-4">
-                          <div class="d-flex align-items-center gap-3 mb-4">
-                            <span class="d-inline-flex align-items-center justify-content-center rounded-circle border border-primary-subtle px-3 py-2 text-primary fw-semibold">AU</span>
-                            <div>
-                              <h4 class="h6 mb-0 text-foreground">Aurora UI</h4>
-                              <small class="text-muted-foreground">Team plan</small>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid overflow-hidden rounded-[calc(var(--radius)*2)] border border-border bg-card shadow-lg lg:grid-cols-[0.28fr_0.72fr]">
+                        <aside class="border-b border-border bg-muted/40 p-6 lg:border-b-0 lg:border-r">
+                          <div class="flex items-center gap-3">
+                            <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">AU</span>
+                            <div class="space-y-1">
+                              <h4 class="text-base font-semibold text-foreground">Aurora UI</h4>
+                              <p class="text-xs text-muted-foreground">Team plan</p>
                             </div>
                           </div>
-                          <nav class="nav flex-column gap-1">
-                            <a class="nav-link active rounded-3" href="#">Pulse</a>
-                            <a class="nav-link rounded-3" href="#">Customers</a>
-                            <a class="nav-link rounded-3" href="#">Revenue</a>
-                            <a class="nav-link rounded-3" href="#">Reports</a>
-                            <a class="nav-link rounded-3" href="#">Automations</a>
+                          <nav class="mt-6 flex flex-col gap-1 text-sm font-semibold">
+                            <a class="inline-flex items-center justify-between rounded-2xl bg-primary px-3 py-2 text-primary-foreground shadow-sm" href="#">
+                              <span>Pulse</span>
+                              <span aria-hidden="true" class="text-xs">●</span>
+                            </a>
+                            <a class="inline-flex items-center justify-between rounded-2xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Customers</a>
+                            <a class="inline-flex items-center justify-between rounded-2xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Revenue</a>
+                            <a class="inline-flex items-center justify-between rounded-2xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Reports</a>
+                            <a class="inline-flex items-center justify-between rounded-2xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Automations</a>
                           </nav>
-                          <div class="mt-5 rounded-3 border border-dashed border-border p-4 text-center">
-                            <p class="mb-2 text-muted-foreground small">Looking for insights?</p>
-                            <button class="btn btn-sm btn-outline" type="button">Generate report</button>
+                          <div class="mt-8 rounded-2xl border border-dashed border-border p-4 text-center text-sm text-muted-foreground">
+                            <p>Looking for insights?</p>
+                            <button class="mt-3 inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">Generate report</button>
                           </div>
                         </aside>
-                        <div class="col-lg-9 bg-background p-4 p-lg-5">
-                          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                        <div class="space-y-6 bg-background p-6 sm:p-8">
+                          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                             <div>
-                              <p class="text-muted-foreground small mb-1">Monday, 09:30 AM</p>
-                              <h4 class="h4 mb-0 text-foreground">Performance pulse</h4>
+                              <p class="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Monday, 09:30 AM</p>
+                              <h4 class="text-2xl font-semibold tracking-tight text-foreground">Performance pulse</h4>
                             </div>
-                            <div class="d-flex gap-2">
-                              <button class="btn btn-outline" type="button">Export</button>
-                              <button class="btn btn-primary" type="button">Create view</button>
-                            </div>
-                          </div>
-                          <div class="row g-3">
-                            <div class="col-md-4">
-                              <div class="card h-100 border-border">
-                                <div class="card-body space-y-2">
-                                  <p class="text-muted-foreground text-uppercase small mb-1">MRR</p>
-                                  <p class="h4 mb-0 text-foreground">$84,230</p>
-                                  <span class="badge bg-success-subtle text-success border border-success-subtle">+6.3%</span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="card h-100 border-border">
-                                <div class="card-body space-y-2">
-                                  <p class="text-muted-foreground text-uppercase small mb-1">Active users</p>
-                                  <p class="h4 mb-0 text-foreground">18,502</p>
-                                  <span class="badge bg-primary-subtle text-primary border border-primary-subtle">↑ 420 today</span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="card h-100 border-border">
-                                <div class="card-body space-y-2">
-                                  <p class="text-muted-foreground text-uppercase small mb-1">Support load</p>
-                                  <p class="h4 mb-0 text-foreground">32 open</p>
-                                  <span class="badge bg-warning-subtle text-warning border border-warning-subtle">SLA 94%</span>
-                                </div>
-                              </div>
+                            <div class="flex gap-2">
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">Export</button>
+                              <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">Create view</button>
                             </div>
                           </div>
-                          <div class="row g-3 mt-1">
-                            <div class="col-xl-7">
-                              <div class="card h-100 border-border">
-                                <div class="card-header d-flex align-items-center justify-content-between">
-                                  <h5 class="card-title h6 mb-0 text-foreground">Revenue snapshot</h5>
-                                  <button class="btn btn-sm btn-ghost" type="button">View details</button>
-                                </div>
-                                <div class="card-body">
-                                  <div class="ratio ratio-16x9 rounded-3 border border-border bg-muted/40 d-flex align-items-center justify-content-center text-muted-foreground">
-                                    Chart placeholder
+                          <div class="grid gap-4 md:grid-cols-3">
+                            <div class="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">MRR</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">$84,230</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">+6.3%</span>
+                            </div>
+                            <div class="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Active users</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">18,502</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">↑ 420 today</span>
+                            </div>
+                            <div class="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Support load</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">32 open</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">SLA 94%</span>
+                            </div>
+                          </div>
+                          <div class="grid gap-4 lg:grid-cols-[0.65fr_0.35fr]">
+                            <div class="flex h-full flex-col rounded-2xl border border-border bg-card shadow-sm">
+                              <div class="flex items-center justify-between border-b border-border px-5 py-4">
+                                <h5 class="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Revenue snapshot</h5>
+                                <button class="inline-flex items-center justify-center rounded-full border border-transparent px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">View details</button>
+                              </div>
+                              <div class="flex flex-1 items-center justify-center px-5 py-6">
+                                <div class="flex h-48 w-full items-center justify-center rounded-2xl border border-border bg-muted/40 text-sm font-semibold text-muted-foreground">Chart placeholder</div>
+                              </div>
+                            </div>
+                            <div class="flex h-full flex-col rounded-2xl border border-border bg-card shadow-sm">
+                              <div class="border-b border-border px-5 py-4">
+                                <h5 class="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Top accounts</h5>
+                              </div>
+                              <ul class="flex flex-col divide-y divide-border">
+                                <li class="flex items-center justify-between gap-4 px-5 py-4">
+                                  <div class="space-y-1">
+                                    <p class="text-sm font-semibold text-foreground">Glow Analytics</p>
+                                    <span class="text-xs text-muted-foreground">Enterprise · $12.4k</span>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-xl-5">
-                              <div class="card h-100 border-border">
-                                <div class="card-header">
-                                  <h5 class="card-title h6 mb-0 text-foreground">Top accounts</h5>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                  <li class="list-group-item d-flex align-items-center justify-content-between">
-                                    <div>
-                                      <p class="mb-0 text-foreground">Glow Analytics</p>
-                                      <small class="text-muted-foreground">Enterprise &middot; $12.4k</small>
-                                    </div>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle">Renewed</span>
-                                  </li>
-                                  <li class="list-group-item d-flex align-items-center justify-content-between">
-                                    <div>
-                                      <p class="mb-0 text-foreground">Nimbus AI</p>
-                                      <small class="text-muted-foreground">Growth &middot; $8.9k</small>
-                                    </div>
-                                    <span class="badge bg-secondary">Trial</span>
-                                  </li>
-                                  <li class="list-group-item d-flex align-items-center justify-content-between">
-                                    <div>
-                                      <p class="mb-0 text-foreground">Orbit CRM</p>
-                                      <small class="text-muted-foreground">Starter &middot; $3.1k</small>
-                                    </div>
-                                    <span class="badge bg-warning-subtle text-warning border border-warning-subtle">At risk</span>
-                                  </li>
-                                </ul>
-                              </div>
+                                  <span class="inline-flex items-center rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">Renewed</span>
+                                </li>
+                                <li class="flex items-center justify-between gap-4 px-5 py-4">
+                                  <div class="space-y-1">
+                                    <p class="text-sm font-semibold text-foreground">Nimbus AI</p>
+                                    <span class="text-xs text-muted-foreground">Growth · $8.9k</span>
+                                  </div>
+                                  <span class="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-xs font-semibold text-secondary-foreground">Trial</span>
+                                </li>
+                                <li class="flex items-center justify-between gap-4 px-5 py-4">
+                                  <div class="space-y-1">
+                                    <p class="text-sm font-semibold text-foreground">Orbit CRM</p>
+                                    <span class="text-xs text-muted-foreground">Starter · $3.1k</span>
+                                  </div>
+                                  <span class="inline-flex items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">At risk</span>
+                                </li>
+                              </ul>
                             </div>
                           </div>
                         </div>
@@ -877,86 +1596,80 @@
                 <div data-slot="preview" class="px-6 py-6"></div>
                 <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
                 <template data-example>
-                  <section class="py-6 py-lg-9">
-                    <div class="container">
-                      <div class="row g-4 align-items-start">
-                        <div class="col-lg-7">
-                          <div class="card border-border h-100">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                              <div>
-                                <h4 class="card-title h6 mb-0 text-foreground">Activity timeline</h4>
-                                <small class="text-muted-foreground">Live updates from your workspace</small>
-                              </div>
-                              <button class="btn btn-sm btn-outline" type="button">Filters</button>
+                  <section class="py-16 sm:py-20">
+                    <div class="mx-auto max-w-6xl px-4">
+                      <div class="grid gap-6 lg:grid-cols-[0.6fr_0.4fr]">
+                        <div class="flex h-full flex-col rounded-[calc(var(--radius)*2)] border border-border bg-card shadow-sm">
+                          <div class="flex items-center justify-between border-b border-border px-6 py-4">
+                            <div>
+                              <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Activity timeline</h4>
+                              <p class="text-xs text-muted-foreground">Live updates from your workspace</p>
                             </div>
-                            <div class="card-body">
-                              <div class="d-flex flex-column gap-4">
-                                <div class="d-flex gap-3">
-                                  <span class="d-inline-flex h-10 w-10 align-items-center justify-content-center rounded-circle bg-primary/10 text-primary fw-semibold">AL</span>
-                                  <div>
-                                    <p class="mb-1 text-foreground">Alex Li published the June release notes.</p>
-                                    <div class="d-flex flex-wrap gap-2 text-xs text-muted-foreground">
-                                      <span>10:21 AM</span>
-                                      <span>&middot;</span>
-                                      <span>Documentation</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="d-flex gap-3">
-                                  <span class="d-inline-flex h-10 w-10 align-items-center justify-content-center rounded-circle bg-success-subtle text-success fw-semibold">JP</span>
-                                  <div>
-                                    <p class="mb-1 text-foreground">Jada Patel closed ticket &ldquo;API latency&rdquo;.</p>
-                                    <div class="d-flex flex-wrap gap-2 text-xs text-muted-foreground">
-                                      <span>9:58 AM</span>
-                                      <span>&middot;</span>
-                                      <span>Support</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="d-flex gap-3">
-                                  <span class="d-inline-flex h-10 w-10 align-items-center justify-content-center rounded-circle bg-warning-subtle text-warning fw-semibold">MR</span>
-                                  <div>
-                                    <p class="mb-1 text-foreground">Marcus Reed scheduled the Q3 roadmap review.</p>
-                                    <div class="d-flex flex-wrap gap-2 text-xs text-muted-foreground">
-                                      <span>8:35 AM</span>
-                                      <span>&middot;</span>
-                                      <span>Planning</span>
-                                    </div>
-                                  </div>
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">Filters</button>
+                          </div>
+                          <div class="flex flex-1 flex-col gap-4 px-6 py-5">
+                            <article class="flex items-start gap-3">
+                              <span class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">AL</span>
+                              <div class="space-y-1">
+                                <p class="text-sm font-medium text-foreground">Alex Li published the June release notes.</p>
+                                <div class="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                                  <span>10:21 AM</span>
+                                  <span aria-hidden="true">•</span>
+                                  <span>Documentation</span>
                                 </div>
                               </div>
-                            </div>
+                            </article>
+                            <article class="flex items-start gap-3">
+                              <span class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full border border-success/30 bg-success/10 text-sm font-semibold text-success">JP</span>
+                              <div class="space-y-1">
+                                <p class="text-sm font-medium text-foreground">Jada Patel closed ticket “API latency”.</p>
+                                <div class="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                                  <span>9:58 AM</span>
+                                  <span aria-hidden="true">•</span>
+                                  <span>Support</span>
+                                </div>
+                              </div>
+                            </article>
+                            <article class="flex items-start gap-3">
+                              <span class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full border border-warning/40 bg-warning/10 text-sm font-semibold text-warning">MR</span>
+                              <div class="space-y-1">
+                                <p class="text-sm font-medium text-foreground">Marcus Reed scheduled the Q3 roadmap review.</p>
+                                <div class="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                                  <span>8:35 AM</span>
+                                  <span aria-hidden="true">•</span>
+                                  <span>Planning</span>
+                                </div>
+                              </div>
+                            </article>
                           </div>
                         </div>
-                        <div class="col-lg-5">
-                          <div class="card border-border mb-4">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                              <h4 class="card-title h6 mb-0 text-foreground">Upcoming tasks</h4>
-                              <button class="btn btn-sm btn-ghost" type="button">View all</button>
+                        <div class="flex h-full flex-col gap-6">
+                          <div class="rounded-[calc(var(--radius)*2)] border border-border bg-card shadow-sm">
+                            <div class="flex items-center justify-between border-b border-border px-5 py-4">
+                              <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Upcoming tasks</h4>
+                              <button class="inline-flex items-center justify-center rounded-full border border-transparent px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">View all</button>
                             </div>
-                            <ul class="list-group list-group-flush">
-                              <li class="list-group-item d-flex align-items-center justify-content-between">
-                                <div>
-                                  <p class="mb-0 text-foreground">Design QA sync</p>
-                                  <small class="text-muted-foreground">Today &middot; 2:00 PM</small>
+                            <ul class="flex flex-col divide-y divide-border">
+                              <li class="flex items-center justify-between gap-4 px-5 py-4">
+                                <div class="space-y-1">
+                                  <p class="text-sm font-semibold text-foreground">Design QA sync</p>
+                                  <span class="text-xs text-muted-foreground">Today · 2:00 PM</span>
                                 </div>
-                                <span class="badge bg-secondary">Team</span>
+                                <span class="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-xs font-semibold text-secondary-foreground">Team</span>
                               </li>
-                              <li class="list-group-item d-flex align-items-center justify-content-between">
-                                <div>
-                                  <p class="mb-0 text-foreground">Security review</p>
-                                  <small class="text-muted-foreground">Tomorrow &middot; 11:00 AM</small>
+                              <li class="flex items-center justify-between gap-4 px-5 py-4">
+                                <div class="space-y-1">
+                                  <p class="text-sm font-semibold text-foreground">Security review</p>
+                                  <span class="text-xs text-muted-foreground">Tomorrow · 11:00 AM</span>
                                 </div>
-                                <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Needs prep</span>
+                                <span class="inline-flex items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">Needs prep</span>
                               </li>
                             </ul>
                           </div>
-                          <div class="card border-border">
-                            <div class="card-body">
-                              <h4 class="card-title h6 text-foreground">Pro tip</h4>
-                              <p class="text-muted-foreground small mb-3">Use saved filters to surface churn risk accounts before weekly standups.</p>
-                              <button class="btn btn-sm btn-primary" type="button">Create filter</button>
-                            </div>
+                          <div class="rounded-[calc(var(--radius)*2)] border border-border bg-card p-5 shadow-sm">
+                            <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Pro tip</h4>
+                            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Use saved filters to surface churn risk accounts before weekly standups.</p>
+                            <button class="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">Create filter</button>
                           </div>
                         </div>
                       </div>
