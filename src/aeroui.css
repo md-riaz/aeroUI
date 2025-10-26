@@ -120,10 +120,6 @@
     @apply font-semibold tracking-tight text-foreground;
   }
 
-  p {
-    @apply leading-relaxed text-muted-foreground;
-  }
-
   small,
   .text-muted {
     @apply text-muted-foreground;
@@ -131,31 +127,6 @@
 
   .lead {
     @apply text-lg text-muted-foreground;
-  }
-
-  hr {
-    @apply my-6 border-border;
-  }
-
-  .visually-hidden {
-    @apply sr-only;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    ::before,
-    ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-}
-
-@layer components {
-  .bg-gradient-banner {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(15, 23, 42, 0.9));
   }
 }
 
@@ -300,65 +271,88 @@
 }
 
 /* =============================================================
-   Badges & alerts
+   Badges
    ============================================================= */
 @layer components {
   .badge {
-    @apply inline-flex items-center rounded-full border border-transparent bg-secondary px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-secondary-foreground;
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide;
+    background-color: hsl(var(--secondary));
+    border-style: solid;
+    border-color: transparent;
+    color: hsl(var(--secondary-foreground));
   }
 
   .badge-primary {
-    @apply bg-primary text-primary-foreground;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 
   .badge-secondary {
-    @apply bg-secondary text-secondary-foreground;
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
   }
 
   .badge-success {
-    @apply bg-success text-success-foreground;
+    background-color: hsl(var(--success));
+    color: hsl(var(--success-foreground));
   }
 
   .badge-warning {
-    @apply bg-warning text-warning-foreground;
+    background-color: hsl(var(--warning));
+    color: hsl(var(--warning-foreground));
   }
 
   .badge-danger {
-    @apply bg-destructive text-destructive-foreground;
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
   }
 
   .badge-info {
-    @apply bg-info text-info-foreground;
+    background-color: hsl(var(--info));
+    color: hsl(var(--info-foreground));
   }
 
   .badge-outline {
-    @apply border border-border bg-transparent text-muted-foreground;
+    background-color: transparent;
+    border-color: hsl(var(--border));
+    color: hsl(var(--muted-foreground));
   }
 
   .badge-outline.badge-primary {
-    @apply border-primary/40 text-primary;
+    border-color: hsl(var(--primary) / 0.4);
+    color: hsl(var(--primary));
   }
 
   .badge-outline.badge-secondary {
-    @apply border-secondary-foreground/30 text-secondary-foreground;
+    border-color: hsl(var(--secondary-foreground) / 0.3);
+    color: hsl(var(--secondary-foreground));
   }
 
   .badge-outline.badge-success {
-    @apply border-success/40 text-success;
+    border-color: hsl(var(--success) / 0.4);
+    color: hsl(var(--success));
   }
 
   .badge-outline.badge-warning {
-    @apply border-warning/50 text-warning;
+    border-color: hsl(var(--warning) / 0.5);
+    color: hsl(var(--warning));
   }
 
   .badge-outline.badge-danger {
-    @apply border-destructive/40 text-destructive;
+    border-color: hsl(var(--destructive) / 0.4);
+    color: hsl(var(--destructive));
   }
 
   .badge-outline.badge-info {
-    @apply border-info/40 text-info;
+    border-color: hsl(var(--info) / 0.4);
+    color: hsl(var(--info));
   }
+}
 
+/* =============================================================
+   Alerts
+   ============================================================= */
+@layer components {
   .alert {
     @apply relative flex w-full items-start gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground shadow-sm;
   }
@@ -447,93 +441,83 @@
 }
 
 /* =============================================================
-   Carousel
+   Pagination
    ============================================================= */
 @layer components {
-  .carousel {
-    @apply relative overflow-hidden rounded-2xl border border-border bg-card text-card-foreground shadow-lg;
+  .pagination {
+    @apply inline-flex items-center gap-1;
   }
 
-  .carousel-inner {
-    @apply relative w-full overflow-hidden;
+  .page-item {
+    @apply list-none;
   }
 
-  .carousel-item {
-    @apply hidden w-full;
+  .page-link {
+    @apply inline-flex h-9 min-w-[2.25rem] items-center justify-center rounded-md border border-border bg-background px-3 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
   }
 
-  .carousel-item.active,
-  .carousel-item-next,
-  .carousel-item-prev {
-    @apply block;
+  .page-item.active .page-link,
+  .page-link.active {
+    @apply border-primary bg-primary text-primary-foreground;
   }
 
-  .carousel-item > * {
-    @apply h-full w-full;
+  .page-item.disabled .page-link,
+  .page-link.disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+}
+
+/* =============================================================
+   Progress bars
+   ============================================================= */
+@layer components {
+  .progress {
+    @apply h-2 w-full overflow-hidden rounded-full bg-muted;
   }
 
-  .carousel-caption {
-    @apply absolute inset-x-4 bottom-6 mx-auto max-w-xl rounded-xl bg-background/80 px-6 py-4 text-center text-sm text-muted-foreground shadow-lg backdrop-blur;
+  .progress-bar {
+    @apply h-full bg-primary transition-all duration-300 ease-out;
   }
 
-  .carousel-indicators {
-    @apply absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2;
+  .progress-bar.bg-success,
+  .progress-bar-success {
+    @apply bg-success;
   }
 
-  .carousel-indicators [data-bs-target] {
-    @apply h-2 w-8 cursor-pointer rounded-full border border-border/60 bg-background/60 transition hover:border-primary/60 hover:bg-primary/20;
+  .progress-bar.bg-warning,
+  .progress-bar-warning {
+    @apply bg-warning;
   }
 
-  .carousel-indicators .active {
-    @apply border-primary/70 bg-primary text-primary-foreground;
+  .progress-bar.bg-danger,
+  .progress-bar-danger {
+    @apply bg-destructive;
   }
 
-  .carousel-control-prev,
-  .carousel-control-next {
-    @apply absolute top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/70 bg-background/80 text-foreground shadow-sm transition hover:bg-background;
+  .progress-bar.bg-info,
+  .progress-bar-info {
+    @apply bg-info;
+  }
+}
+
+/* =============================================================
+   Spinners
+   ============================================================= */
+@layer components {
+  .spinner-border {
+    @apply inline-block h-10 w-10 animate-[aeroui-spinner-border_0.75s_linear_infinite] rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em];
   }
 
-  .carousel-control-prev {
-    @apply left-4;
+  .spinner-border-sm {
+    @apply h-6 w-6 border-2;
   }
 
-  .carousel-control-next {
-    @apply right-4;
+  .spinner-grow {
+    @apply inline-block h-10 w-10 animate-[aeroui-spinner-grow_0.75s_linear_infinite] rounded-full bg-current opacity-0 align-[-0.125em];
   }
 
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    @apply block h-4 w-4 bg-no-repeat bg-center;
-  }
-
-  .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3e%3cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 19l-7-7 7-7'/%3e%3c/svg%3e");
-  }
-
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3e%3cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'/%3e%3c/svg%3e");
-  }
-
-  .carousel-item-next,
-  .carousel-item-prev,
-  .carousel-item.active {
-    transition: transform 0.6s ease;
-  }
-
-  .carousel-item-next.carousel-item-start,
-  .carousel-item-prev.carousel-item-end,
-  .carousel-item.active {
-    transform: translateX(0);
-  }
-
-  .carousel-item-next,
-  .carousel-item.active.carousel-item-end {
-    transform: translateX(100%);
-  }
-
-  .carousel-item-prev,
-  .carousel-item.active.carousel-item-start {
-    transform: translateX(-100%);
+  .spinner-grow-sm {
+    @apply h-6 w-6;
   }
 }
 
@@ -729,88 +713,6 @@
 
   .dropdown-header {
     @apply px-3 py-1 text-xs font-semibold uppercase text-muted-foreground;
-  }
-}
-
-/* =============================================================
-   Breadcrumbs & pagination
-   ============================================================= */
-@layer components {
-  .breadcrumb {
-    @apply flex flex-wrap gap-2 text-sm text-muted-foreground;
-  }
-
-  .breadcrumb-item {
-    @apply inline-flex items-center gap-2 text-muted-foreground;
-  }
-
-  .breadcrumb-item + .breadcrumb-item::before {
-    content: "/";
-    @apply text-muted-foreground;
-  }
-
-  .breadcrumb-item.active {
-    @apply text-foreground font-medium;
-  }
-
-  .pagination {
-    @apply inline-flex items-center gap-1 rounded-md border border-border bg-background p-1 shadow-sm;
-  }
-
-  .page-item {
-    @apply inline-flex;
-  }
-
-  .page-link {
-    @apply inline-flex min-w-[2.5rem] items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
-  }
-
-  .page-item.active .page-link {
-    @apply bg-primary text-primary-foreground shadow;
-  }
-}
-
-/* =============================================================
-   Progress, badges, utilities
-   ============================================================= */
-@layer components {
-  .progress {
-    @apply h-3 w-full overflow-hidden rounded-full bg-muted;
-  }
-
-  .progress-bar {
-    @apply h-full rounded-full bg-primary text-xs font-medium leading-none text-primary-foreground transition-[width];
-  }
-}
-
-/* =============================================================
-   List group & spinners
-   ============================================================= */
-@layer components {
-  .list-group {
-    @apply divide-y divide-border overflow-hidden rounded-lg border border-border bg-card text-sm text-card-foreground shadow-sm;
-  }
-
-  .list-group-item {
-    @apply block px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted;
-  }
-
-  .list-group-item.active,
-  .list-group-item-action.active {
-    @apply bg-primary text-primary-foreground shadow-inner;
-  }
-
-  .list-group-item-action {
-    @apply cursor-pointer;
-  }
-
-  .spinner-border,
-  .spinner-grow {
-    @apply inline-block h-6 w-6 animate-spin rounded-full border-[3px] border-border border-t-primary;
-  }
-
-  .spinner-grow {
-    @apply animate-ping border-transparent bg-primary/30;
   }
 }
 
@@ -1050,6 +952,28 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes aeroui-spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aeroui-spinner-grow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
