@@ -271,6 +271,85 @@
 }
 
 /* =============================================================
+   Badges
+   ============================================================= */
+@layer components {
+  .badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide;
+    background-color: hsl(var(--secondary));
+    border-style: solid;
+    border-color: transparent;
+    color: hsl(var(--secondary-foreground));
+  }
+
+  .badge-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .badge-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+
+  .badge-success {
+    background-color: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+  }
+
+  .badge-warning {
+    background-color: hsl(var(--warning));
+    color: hsl(var(--warning-foreground));
+  }
+
+  .badge-danger {
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+  }
+
+  .badge-info {
+    background-color: hsl(var(--info));
+    color: hsl(var(--info-foreground));
+  }
+
+  .badge-outline {
+    background-color: transparent;
+    border-color: hsl(var(--border));
+    color: hsl(var(--muted-foreground));
+  }
+
+  .badge-outline.badge-primary {
+    border-color: hsl(var(--primary) / 0.4);
+    color: hsl(var(--primary));
+  }
+
+  .badge-outline.badge-secondary {
+    border-color: hsl(var(--secondary-foreground) / 0.3);
+    color: hsl(var(--secondary-foreground));
+  }
+
+  .badge-outline.badge-success {
+    border-color: hsl(var(--success) / 0.4);
+    color: hsl(var(--success));
+  }
+
+  .badge-outline.badge-warning {
+    border-color: hsl(var(--warning) / 0.5);
+    color: hsl(var(--warning));
+  }
+
+  .badge-outline.badge-danger {
+    border-color: hsl(var(--destructive) / 0.4);
+    color: hsl(var(--destructive));
+  }
+
+  .badge-outline.badge-info {
+    border-color: hsl(var(--info) / 0.4);
+    color: hsl(var(--info));
+  }
+}
+
+/* =============================================================
    Alerts
    ============================================================= */
 @layer components {
