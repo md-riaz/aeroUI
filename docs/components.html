@@ -313,6 +313,1658 @@
                 </nav>
               </template>
             </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Responsive sidebar patterns</h3>
+                <p class="mt-1 text-sm text-muted-foreground">
+                  Offcanvas, collapsible, and condensed navigation rails that adapt gracefully to mobile breakpoints.
+                </p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <section class="space-y-10 rounded-2xl border border-border bg-background p-6">
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Workspace offcanvas</h4>
+                        <p class="text-sm text-muted-foreground">Desktop shows the full rail while mobile uses a Bootstrap offcanvas drawer.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarOffcanvasWorkspace"
+                        aria-controls="sidebarOffcanvasWorkspace"
+                      >
+                        Open menu
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                      <aside class="hidden h-full flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="space-y-5">
+                          <div class="flex items-center gap-3">
+                            <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">NC</span>
+                            <div class="space-y-0.5">
+                              <p class="text-sm font-semibold text-foreground">Nimbus Collective</p>
+                              <span class="text-xs text-muted-foreground">Team workspace</span>
+                            </div>
+                          </div>
+                          <nav class="flex flex-col gap-1 text-sm font-medium">
+                            <a class="inline-flex items-center justify-between rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">
+                              <span>Home</span>
+                              <span aria-hidden="true" class="text-xs">•</span>
+                            </a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Projects</a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Analytics</a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Integrations</a>
+                          </nav>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Storage</p>
+                          <div class="mt-2 flex items-center justify-between text-sm text-foreground">
+                            <span>68 GB used</span>
+                            <span>80%</span>
+                          </div>
+                          <div class="mt-3 h-2 rounded-full bg-muted">
+                            <div class="h-full w-4/5 rounded-full bg-primary"></div>
+                          </div>
+                          <button class="mt-4 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">
+                            Upgrade plan
+                          </button>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <p class="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Today</p>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Product roadmap sync</h5>
+                          </div>
+                          <div class="flex gap-2">
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Share</button>
+                            <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">New task</button>
+                          </div>
+                        </div>
+                        <div class="mt-6 grid gap-4 md:grid-cols-2">
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Upcoming</p>
+                            <p class="mt-2 text-sm text-foreground">Design review with brand studio</p>
+                            <span class="mt-2 inline-flex w-fit items-center rounded-full border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-xs font-semibold text-secondary-foreground">Tomorrow · 2:30 PM</span>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Alerts</p>
+                            <p class="mt-2 text-sm text-foreground">Billing requires new payment method before 23 Aug.</p>
+                            <button class="mt-3 inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Update billing</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarOffcanvasWorkspace" aria-labelledby="sidebarOffcanvasWorkspaceLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarOffcanvasWorkspaceLabel">Workspace navigation</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <nav class="flex flex-col gap-1 text-sm font-medium">
+                          <a class="inline-flex items-center justify-between rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">
+                            <span>Home</span>
+                            <span aria-hidden="true" class="text-xs">•</span>
+                          </a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Projects</a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Analytics</a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Integrations</a>
+                        </nav>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Storage</p>
+                          <div class="mt-2 flex items-center justify-between text-sm text-foreground">
+                            <span>68 GB used</span>
+                            <span>80%</span>
+                          </div>
+                          <div class="mt-3 h-2 rounded-full bg-muted">
+                            <div class="h-full w-4/5 rounded-full bg-primary"></div>
+                          </div>
+                          <button class="mt-4 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">
+                            Upgrade plan
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Collapsible project filters</h4>
+                        <p class="text-sm text-muted-foreground">Bootstrap collapse powers the filter panel while desktop keeps it pinned open.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sidebarFilters"
+                        aria-expanded="false"
+                        aria-controls="sidebarFilters"
+                      >
+                        Toggle filters
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.28fr_0.72fr]">
+                      <aside id="sidebarFilters" class="collapse space-y-4 rounded-2xl border border-border bg-card p-5 shadow-sm lg:!block">
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Status</p>
+                          <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" checked />
+                              <span>Active</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>Planning</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>On hold</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Owners</p>
+                          <div class="flex flex-col gap-2">
+                            <button class="inline-flex items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ownerCollapse" aria-expanded="true" aria-controls="ownerCollapse">
+                              Product teams
+                              <span class="text-xs text-muted-foreground">View</span>
+                            </button>
+                            <div id="ownerCollapse" class="collapse show space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" checked />
+                                <span>Design</span>
+                              </label>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" checked />
+                                <span>Engineering</span>
+                              </label>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" />
+                                <span>Marketing</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Timeline</p>
+                          <div class="flex flex-col gap-2">
+                            <button class="inline-flex items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#timelineCollapse" aria-expanded="false" aria-controls="timelineCollapse">
+                              Quarter
+                              <span class="text-xs text-muted-foreground">Edit</span>
+                            </button>
+                            <div id="timelineCollapse" class="collapse space-y-3 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                              <p class="flex items-center justify-between">
+                                <span>Current</span>
+                                <span class="rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">Q3</span>
+                              </p>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" />
+                                <span>Include past quarters</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">
+                          Apply filters
+                        </button>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Active initiatives</h5>
+                            <p class="text-sm text-muted-foreground">Filtered by owners and quarterly milestones.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Save view</button>
+                        </div>
+                        <ul class="mt-6 space-y-4">
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                              <p class="text-sm font-semibold text-foreground">Rebuild onboarding journey</p>
+                              <span class="inline-flex items-center rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">On track</span>
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">Design and experiment with a streamlined getting-started flow.</p>
+                          </li>
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                              <p class="text-sm font-semibold text-foreground">Machine learning insights</p>
+                              <span class="inline-flex items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">At risk</span>
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">Ship the predictive churn dashboard for success managers.</p>
+                          </li>
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                              <p class="text-sm font-semibold text-foreground">Localization rollout</p>
+                              <span class="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-xs font-semibold text-secondary-foreground">Planning</span>
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">Expand coverage to Spanish and Brazilian Portuguese audiences.</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Compact icon rail</h4>
+                        <p class="text-sm text-muted-foreground">Mobile converts the rail into a tabbed command bar while desktop keeps the icons pinned.</p>
+                      </div>
+                      <div class="grid grid-cols-3 gap-2 rounded-full border border-border bg-card p-1 text-xs font-semibold text-muted-foreground shadow-sm sm:hidden">
+                        <button class="inline-flex items-center justify-center rounded-full bg-primary/10 px-3 py-1.5 text-primary transition" type="button" data-bs-target="#railPanelOverview" data-bs-toggle="tab" aria-controls="railPanelOverview" aria-selected="true">Overview</button>
+                        <button class="inline-flex items-center justify-center rounded-full px-3 py-1.5 transition hover:text-primary" type="button" data-bs-target="#railPanelReports" data-bs-toggle="tab" aria-controls="railPanelReports" aria-selected="false">Reports</button>
+                        <button class="inline-flex items-center justify-center rounded-full px-3 py-1.5 transition hover:text-primary" type="button" data-bs-target="#railPanelSettings" data-bs-toggle="tab" aria-controls="railPanelSettings" aria-selected="false">Settings</button>
+                      </div>
+                    </div>
+                  <div class="flex flex-col gap-6 lg:flex-row">
+                      <aside class="hidden w-full max-w-[230px] flex-col rounded-2xl border border-border bg-card p-3 shadow-sm lg:flex">
+                        <nav class="flex flex-col gap-1">
+                          <button class="inline-flex items-center gap-3 rounded-xl bg-primary/10 px-3 py-2 text-sm font-semibold text-primary transition" type="button" data-bs-target="#railPanelOverview" data-bs-toggle="tab" aria-controls="railPanelOverview" aria-selected="true">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary/40 bg-primary/10">🏠</span>
+                            Overview
+                          </button>
+                          <button class="inline-flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" type="button" data-bs-target="#railPanelReports" data-bs-toggle="tab" aria-controls="railPanelReports" aria-selected="false">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted/60">📊</span>
+                            Reports
+                          </button>
+                          <button class="inline-flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" type="button" data-bs-target="#railPanelSettings" data-bs-toggle="tab" aria-controls="railPanelSettings" aria-selected="false">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted/60">⚙️</span>
+                            Settings
+                          </button>
+                        </nav>
+                        <div class="mt-4 rounded-xl border border-border bg-muted/40 p-3 text-xs text-muted-foreground">
+                          <p class="font-semibold uppercase tracking-[0.18em]">Shortcuts</p>
+                          <p class="mt-2">Press <span class="rounded border border-border bg-background px-2 py-0.5 text-foreground">⌘K</span> to open command palette.</p>
+                        </div>
+                      </aside>
+                      <div class="tab-content w-full rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="tab-pane fade show active space-y-4" id="railPanelOverview" role="tabpanel">
+                          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h5 class="text-xl font-semibold tracking-tight text-foreground">Weekly pulse</h5>
+                              <p class="text-sm text-muted-foreground">Snapshot of the latest velocity, sentiment, and blockers.</p>
+                            </div>
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">View details</button>
+                          </div>
+                          <div class="grid gap-4 md:grid-cols-3">
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Velocity</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">42%</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">+5.4%</span>
+                            </div>
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sentiment</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">7.8</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">Stable</span>
+                            </div>
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Blockers</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">3</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">Escalated</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade space-y-4" id="railPanelReports" role="tabpanel">
+                          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h5 class="text-xl font-semibold tracking-tight text-foreground">Report library</h5>
+                              <p class="text-sm text-muted-foreground">Access saved exports and automate recurring digests.</p>
+                            </div>
+                            <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Create report</button>
+                          </div>
+                          <ul class="space-y-3">
+                            <li class="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3 text-sm">
+                              <span class="text-foreground">Executive summary</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Send</button>
+                            </li>
+                            <li class="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3 text-sm">
+                              <span class="text-foreground">Growth dashboard export</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Download</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tab-pane fade space-y-4" id="railPanelSettings" role="tabpanel">
+                          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h5 class="text-xl font-semibold tracking-tight text-foreground">Platform settings</h5>
+                              <p class="text-sm text-muted-foreground">Control permissions, regional preferences, and API keys.</p>
+                            </div>
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Manage access</button>
+                          </div>
+                          <div class="space-y-3 text-sm text-muted-foreground">
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-sm font-semibold text-foreground">Team management</p>
+                              <p class="mt-1">Invite members, define roles, and manage provisioning via SCIM.</p>
+                            </div>
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-sm font-semibold text-foreground">API access</p>
+                              <p class="mt-1">Rotate production keys and review webhook delivery logs.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Team switcher &amp; projects</h4>
+                        <p class="text-sm text-muted-foreground">Stacked navigation for multi-workspace teams with usage insights and quick actions.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarTeams"
+                        aria-controls="sidebarTeams"
+                      >
+                        Open navigation
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.32fr_0.68fr]">
+                      <aside class="hidden flex-col rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="space-y-4">
+                          <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Workspace</p>
+                            <div class="mt-2 inline-flex items-center gap-3 rounded-2xl border border-border/80 bg-background px-3 py-2">
+                              <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">AC</span>
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Acme Inc</p>
+                                <span class="text-xs text-muted-foreground">Product team</span>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#teamSwitcher" aria-expanded="false" aria-controls="teamSwitcher">
+                            Switch workspace
+                            <span class="text-xs text-muted-foreground">⌘K</span>
+                          </button>
+                          <div id="teamSwitcher" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <button class="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2 text-left text-foreground transition hover:border-primary/50 hover:bg-primary/5" type="button">
+                              <span>Design systems</span>
+                              <span class="text-xs">Default</span>
+                            </button>
+                            <button class="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2 text-left text-foreground transition hover:border-primary/50 hover:bg-primary/5" type="button">
+                              <span>Mobile apps</span>
+                              <span class="text-xs">7 members</span>
+                            </button>
+                            <button class="flex w-full items-center justify-between rounded-lg border border-dashed border-border px-3 py-2 text-left text-muted-foreground transition hover:border-primary/50 hover:text-primary" type="button">
+                              <span>New workspace</span>
+                              <span class="text-xs">Create</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="mt-6 space-y-3">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Projects</p>
+                          <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                            <a class="flex items-center justify-between rounded-xl px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">
+                              <span>Marketing site</span>
+                              <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">LIVE</span>
+                            </a>
+                            <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                              <span>Design kit</span>
+                              <span class="text-xs">6 tasks</span>
+                            </a>
+                            <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                              <span>Dev portal</span>
+                              <span class="text-xs">Planning</span>
+                            </a>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">
+                            New project
+                          </button>
+                        </div>
+                        <div class="mt-6 rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Usage</p>
+                          <p class="mt-2 flex items-center justify-between text-sm text-foreground"><span>Seats</span><span>18 / 25</span></p>
+                          <div class="mt-3 h-2 rounded-full bg-muted">
+                            <div class="h-full w-3/4 rounded-full bg-primary"></div>
+                          </div>
+                          <button class="mt-4 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Upgrade seats</button>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Weekly planning</h5>
+                            <p class="text-sm text-muted-foreground">Assign owners, review blockers, and celebrate wins.</p>
+                          </div>
+                          <div class="flex gap-2">
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Share notes</button>
+                            <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Start huddle</button>
+                          </div>
+                        </div>
+                        <div class="mt-6 space-y-4">
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex items-start justify-between gap-4">
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Homepage refresh</p>
+                                <p class="text-xs text-muted-foreground">Design · Due Aug 26</p>
+                              </div>
+                              <span class="rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-semibold text-success">On track</span>
+                            </div>
+                            <p class="mt-3 text-sm text-muted-foreground">Update hero animations and improve conversion modals.</p>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex items-start justify-between gap-4">
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Mobile onboarding</p>
+                                <p class="text-xs text-muted-foreground">Product · Due Sep 2</p>
+                              </div>
+                              <span class="rounded-full bg-warning/10 px-2.5 py-0.5 text-xs font-semibold text-warning">Needs review</span>
+                            </div>
+                            <p class="mt-3 text-sm text-muted-foreground">Validate copy variations and finish analytics wiring.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarTeams" aria-labelledby="sidebarTeamsLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarTeamsLabel">Team navigation</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div>
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Workspace</p>
+                          <div class="mt-2 inline-flex items-center gap-3 rounded-2xl border border-border/80 bg-card px-3 py-2">
+                            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">AC</span>
+                            <div>
+                              <p class="text-sm font-semibold text-foreground">Acme Inc</p>
+                              <span class="text-xs text-muted-foreground">Product team</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="space-y-2">
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#teamSwitcherMobile" aria-expanded="false" aria-controls="teamSwitcherMobile">
+                            Switch workspace
+                            <span class="text-xs text-muted-foreground">⌘K</span>
+                          </button>
+                          <div id="teamSwitcherMobile" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <button class="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2 text-left text-foreground transition hover:border-primary/50 hover:bg-primary/5" type="button">
+                              <span>Design systems</span>
+                              <span class="text-xs">Default</span>
+                            </button>
+                            <button class="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2 text-left text-foreground transition hover:border-primary/50 hover:bg-primary/5" type="button">
+                              <span>Mobile apps</span>
+                              <span class="text-xs">7 members</span>
+                            </button>
+                            <button class="flex w-full items-center justify-between rounded-lg border border-dashed border-border px-3 py-2 text-left text-muted-foreground transition hover:border-primary/50 hover:text-primary" type="button">
+                              <span>New workspace</span>
+                              <span class="text-xs">Create</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">
+                            <span>Marketing site</span>
+                            <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">LIVE</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Design kit</span>
+                            <span class="text-xs">6 tasks</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Dev portal</span>
+                            <span class="text-xs">Planning</span>
+                          </a>
+                        </div>
+                        <button class="inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">
+                          New project
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Analytics overview</h4>
+                        <p class="text-sm text-muted-foreground">Navigation rail with KPI callouts and channel breakdowns for growth teams.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarAnalytics"
+                        aria-controls="sidebarAnalytics"
+                      >
+                        View analytics nav
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                      <aside class="hidden flex-col rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="flex items-center gap-3 rounded-xl border border-border/80 bg-background px-3 py-2">
+                          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">QL</span>
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Quarterly Lens</p>
+                            <span class="text-xs text-muted-foreground">Analytics suite</span>
+                          </div>
+                        </div>
+                        <div class="mt-5 space-y-3 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-primary transition hover:bg-muted/60 hover:text-primary" href="#">
+                            <span>Overview</span>
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">24</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Acquisition</span>
+                            <span class="text-xs">6 reports</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Retention</span>
+                            <span class="text-xs">12 cohorts</span>
+                          </a>
+                        </div>
+                        <div class="mt-6 rounded-xl border border-border bg-muted/40 p-4 text-xs text-muted-foreground">
+                          <p class="font-semibold uppercase tracking-[0.18em]">Highlights</p>
+                          <ul class="mt-3 space-y-2">
+                            <li class="flex items-center justify-between gap-3">
+                              <span>Paid conversions</span>
+                              <span class="rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-semibold text-success">+19%</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3">
+                              <span>Organic traffic</span>
+                              <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">Stable</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <button class="mt-6 inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Download CSV</button>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="grid gap-4 sm:grid-cols-2">
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Revenue</p>
+                            <p class="mt-2 text-3xl font-semibold text-foreground">$482k</p>
+                            <p class="mt-2 text-xs text-success">▲ 8.3% vs last quarter</p>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Active users</p>
+                            <p class="mt-2 text-3xl font-semibold text-foreground">32,450</p>
+                            <p class="mt-2 text-xs text-muted-foreground">Streak: 7 growth days</p>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4 sm:col-span-2">
+                            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Channel performance</p>
+                                <p class="text-xs text-muted-foreground">Weekly attribution split across paid and organic sources.</p>
+                              </div>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Open dashboard</button>
+                            </div>
+                            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                              <div class="rounded-lg border border-border/80 bg-muted/40 p-3 text-xs text-muted-foreground">
+                                <p class="font-semibold text-foreground">Search</p>
+                                <p class="mt-1 text-sm text-primary">39%</p>
+                                <p class="mt-1">↑ 6% WoW</p>
+                              </div>
+                              <div class="rounded-lg border border-border/80 bg-muted/40 p-3 text-xs text-muted-foreground">
+                                <p class="font-semibold text-foreground">Social</p>
+                                <p class="mt-1 text-sm text-primary">27%</p>
+                                <p class="mt-1">↑ 4% WoW</p>
+                              </div>
+                              <div class="rounded-lg border border-border/80 bg-muted/40 p-3 text-xs text-muted-foreground">
+                                <p class="font-semibold text-foreground">Partners</p>
+                                <p class="mt-1 text-sm text-primary">21%</p>
+                                <p class="mt-1">↓ 2% WoW</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarAnalytics" aria-labelledby="sidebarAnalyticsLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarAnalyticsLabel">Analytics navigation</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="flex items-center gap-3 rounded-xl border border-border/80 bg-card px-3 py-2">
+                          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">QL</span>
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Quarterly Lens</p>
+                            <span class="text-xs text-muted-foreground">Analytics suite</span>
+                          </div>
+                        </div>
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-primary transition hover:bg-muted/60 hover:text-primary" href="#">
+                            <span>Overview</span>
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">24</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Acquisition</span>
+                            <span class="text-xs">6 reports</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Retention</span>
+                            <span class="text-xs">12 cohorts</span>
+                          </a>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4 text-xs text-muted-foreground">
+                          <p class="font-semibold uppercase tracking-[0.18em]">Highlights</p>
+                          <ul class="mt-3 space-y-2">
+                            <li class="flex items-center justify-between gap-3">
+                              <span>Paid conversions</span>
+                              <span class="rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-semibold text-success">+19%</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3">
+                              <span>Organic traffic</span>
+                              <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">Stable</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <button class="inline-flex w-full items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Download CSV</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Command palette &amp; shortcuts</h4>
+                        <p class="text-sm text-muted-foreground">Bring command search, pinned actions, and workflow history into a focused rail.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarCommands"
+                        aria-controls="sidebarCommands"
+                      >
+                        Open command rail
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                      <aside class="hidden flex-col gap-5 rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="space-y-2">
+                          <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="commandSearchDesktop">Search</label>
+                          <div class="relative">
+                            <span class="pointer-events-none absolute inset-y-0 left-3 inline-flex items-center text-muted-foreground">⌘</span>
+                            <input id="commandSearchDesktop" type="search" class="form-control rounded-xl border-border bg-background pl-10 text-sm" placeholder="Search commands" />
+                          </div>
+                        </div>
+                        <div class="space-y-3 text-sm text-muted-foreground">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Pinned</p>
+                          <a class="flex items-center justify-between rounded-xl border border-transparent px-3 py-2 text-foreground transition hover:border-primary/50 hover:bg-primary/5" href="#">
+                            <span>Invite teammates</span>
+                            <span class="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">⇧⌘I</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl border border-transparent px-3 py-2 text-foreground transition hover:border-primary/50 hover:bg-primary/5" href="#">
+                            <span>Generate report</span>
+                            <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">⌘R</span>
+                          </a>
+                        </div>
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Collections</p>
+                          <div class="flex flex-col gap-2 text-sm font-medium text-muted-foreground">
+                            <button class="inline-flex items-center justify-between rounded-xl border border-border px-3 py-2 transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#commandProjects" aria-expanded="true" aria-controls="commandProjects">
+                              Projects
+                              <span class="text-xs">12</span>
+                            </button>
+                            <div id="commandProjects" class="collapse show space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                              <a class="block rounded-lg px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Website relaunch</a>
+                              <a class="block rounded-lg px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Mobile onboarding</a>
+                              <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Customer portal</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4 text-xs text-muted-foreground">
+                          <p class="font-semibold uppercase tracking-[0.18em]">Tips</p>
+                          <p class="mt-2 text-sm text-foreground">Press <span class="rounded border border-border/80 bg-card px-1 py-0.5 text-xs">⌘K</span> to launch command search anywhere.</p>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Latest activity</h5>
+                            <p class="text-sm text-muted-foreground">Recently executed commands and automation outcomes.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">View history</button>
+                        </div>
+                        <ul class="mt-6 space-y-4">
+                          <li class="flex items-start justify-between gap-4 rounded-xl border border-border bg-background p-4">
+                            <div>
+                              <p class="text-sm font-semibold text-foreground">Create invoice</p>
+                              <p class="text-xs text-muted-foreground">Triggered via palette · 2m ago</p>
+                            </div>
+                            <span class="rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-semibold text-success">Success</span>
+                          </li>
+                          <li class="flex items-start justify-between gap-4 rounded-xl border border-border bg-background p-4">
+                            <div>
+                              <p class="text-sm font-semibold text-foreground">Sync Salesforce</p>
+                              <p class="text-xs text-muted-foreground">Scheduled workflow · 12m ago</p>
+                            </div>
+                            <span class="rounded-full bg-warning/10 px-2.5 py-0.5 text-xs font-semibold text-warning">Delayed</span>
+                          </li>
+                          <li class="flex items-start justify-between gap-4 rounded-xl border border-border bg-background p-4">
+                            <div>
+                              <p class="text-sm font-semibold text-foreground">Generate weekly deck</p>
+                              <p class="text-xs text-muted-foreground">Manual run · 1h ago</p>
+                            </div>
+                            <span class="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground">Ready</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarCommands" aria-labelledby="sidebarCommandsLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarCommandsLabel">Command palette</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="space-y-2">
+                          <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="commandSearchMobile">Search</label>
+                          <input id="commandSearchMobile" type="search" class="form-control rounded-xl border-border bg-card text-sm" placeholder="Search commands" />
+                        </div>
+                        <div class="space-y-2 text-sm text-muted-foreground">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Pinned</p>
+                          <a class="flex items-center justify-between rounded-xl border border-transparent px-3 py-2 text-foreground transition hover:border-primary/50 hover:bg-primary/5" href="#">
+                            <span>Invite teammates</span>
+                            <span class="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">⇧⌘I</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl border border-transparent px-3 py-2 text-foreground transition hover:border-primary/50 hover:bg-primary/5" href="#">
+                            <span>Generate report</span>
+                            <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">⌘R</span>
+                          </a>
+                        </div>
+                        <div class="space-y-2 text-sm text-muted-foreground">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Projects</p>
+                          <a class="block rounded-xl px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Website relaunch</a>
+                          <a class="block rounded-xl px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Mobile onboarding</a>
+                          <a class="block rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Customer portal</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Support knowledge base</h4>
+                        <p class="text-sm text-muted-foreground">Collapsible help center navigation with recently viewed content and CTAs.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarSupport"
+                        aria-controls="sidebarSupport"
+                      >
+                        Browse help
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.34fr_0.66fr]">
+                      <aside class="hidden flex-col gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="flex items-center justify-between rounded-xl border border-border/80 bg-background px-3 py-2">
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Help center</p>
+                            <span class="text-xs text-muted-foreground">Updated 2d ago</span>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Contact</button>
+                        </div>
+                        <div class="space-y-3 text-sm font-medium text-muted-foreground">
+                          <button class="flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-left text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#supportGettingStarted" aria-expanded="true" aria-controls="supportGettingStarted">
+                            Getting started
+                            <span class="text-xs">8 articles</span>
+                          </button>
+                          <div id="supportGettingStarted" class="collapse show space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <a class="block rounded-lg px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Install aeroUI package</a>
+                            <a class="block rounded-lg px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Configure Tailwind tokens</a>
+                            <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Deploy to production</a>
+                          </div>
+                          <button class="flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-left text-muted-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#supportBilling" aria-expanded="false" aria-controls="supportBilling">
+                            Billing &amp; accounts
+                            <span class="text-xs">5 articles</span>
+                          </button>
+                          <div id="supportBilling" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Update payment method</a>
+                            <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Download invoices</a>
+                          </div>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Need more help?</p>
+                          <p class="mt-2 text-sm text-foreground">Join weekly office hours with support engineers.</p>
+                          <button class="mt-3 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Register</button>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Recently viewed articles</h5>
+                            <p class="text-sm text-muted-foreground">Curated docs and tutorials to keep learning.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">View all</button>
+                        </div>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-sm font-semibold text-foreground">Audit logging for compliance</p>
+                            <p class="mt-2 text-xs text-muted-foreground">Security · Updated Jul 22</p>
+                            <button class="mt-3 inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Read article</button>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-sm font-semibold text-foreground">Building multi-tenant apps</p>
+                            <p class="mt-2 text-xs text-muted-foreground">Development · Updated Aug 3</p>
+                            <button class="mt-3 inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Read article</button>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4 sm:col-span-2">
+                            <p class="text-sm font-semibold text-foreground">Design tokens quickstart</p>
+                            <p class="mt-2 text-xs text-muted-foreground">Design · Updated Jul 30</p>
+                            <div class="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                              <span class="inline-flex items-center rounded-full border border-border px-2 py-0.5">Tailwind</span>
+                              <span class="inline-flex items-center rounded-full border border-border px-2 py-0.5">Bootstrap</span>
+                              <span class="inline-flex items-center rounded-full border border-border px-2 py-0.5">Design tokens</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarSupport" aria-labelledby="sidebarSupportLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarSupportLabel">Help center</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="flex items-center justify-between rounded-xl border border-border/80 bg-card px-3 py-2">
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Help center</p>
+                            <span class="text-xs text-muted-foreground">Updated 2d ago</span>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Contact</button>
+                        </div>
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <button class="flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-left text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#supportGettingStartedMobile" aria-expanded="false" aria-controls="supportGettingStartedMobile">
+                            Getting started
+                            <span class="text-xs">8 articles</span>
+                          </button>
+                          <div id="supportGettingStartedMobile" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <a class="block rounded-lg px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Install aeroUI package</a>
+                            <a class="block rounded-lg px-3 py-2 text-foreground transition hover:bg-muted/60" href="#">Configure Tailwind tokens</a>
+                            <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Deploy to production</a>
+                          </div>
+                          <button class="flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-left text-muted-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#supportBillingMobile" aria-expanded="false" aria-controls="supportBillingMobile">
+                            Billing &amp; accounts
+                            <span class="text-xs">5 articles</span>
+                          </button>
+                          <div id="supportBillingMobile" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Update payment method</a>
+                            <a class="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Download invoices</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Calendar schedule</h4>
+                        <p class="text-sm text-muted-foreground">Agenda view with mini calendar, upcoming events, and RSVP actions.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarCalendar"
+                        aria-controls="sidebarCalendar"
+                      >
+                        Open calendar
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.28fr_0.72fr]">
+                      <aside class="hidden flex-col rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="flex items-center justify-between">
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">August 2024</p>
+                            <span class="text-xs text-muted-foreground">5 meetings this week</span>
+                          </div>
+                          <div class="inline-flex items-center gap-2 text-muted-foreground">
+                            <button class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background" type="button" aria-label="Previous month">‹</button>
+                            <button class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background" type="button" aria-label="Next month">›</button>
+                          </div>
+                        </div>
+                        <div class="mt-4 grid grid-cols-7 gap-2 text-center text-xs font-semibold text-muted-foreground">
+                          <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                        </div>
+                        <div class="mt-2 grid grid-cols-7 gap-1 text-center text-xs">
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">28</span>
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">29</span>
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">30</span>
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">31</span>
+                          <span class="rounded-lg bg-primary/10 px-2 py-1 font-semibold text-primary">1</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">2</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">3</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">4</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">5</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">6</span>
+                          <span class="rounded-lg bg-secondary/10 px-2 py-1 font-semibold text-secondary-foreground">7</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">8</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">9</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">10</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">11</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">12</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">13</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">14</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">15</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">16</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">17</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">18</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">19</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">20</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">21</span>
+                          <span class="rounded-lg bg-primary/10 px-2 py-1 font-semibold text-primary">22</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">23</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">24</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">25</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">26</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">27</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">28</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">29</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">30</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">31</span>
+                        </div>
+                        <div class="mt-6 space-y-3 text-sm text-muted-foreground">
+                          <div class="rounded-xl border border-border bg-background p-3">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Focus block</p>
+                            <p class="mt-1 text-sm text-foreground">Deep work — Product strategy</p>
+                            <p class="text-xs">Today · 09:00–11:00</p>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-3">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Travel</p>
+                            <p class="mt-1 text-sm text-foreground">NYC leadership meetup</p>
+                            <p class="text-xs">Aug 21–23</p>
+                          </div>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Today&rsquo;s agenda</h5>
+                            <p class="text-sm text-muted-foreground">Keep your day organized with RSVP-ready events.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Add event</button>
+                        </div>
+                        <ul class="mt-6 space-y-4">
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Growth sync</p>
+                                <p class="text-xs text-muted-foreground">09:30–10:30 · Zoom</p>
+                              </div>
+                              <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">Accepted</span>
+                            </div>
+                            <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                              <span class="inline-flex items-center rounded-full border border-border px-2 py-0.5">Alex</span>
+                              <span class="inline-flex items-center rounded-full border border-border px-2 py-0.5">Priya</span>
+                              <span class="inline-flex items-center rounded-full border border-border px-2 py-0.5">Jordan</span>
+                            </div>
+                          </li>
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Design QA</p>
+                                <p class="text-xs text-muted-foreground">13:00–14:00 · Huddle Room B</p>
+                              </div>
+                              <span class="rounded-full bg-warning/10 px-2.5 py-0.5 text-xs font-semibold text-warning">Needs reply</span>
+                            </div>
+                            <div class="mt-3 flex gap-2 text-xs">
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Accept</button>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Decline</button>
+                            </div>
+                          </li>
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                              <div>
+                                <p class="text-sm font-semibold text-foreground">Product review</p>
+                                <p class="text-xs text-muted-foreground">16:30–17:15 · Hybrid</p>
+                              </div>
+                              <span class="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground">Draft</span>
+                            </div>
+                            <p class="mt-3 text-sm text-muted-foreground">Review release candidates for sprint 34.</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarCalendar" aria-labelledby="sidebarCalendarLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarCalendarLabel">Calendar</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="flex items-center justify-between">
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">August 2024</p>
+                            <span class="text-xs text-muted-foreground">5 meetings this week</span>
+                          </div>
+                          <div class="inline-flex items-center gap-2 text-muted-foreground">
+                            <button class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card" type="button" aria-label="Previous month">‹</button>
+                            <button class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card" type="button" aria-label="Next month">›</button>
+                          </div>
+                        </div>
+                        <div class="grid grid-cols-7 gap-2 text-center text-xs font-semibold text-muted-foreground">
+                          <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                        </div>
+                        <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">28</span>
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">29</span>
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">30</span>
+                          <span class="rounded-lg px-2 py-1 text-muted-foreground">31</span>
+                          <span class="rounded-lg bg-primary/10 px-2 py-1 font-semibold text-primary">1</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">2</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">3</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">4</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">5</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">6</span>
+                          <span class="rounded-lg bg-secondary/10 px-2 py-1 font-semibold text-secondary-foreground">7</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">8</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">9</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">10</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">11</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">12</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">13</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">14</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">15</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">16</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">17</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">18</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">19</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">20</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">21</span>
+                          <span class="rounded-lg bg-primary/10 px-2 py-1 font-semibold text-primary">22</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">23</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">24</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">25</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">26</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">27</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">28</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">29</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">30</span>
+                          <span class="rounded-lg px-2 py-1 text-foreground">31</span>
+                        </div>
+                        <div class="space-y-3 text-sm text-muted-foreground">
+                          <div class="rounded-xl border border-border bg-background p-3">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Focus block</p>
+                            <p class="mt-1 text-sm text-foreground">Deep work — Product strategy</p>
+                            <p class="text-xs">Today · 09:00–11:00</p>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-3">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Travel</p>
+                            <p class="mt-1 text-sm text-foreground">NYC leadership meetup</p>
+                            <p class="text-xs">Aug 21–23</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Additional variations inserted below (music, documentation, catalog, account settings) -->
+                  <!-- MUSIC WORKSPACE -->
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Music workspace</h4>
+                        <p class="text-sm text-muted-foreground">Playlist browsing with now playing controls and curated mixes.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarMusic"
+                        aria-controls="sidebarMusic"
+                      >
+                        View playlists
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                      <aside class="hidden flex-col rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="flex items-center gap-3">
+                          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-xl">🎧</div>
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Flow radio</p>
+                            <span class="text-xs text-muted-foreground">Personalized for you</span>
+                          </div>
+                        </div>
+                        <div class="mt-5 space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-primary transition hover:bg-muted/60 hover:text-primary" href="#">
+                            <span>Favorites</span>
+                            <span class="text-xs">128 tracks</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Chillwave</span>
+                            <span class="text-xs">32 tracks</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Focus beats</span>
+                            <span class="text-xs">19 tracks</span>
+                          </a>
+                        </div>
+                        <div class="mt-6 rounded-xl border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Now playing</p>
+                          <p class="mt-2 text-sm font-semibold text-foreground">Midnight City — Remix</p>
+                          <div class="mt-3 h-1.5 rounded-full bg-muted">
+                            <div class="h-full w-1/2 rounded-full bg-primary"></div>
+                          </div>
+                          <div class="mt-3 flex items-center justify-between text-xs">
+                            <span>01:32</span>
+                            <span>03:58</span>
+                          </div>
+                          <div class="mt-4 flex items-center justify-center gap-3">
+                            <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border" type="button" aria-label="Previous">⏮</button>
+                            <button class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground" type="button" aria-label="Play">▶</button>
+                            <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border" type="button" aria-label="Next">⏭</button>
+                          </div>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Featured mixes</h5>
+                            <p class="text-sm text-muted-foreground">Energetic playlists tuned for your work sessions.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Start radio</button>
+                        </div>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+                          <div class="space-y-3 rounded-xl border border-border bg-background p-4 text-sm text-muted-foreground">
+                            <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-primary/20 via-primary/10 to-transparent"></div>
+                            <p class="font-semibold text-foreground">Sunset drive</p>
+                            <span>68 minutes • Synth pop</span>
+                          </div>
+                          <div class="space-y-3 rounded-xl border border-border bg-background p-4 text-sm text-muted-foreground">
+                            <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-secondary/20 via-secondary/10 to-transparent"></div>
+                            <p class="font-semibold text-foreground">Deep focus</p>
+                            <span>54 minutes • Ambient</span>
+                          </div>
+                          <div class="space-y-3 rounded-xl border border-border bg-background p-4 text-sm text-muted-foreground">
+                            <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-warning/20 via-warning/10 to-transparent"></div>
+                            <p class="font-semibold text-foreground">Momentum</p>
+                            <span>72 minutes • Electronic</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarMusic" aria-labelledby="sidebarMusicLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarMusicLabel">Playlists</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="flex items-center gap-3">
+                          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-xl">🎧</div>
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Flow radio</p>
+                            <span class="text-xs text-muted-foreground">Personalized for you</span>
+                          </div>
+                        </div>
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-primary transition hover:bg-muted/60 hover:text-primary" href="#">
+                            <span>Favorites</span>
+                            <span class="text-xs">128 tracks</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Chillwave</span>
+                            <span class="text-xs">32 tracks</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Focus beats</span>
+                            <span class="text-xs">19 tracks</span>
+                          </a>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Now playing</p>
+                          <p class="mt-2 text-sm font-semibold text-foreground">Midnight City — Remix</p>
+                          <div class="mt-3 h-1.5 rounded-full bg-muted">
+                            <div class="h-full w-1/2 rounded-full bg-primary"></div>
+                          </div>
+                          <div class="mt-3 flex items-center justify-between text-xs">
+                            <span>01:32</span>
+                            <span>03:58</span>
+                          </div>
+                          <div class="mt-4 flex items-center justify-center gap-3">
+                            <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border" type="button" aria-label="Previous">⏮</button>
+                            <button class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground" type="button" aria-label="Play">▶</button>
+                            <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border" type="button" aria-label="Next">⏭</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Additional variations continue... -->
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Documentation navigator</h4>
+                        <p class="text-sm text-muted-foreground">Version switcher, topic outline, and rich preview for docs teams.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarDocs"
+                        aria-controls="sidebarDocs"
+                      >
+                        View docs nav
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                      <aside class="hidden flex-col rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="space-y-2">
+                          <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="docsVersionSelect">Version</label>
+                          <select id="docsVersionSelect" class="form-select rounded-xl border-border bg-background text-sm">
+                            <option>v3.4 — Latest</option>
+                            <option>v3.3</option>
+                            <option>v3.2</option>
+                          </select>
+                        </div>
+                        <div class="mt-5 space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-primary transition hover:bg-muted/60 hover:text-primary" href="#">
+                            <span>Getting started</span>
+                            <span class="text-xs">5</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Components</span>
+                            <span class="text-xs">18</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Guides</span>
+                            <span class="text-xs">9</span>
+                          </a>
+                        </div>
+                        <div class="mt-6 rounded-xl border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Quick links</p>
+                          <ul class="mt-2 space-y-2">
+                            <li><a class="text-foreground hover:underline" href="#">API reference</a></li>
+                            <li><a class="text-foreground hover:underline" href="#">Changelog</a></li>
+                            <li><a class="text-foreground hover:underline" href="#">Design tokens</a></li>
+                          </ul>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Design tokens</h5>
+                            <p class="text-sm text-muted-foreground">Map shadcn variables to Bootstrap utilities for consistent surfaces.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Open guide</button>
+                        </div>
+                        <div class="mt-6 space-y-4 text-sm text-muted-foreground">
+                          <p class="rounded-xl border border-border bg-background p-4">Learn how to extend the design token pipeline with custom palettes, semantic roles, and dark mode elevations.</p>
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-sm font-semibold text-foreground">In this chapter</p>
+                            <ul class="mt-3 space-y-2">
+                              <li class="flex items-center justify-between">
+                                <span>Token categories</span>
+                                <span class="text-xs">5 min</span>
+                              </li>
+                              <li class="flex items-center justify-between">
+                                <span>Updating Tailwind config</span>
+                                <span class="text-xs">8 min</span>
+                              </li>
+                              <li class="flex items-center justify-between">
+                                <span>Syncing with Bootstrap</span>
+                                <span class="text-xs">7 min</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarDocs" aria-labelledby="sidebarDocsLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarDocsLabel">Docs navigation</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="space-y-2">
+                          <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="docsVersionSelectMobile">Version</label>
+                          <select id="docsVersionSelectMobile" class="form-select rounded-xl border-border bg-card text-sm">
+                            <option>v3.4 — Latest</option>
+                            <option>v3.3</option>
+                            <option>v3.2</option>
+                          </select>
+                        </div>
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 text-primary transition hover:bg-muted/60 hover:text-primary" href="#">
+                            <span>Getting started</span>
+                            <span class="text-xs">5</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Components</span>
+                            <span class="text-xs">18</span>
+                          </a>
+                          <a class="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">
+                            <span>Guides</span>
+                            <span class="text-xs">9</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Catalog filters</h4>
+                        <p class="text-sm text-muted-foreground">Ecommerce sidebar with collapsible filters and curated product grid.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarCatalog"
+                        aria-controls="sidebarCatalog"
+                      >
+                        Filter products
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.28fr_0.72fr]">
+                      <aside class="hidden space-y-4 rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="w-full space-y-3">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Collections</p>
+                          <div class="flex flex-col gap-2 text-sm font-medium text-muted-foreground">
+                            <a class="rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">All products</a>
+                            <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Workstations</a>
+                            <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Accessories</a>
+                          </div>
+                        </div>
+                        <div class="w-full space-y-3">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Filters</p>
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#catalogPrice" aria-expanded="true" aria-controls="catalogPrice">
+                            Price
+                            <span class="text-xs text-muted-foreground">$</span>
+                          </button>
+                          <div id="catalogPrice" class="collapse show space-y-3 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <label class="flex items-center justify-between gap-2">
+                              <span>Budget</span>
+                              <input type="range" class="form-range" min="0" max="100" value="45" />
+                            </label>
+                            <div class="flex items-center justify-between text-xs">
+                              <span>$199</span>
+                              <span>$2,499</span>
+                            </div>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#catalogFeatures" aria-expanded="false" aria-controls="catalogFeatures">
+                            Features
+                            <span class="text-xs text-muted-foreground">4</span>
+                          </button>
+                          <div id="catalogFeatures" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" checked />
+                              <span>Wireless</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>Ergonomic</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>Backlit</span>
+                            </label>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#catalogAvailability" aria-expanded="false" aria-controls="catalogAvailability">
+                            Availability
+                            <span class="text-xs text-muted-foreground">3</span>
+                          </button>
+                          <div id="catalogAvailability" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="radio" name="catalogStock" checked />
+                              <span>In stock</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="radio" name="catalogStock" />
+                              <span>Pre-order</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="radio" name="catalogStock" />
+                              <span>Backorder</span>
+                            </label>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Apply filters</button>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Latest arrivals</h5>
+                            <p class="text-sm text-muted-foreground">Hand-picked gear tailored to your workspace aesthetic.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Sort by newest</button>
+                        </div>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+                          <div class="space-y-3 rounded-xl border border-border bg-background p-4">
+                            <div class="aspect-square w-full rounded-lg bg-muted/40"></div>
+                            <p class="text-sm font-semibold text-foreground">Arc keyboard</p>
+                            <p class="text-xs text-muted-foreground">Wireless · Backlit</p>
+                            <div class="flex items-center justify-between text-sm text-foreground">
+                              <span>$189</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Add</button>
+                            </div>
+                          </div>
+                          <div class="space-y-3 rounded-xl border border-border bg-background p-4">
+                            <div class="aspect-square w-full rounded-lg bg-muted/40"></div>
+                            <p class="text-sm font-semibold text-foreground">Nimbus chair</p>
+                            <p class="text-xs text-muted-foreground">Ergonomic · Graphite</p>
+                            <div class="flex items-center justify-between text-sm text-foreground">
+                              <span>$499</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Add</button>
+                            </div>
+                          </div>
+                          <div class="space-y-3 rounded-xl border border-border bg-background p-4">
+                            <div class="aspect-square w-full rounded-lg bg-muted/40"></div>
+                            <p class="text-sm font-semibold text-foreground">Focus lamp</p>
+                            <p class="text-xs text-muted-foreground">Smart · Warm dim</p>
+                            <div class="flex items-center justify-between text-sm text-foreground">
+                              <span>$129</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Add</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarCatalog" aria-labelledby="sidebarCatalogLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarCatalogLabel">Filters</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">All products</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Workstations</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Accessories</a>
+                        </div>
+                        <div class="space-y-3">
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#catalogPriceMobile" aria-expanded="false" aria-controls="catalogPriceMobile">
+                            Price
+                            <span class="text-xs text-muted-foreground">$</span>
+                          </button>
+                          <div id="catalogPriceMobile" class="collapse space-y-3 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <label class="flex items-center justify-between gap-2">
+                              <span>Budget</span>
+                              <input type="range" class="form-range" min="0" max="100" value="45" />
+                            </label>
+                            <div class="flex items-center justify-between text-xs">
+                              <span>$199</span>
+                              <span>$2,499</span>
+                            </div>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#catalogFeaturesMobile" aria-expanded="false" aria-controls="catalogFeaturesMobile">
+                            Features
+                            <span class="text-xs text-muted-foreground">4</span>
+                          </button>
+                          <div id="catalogFeaturesMobile" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" checked />
+                              <span>Wireless</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>Ergonomic</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>Backlit</span>
+                            </label>
+                          </div>
+                          <button class="inline-flex w-full items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#catalogAvailabilityMobile" aria-expanded="false" aria-controls="catalogAvailabilityMobile">
+                            Availability
+                            <span class="text-xs text-muted-foreground">3</span>
+                          </button>
+                          <div id="catalogAvailabilityMobile" class="collapse space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="radio" name="catalogStockMobile" checked />
+                              <span>In stock</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="radio" name="catalogStockMobile" />
+                              <span>Pre-order</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="radio" name="catalogStockMobile" />
+                              <span>Backorder</span>
+                            </label>
+                          </div>
+                        </div>
+                        <button class="inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Apply filters</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Account settings</h4>
+                        <p class="text-sm text-muted-foreground">Profile overview, billing summary, and security controls in a responsive layout.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarSettings"
+                        aria-controls="sidebarSettings"
+                      >
+                        Manage account
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.32fr_0.68fr]">
+                      <aside class="hidden flex-col rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="flex items-center gap-3">
+                          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-semibold text-primary">JD</span>
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Jordan Diaz</p>
+                            <span class="text-xs text-muted-foreground">Founder plan</span>
+                          </div>
+                        </div>
+                        <div class="mt-5 space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">Profile</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Security</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Integrations</a>
+                        </div>
+                        <div class="mt-6 rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Billing summary</p>
+                          <p class="mt-2 flex items-center justify-between text-sm text-foreground"><span>Next invoice</span><span>$420 · Sep 1</span></p>
+                          <button class="mt-3 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">View invoices</button>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="grid gap-6 sm:grid-cols-2">
+                          <div class="space-y-3">
+                            <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="accountName">Full name</label>
+                            <input id="accountName" type="text" class="form-control rounded-xl border-border bg-background text-sm" value="Jordan Diaz" />
+                          </div>
+                          <div class="space-y-3">
+                            <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="accountEmail">Email</label>
+                            <input id="accountEmail" type="email" class="form-control rounded-xl border-border bg-background text-sm" value="jordan@acme.io" />
+                          </div>
+                          <div class="space-y-3">
+                            <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Notifications</label>
+                            <div class="space-y-2 text-sm text-muted-foreground">
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" checked />
+                                <span>Product updates</span>
+                              </label>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" />
+                                <span>Marketing</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="space-y-3">
+                            <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground" for="accountTimezone">Timezone</label>
+                            <select id="accountTimezone" class="form-select rounded-xl border-border bg-background text-sm">
+                              <option>UTC-05:00 Eastern</option>
+                              <option>UTC-08:00 Pacific</option>
+                              <option>UTC+01:00 Central European</option>
+                            </select>
+                          </div>
+                          <div class="space-y-3 sm:col-span-2">
+                            <label class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sessions</label>
+                            <div class="space-y-2 text-sm text-muted-foreground">
+                              <div class="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3">
+                                <div>
+                                  <p class="text-sm font-semibold text-foreground">Chrome · San Francisco</p>
+                                  <p class="text-xs text-muted-foreground">Active now</p>
+                                </div>
+                                <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Sign out</button>
+                              </div>
+                              <div class="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3">
+                                <div>
+                                  <p class="text-sm font-semibold text-foreground">Safari · London</p>
+                                  <p class="text-xs text-muted-foreground">Active 2d ago</p>
+                                </div>
+                                <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Remove</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-6 flex flex-wrap justify-end gap-3">
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Cancel</button>
+                          <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarSettings" aria-labelledby="sidebarSettingsLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarSettingsLabel">Account navigation</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <div class="flex items-center gap-3">
+                          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-semibold text-primary">JD</span>
+                          <div>
+                            <p class="text-sm font-semibold text-foreground">Jordan Diaz</p>
+                            <span class="text-xs text-muted-foreground">Founder plan</span>
+                          </div>
+                        </div>
+                        <div class="space-y-2 text-sm font-medium text-muted-foreground">
+                          <a class="rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">Profile</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Security</a>
+                          <a class="rounded-xl px-3 py-2 transition hover:bg-muted/60 hover:text-foreground" href="#">Integrations</a>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Billing summary</p>
+                          <p class="mt-2 flex items-center justify-between text-sm text-foreground"><span>Next invoice</span><span>$420 · Sep 1</span></p>
+                          <button class="mt-3 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">View invoices</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </template>
+            </article>
           </div>
         </section>
 
