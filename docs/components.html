@@ -313,6 +313,357 @@
                 </nav>
               </template>
             </article>
+
+            <article data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Responsive sidebar patterns</h3>
+                <p class="mt-1 text-sm text-muted-foreground">
+                  Offcanvas, collapsible, and condensed navigation rails that adapt gracefully to mobile breakpoints.
+                </p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <section class="space-y-10 rounded-2xl border border-border bg-background p-6">
+                  <div class="space-y-5">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Workspace offcanvas</h4>
+                        <p class="text-sm text-muted-foreground">Desktop shows the full rail while mobile uses a Bootstrap offcanvas drawer.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebarOffcanvasWorkspace"
+                        aria-controls="sidebarOffcanvasWorkspace"
+                      >
+                        Open menu
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.3fr_0.7fr]">
+                      <aside class="hidden h-full flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm lg:flex">
+                        <div class="space-y-5">
+                          <div class="flex items-center gap-3">
+                            <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold text-primary">NC</span>
+                            <div class="space-y-0.5">
+                              <p class="text-sm font-semibold text-foreground">Nimbus Collective</p>
+                              <span class="text-xs text-muted-foreground">Team workspace</span>
+                            </div>
+                          </div>
+                          <nav class="flex flex-col gap-1 text-sm font-medium">
+                            <a class="inline-flex items-center justify-between rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">
+                              <span>Home</span>
+                              <span aria-hidden="true" class="text-xs">•</span>
+                            </a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Projects</a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Analytics</a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                            <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Integrations</a>
+                          </nav>
+                        </div>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Storage</p>
+                          <div class="mt-2 flex items-center justify-between text-sm text-foreground">
+                            <span>68 GB used</span>
+                            <span>80%</span>
+                          </div>
+                          <div class="mt-3 h-2 rounded-full bg-muted">
+                            <div class="h-full w-4/5 rounded-full bg-primary"></div>
+                          </div>
+                          <button class="mt-4 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">
+                            Upgrade plan
+                          </button>
+                        </div>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <p class="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Today</p>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Product roadmap sync</h5>
+                          </div>
+                          <div class="flex gap-2">
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Share</button>
+                            <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">New task</button>
+                          </div>
+                        </div>
+                        <div class="mt-6 grid gap-4 md:grid-cols-2">
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Upcoming</p>
+                            <p class="mt-2 text-sm text-foreground">Design review with brand studio</p>
+                            <span class="mt-2 inline-flex w-fit items-center rounded-full border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-xs font-semibold text-secondary-foreground">Tomorrow · 2:30 PM</span>
+                          </div>
+                          <div class="rounded-xl border border-border bg-background p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Alerts</p>
+                            <p class="mt-2 text-sm text-foreground">Billing requires new payment method before 23 Aug.</p>
+                            <button class="mt-3 inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Update billing</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start lg:hidden" tabindex="-1" id="sidebarOffcanvasWorkspace" aria-labelledby="sidebarOffcanvasWorkspaceLabel">
+                      <div class="offcanvas-header border-b border-border/80 bg-card">
+                        <h5 class="offcanvas-title text-sm font-semibold text-foreground" id="sidebarOffcanvasWorkspaceLabel">Workspace navigation</h5>
+                        <button type="button" class="btn-close text-foreground" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body space-y-5 bg-background">
+                        <nav class="flex flex-col gap-1 text-sm font-medium">
+                          <a class="inline-flex items-center justify-between rounded-xl bg-primary/10 px-3 py-2 text-primary" href="#">
+                            <span>Home</span>
+                            <span aria-hidden="true" class="text-xs">•</span>
+                          </a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Projects</a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Analytics</a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Billing</a>
+                          <a class="rounded-xl px-3 py-2 text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" href="#">Integrations</a>
+                        </nav>
+                        <div class="rounded-xl border border-border bg-muted/40 p-4">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Storage</p>
+                          <div class="mt-2 flex items-center justify-between text-sm text-foreground">
+                            <span>68 GB used</span>
+                            <span>80%</span>
+                          </div>
+                          <div class="mt-3 h-2 rounded-full bg-muted">
+                            <div class="h-full w-4/5 rounded-full bg-primary"></div>
+                          </div>
+                          <button class="mt-4 inline-flex w-full items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">
+                            Upgrade plan
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Collapsible project filters</h4>
+                        <p class="text-sm text-muted-foreground">Bootstrap collapse powers the filter panel while desktop keeps it pinned open.</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#sidebarFilters"
+                        aria-expanded="false"
+                        aria-controls="sidebarFilters"
+                      >
+                        Toggle filters
+                      </button>
+                    </div>
+                    <div class="grid gap-6 lg:grid-cols-[0.28fr_0.72fr]">
+                      <aside id="sidebarFilters" class="collapse space-y-4 rounded-2xl border border-border bg-card p-5 shadow-sm lg:!block">
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Status</p>
+                          <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" checked />
+                              <span>Active</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>Planning</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2">
+                              <input class="form-check-input rounded border-border" type="checkbox" />
+                              <span>On hold</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Owners</p>
+                          <div class="flex flex-col gap-2">
+                            <button class="inline-flex items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ownerCollapse" aria-expanded="true" aria-controls="ownerCollapse">
+                              Product teams
+                              <span class="text-xs text-muted-foreground">View</span>
+                            </button>
+                            <div id="ownerCollapse" class="collapse show space-y-2 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" checked />
+                                <span>Design</span>
+                              </label>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" checked />
+                                <span>Engineering</span>
+                              </label>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" />
+                                <span>Marketing</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="space-y-2">
+                          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Timeline</p>
+                          <div class="flex flex-col gap-2">
+                            <button class="inline-flex items-center justify-between rounded-xl border border-border px-3 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#timelineCollapse" aria-expanded="false" aria-controls="timelineCollapse">
+                              Quarter
+                              <span class="text-xs text-muted-foreground">Edit</span>
+                            </button>
+                            <div id="timelineCollapse" class="collapse space-y-3 rounded-xl border border-border/80 bg-muted/40 p-3 text-sm text-muted-foreground">
+                              <p class="flex items-center justify-between">
+                                <span>Current</span>
+                                <span class="rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">Q3</span>
+                              </p>
+                              <label class="inline-flex items-center gap-2">
+                                <input class="form-check-input rounded border-border" type="checkbox" />
+                                <span>Include past quarters</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">
+                          Apply filters
+                        </button>
+                      </aside>
+                      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                          <div>
+                            <h5 class="text-xl font-semibold tracking-tight text-foreground">Active initiatives</h5>
+                            <p class="text-sm text-muted-foreground">Filtered by owners and quarterly milestones.</p>
+                          </div>
+                          <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Save view</button>
+                        </div>
+                        <ul class="mt-6 space-y-4">
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                              <p class="text-sm font-semibold text-foreground">Rebuild onboarding journey</p>
+                              <span class="inline-flex items-center rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">On track</span>
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">Design and experiment with a streamlined getting-started flow.</p>
+                          </li>
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                              <p class="text-sm font-semibold text-foreground">Machine learning insights</p>
+                              <span class="inline-flex items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">At risk</span>
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">Ship the predictive churn dashboard for success managers.</p>
+                          </li>
+                          <li class="rounded-xl border border-border bg-background p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                              <p class="text-sm font-semibold text-foreground">Localization rollout</p>
+                              <span class="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-xs font-semibold text-secondary-foreground">Planning</span>
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">Expand coverage to Spanish and Brazilian Portuguese audiences.</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h4 class="text-base font-semibold text-foreground">Compact icon rail</h4>
+                        <p class="text-sm text-muted-foreground">Mobile converts the rail into a tabbed command bar while desktop keeps the icons pinned.</p>
+                      </div>
+                      <div class="grid grid-cols-3 gap-2 rounded-full border border-border bg-card p-1 text-xs font-semibold text-muted-foreground shadow-sm sm:hidden">
+                        <button class="inline-flex items-center justify-center rounded-full bg-primary/10 px-3 py-1.5 text-primary transition" type="button" data-bs-target="#railPanelOverview" data-bs-toggle="tab" aria-controls="railPanelOverview" aria-selected="true">Overview</button>
+                        <button class="inline-flex items-center justify-center rounded-full px-3 py-1.5 transition hover:text-primary" type="button" data-bs-target="#railPanelReports" data-bs-toggle="tab" aria-controls="railPanelReports" aria-selected="false">Reports</button>
+                        <button class="inline-flex items-center justify-center rounded-full px-3 py-1.5 transition hover:text-primary" type="button" data-bs-target="#railPanelSettings" data-bs-toggle="tab" aria-controls="railPanelSettings" aria-selected="false">Settings</button>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-6 lg:flex-row">
+                      <aside class="hidden w-full max-w-[230px] flex-col rounded-2xl border border-border bg-card p-3 shadow-sm lg:flex">
+                        <nav class="flex flex-col gap-1">
+                          <button class="inline-flex items-center gap-3 rounded-xl bg-primary/10 px-3 py-2 text-sm font-semibold text-primary transition" type="button" data-bs-target="#railPanelOverview" data-bs-toggle="tab" aria-controls="railPanelOverview" aria-selected="true">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary/40 bg-primary/10">🏠</span>
+                            Overview
+                          </button>
+                          <button class="inline-flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" type="button" data-bs-target="#railPanelReports" data-bs-toggle="tab" aria-controls="railPanelReports" aria-selected="false">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted/60">📊</span>
+                            Reports
+                          </button>
+                          <button class="inline-flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground" type="button" data-bs-target="#railPanelSettings" data-bs-toggle="tab" aria-controls="railPanelSettings" aria-selected="false">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted/60">⚙️</span>
+                            Settings
+                          </button>
+                        </nav>
+                        <div class="mt-4 rounded-xl border border-border bg-muted/40 p-3 text-xs text-muted-foreground">
+                          <p class="font-semibold uppercase tracking-[0.18em]">Shortcuts</p>
+                          <p class="mt-2">Press <span class="rounded border border-border bg-background px-2 py-0.5 text-foreground">⌘K</span> to open command palette.</p>
+                        </div>
+                      </aside>
+                      <div class="tab-content w-full rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                        <div class="tab-pane fade show active space-y-4" id="railPanelOverview" role="tabpanel">
+                          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h5 class="text-xl font-semibold tracking-tight text-foreground">Weekly pulse</h5>
+                              <p class="text-sm text-muted-foreground">Snapshot of the latest velocity, sentiment, and blockers.</p>
+                            </div>
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">View details</button>
+                          </div>
+                          <div class="grid gap-4 md:grid-cols-3">
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Velocity</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">42%</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">+5.4%</span>
+                            </div>
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sentiment</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">7.8</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">Stable</span>
+                            </div>
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Blockers</p>
+                              <p class="mt-2 text-2xl font-semibold tracking-tight text-foreground">3</p>
+                              <span class="mt-3 inline-flex w-fit items-center rounded-full border border-warning/40 bg-warning/10 px-2.5 py-1 text-xs font-semibold text-warning">Escalated</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade space-y-4" id="railPanelReports" role="tabpanel">
+                          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h5 class="text-xl font-semibold tracking-tight text-foreground">Report library</h5>
+                              <p class="text-sm text-muted-foreground">Access saved exports and automate recurring digests.</p>
+                            </div>
+                            <button class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90" type="button">Create report</button>
+                          </div>
+                          <ul class="space-y-3">
+                            <li class="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3 text-sm">
+                              <span class="text-foreground">Executive summary</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Send</button>
+                            </li>
+                            <li class="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3 text-sm">
+                              <span class="text-foreground">Growth dashboard export</span>
+                              <button class="inline-flex items-center justify-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Download</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tab-pane fade space-y-4" id="railPanelSettings" role="tabpanel">
+                          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h5 class="text-xl font-semibold tracking-tight text-foreground">Platform settings</h5>
+                              <p class="text-sm text-muted-foreground">Control permissions, regional preferences, and API keys.</p>
+                            </div>
+                            <button class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-primary" type="button">Manage access</button>
+                          </div>
+                          <div class="space-y-3 text-sm text-muted-foreground">
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-sm font-semibold text-foreground">Team management</p>
+                              <p class="mt-1">Invite members, define roles, and manage provisioning via SCIM.</p>
+                            </div>
+                            <div class="rounded-xl border border-border bg-background p-4">
+                              <p class="text-sm font-semibold text-foreground">API access</p>
+                              <p class="mt-1">Rotate production keys and review webhook delivery logs.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </template>
+            </article>
           </div>
         </section>
 
