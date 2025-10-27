@@ -261,6 +261,22 @@
     @apply inline-flex h-8 w-8 items-center justify-center rounded-full border border-transparent text-muted-foreground transition hover:bg-muted hover:text-foreground;
   }
 
+  .btn-close::before {
+    content: "";
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: currentColor;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m5 5 6 6m0-6-6 6'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m5 5 6 6m0-6-6 6'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+
   .btn-group {
     @apply inline-flex overflow-hidden rounded-md shadow-sm;
   }
@@ -481,22 +497,22 @@
 
   .progress-bar.bg-success,
   .progress-bar-success {
-    @apply bg-success;
+    background-color: hsl(var(--success));
   }
 
   .progress-bar.bg-warning,
   .progress-bar-warning {
-    @apply bg-warning;
+    background-color: hsl(var(--warning));
   }
 
   .progress-bar.bg-danger,
   .progress-bar-danger {
-    @apply bg-destructive;
+    background-color: hsl(var(--destructive));
   }
 
   .progress-bar.bg-info,
   .progress-bar-info {
-    @apply bg-info;
+    background-color: hsl(var(--info));
   }
 }
 
@@ -814,7 +830,7 @@
   }
 
   .accordion-body {
-    @apply px-6 py-4 text-sm text-muted-foreground;
+    @apply px-6 py-4 text-sm text-foreground;
   }
 }
 

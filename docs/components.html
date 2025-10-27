@@ -23,7 +23,17 @@
     <script defer src="https://cdn.jsdelivr.net/npm/prettier@3.3.2/plugins/html.js"></script>
     <script defer src="assets/theme-toggle.js"></script>
   </head>
-  <body id="top" class="bg-background text-foreground antialiased" data-theme="light" data-site-root>
+  <body
+    id="top"
+    class="bg-background text-foreground antialiased relative"
+    data-theme="light"
+    data-site-root
+    data-bs-spy="scroll"
+    data-bs-target="#component-nav"
+    data-bs-offset="120"
+    data-bs-root-margin="0px 0px -40%"
+    data-bs-smooth-scroll="true"
+  >
     <div class="flex min-h-screen flex-col">
       <header class="border-b border-border/80 bg-background/80">
         <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -94,21 +104,81 @@
             <p class="max-w-3xl text-sm leading-relaxed text-muted-foreground">
               Every component honours the project motto: shadcn UI design foundations layered on Tailwind CSS, delivered through familiar Bootstrap semantics and interactive data attributes.
             </p>
-            <div class="flex flex-wrap gap-3 text-xs font-semibold text-muted-foreground">
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#navigation">Navigation</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#buttons">Buttons</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#menus">Menus</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#layout">Layout</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#content">Content</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#forms">Forms</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#feedback">Feedback</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#overlays">Overlays</a>
-              <a class="rounded-full border border-border px-3 py-1 transition hover:border-primary/50 hover:text-primary" href="#utilities">Utilities</a>
-            </div>
           </div>
         </section>
 
-        <section id="navigation" class="border-b border-border/80 bg-muted/30">
+        <div class="bg-background">
+          <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-[17rem_1fr] lg:items-start lg:gap-12">
+              <nav
+                id="component-nav"
+                aria-label="Component sections"
+                class="sticky top-24 z-30 -mt-10 mb-6 flex w-full scroll-pt-24 flex-wrap items-center gap-2 overflow-x-auto rounded-full border border-border/80 bg-card/90 px-3 py-3 text-xs font-semibold text-muted-foreground transition-shadow duration-200 ease-out backdrop-blur supports-[backdrop-filter]:bg-card/70 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-400/40 sm:px-4 sm:py-4 sm:text-sm lg:mt-0 lg:mb-0 lg:max-h-[calc(100vh-7rem)] lg:flex-col lg:items-stretch lg:gap-1.5 lg:overflow-y-auto lg:rounded-3xl lg:border lg:bg-card/90 lg:px-4 lg:py-6 lg:pr-1 lg:text-sm"
+              >
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#navigation"
+                >
+                  Navigation
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#buttons"
+                >
+                  Buttons
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#menus"
+                >
+                  Menus
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#layout"
+                >
+                  Layout
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#content"
+                >
+                  Content
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#forms"
+                >
+                  Forms
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#feedback"
+                >
+                  Feedback
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#interactions"
+                >
+                  Interactions
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#overlays"
+                >
+                  Overlays
+                </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#utilities"
+                >
+                  Utilities
+                </a>
+              </nav>
+
+              <div class="lg:pb-24">
+        <section id="navigation" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Navigation</h2>
@@ -246,7 +316,7 @@
           </div>
         </section>
 
-        <section id="buttons" class="border-b border-border/80 bg-background">
+        <section id="buttons" class="scroll-mt-28 border-b border-border/80 bg-background">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Buttons</h2>
@@ -308,7 +378,7 @@
           </div>
         </section>
 
-        <section id="menus" class="border-b border-border/80 bg-muted/30">
+        <section id="menus" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Menus &amp; dropdowns</h2>
@@ -361,7 +431,7 @@
           </div>
         </section>
 
-        <section id="layout" class="border-b border-border/80 bg-background">
+        <section id="layout" class="scroll-mt-28 border-b border-border/80 bg-background">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Layout &amp; structure</h2>
@@ -385,21 +455,26 @@
               <div data-slot="preview" class="px-6 py-6"></div>
               <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
               <template data-example>
-                <div class="space-y-6 rounded-2xl border border-border bg-background p-6">
-                  <div class="row g-4">
-                    <div class="col-md-4">
-                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 1</div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 2</div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Column 3</div>
+                <div class="space-y-8 rounded-2xl border border-border bg-background p-6">
+                  <div class="space-y-3">
+                    <h4 class="text-sm font-semibold text-muted-foreground">Responsive thirds</h4>
+                    <div class="grid gap-4 md:grid-cols-3">
+                      <div class="rounded-xl border border-border/80 bg-muted/60 p-6 text-center text-sm font-medium text-muted-foreground">Column 1</div>
+                      <div class="rounded-xl border border-border/80 bg-muted/60 p-6 text-center text-sm font-medium text-muted-foreground">Column 2</div>
+                      <div class="rounded-xl border border-border/80 bg-muted/60 p-6 text-center text-sm font-medium text-muted-foreground">Column 3</div>
                     </div>
                   </div>
-                  <div class="row g-4">
-                    <div class="col-12">
-                      <div class="rounded-lg border border-border bg-muted p-6 text-center">Full width column</div>
+                  <div class="space-y-3">
+                    <h4 class="text-sm font-semibold text-muted-foreground">Split layout</h4>
+                    <div class="grid gap-4 md:grid-cols-[2fr_1fr]">
+                      <div class="rounded-xl border border-border/80 bg-muted/40 p-6 text-center text-sm font-medium text-muted-foreground">Main content</div>
+                      <div class="rounded-xl border border-border/80 bg-muted/60 p-6 text-center text-sm font-medium text-muted-foreground">Sidebar</div>
+                    </div>
+                  </div>
+                  <div class="space-y-3">
+                    <h4 class="text-sm font-semibold text-muted-foreground">Stacked full width</h4>
+                    <div class="grid gap-4">
+                      <div class="rounded-xl border border-border/80 bg-muted/60 p-6 text-center text-sm font-medium text-muted-foreground">Full width column</div>
                     </div>
                   </div>
                 </div>
@@ -511,7 +586,7 @@
           </div>
         </section>
 
-        <section id="content" class="border-b border-border/80 bg-muted/30">
+        <section id="content" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Content displays</h2>
@@ -677,7 +752,7 @@
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <div class="flex h-64 flex-col justify-between rounded-[calc(var(--radius)*1.5)] bg-gradient-banner p-8 text-primary-foreground">
+                        <div class="flex h-64 flex-col justify-between rounded-[calc(var(--radius)*1.5)] bg-gradient-to-br from-primary/95 via-primary to-primary/70 p-8 text-primary-foreground shadow-lg ring-1 ring-primary/40">
                           <div class="text-xs font-semibold uppercase tracking-wide text-primary-foreground/80">Component library</div>
                           <div class="space-y-2">
                             <h4 class="text-2xl font-semibold">Bring shadcn polish to Bootstrap</h4>
@@ -686,7 +761,7 @@
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <div class="flex h-64 flex-col justify-between rounded-[calc(var(--radius)*1.5)] bg-muted p-8">
+                        <div class="flex h-64 flex-col justify-between rounded-[calc(var(--radius)*1.5)] bg-gradient-to-br from-muted via-background to-muted/70 p-8 text-foreground shadow-lg ring-1 ring-border/60">
                           <div class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Live previews</div>
                           <div class="space-y-2">
                             <h4 class="text-2xl font-semibold text-foreground">Prototype faster with Tailwind utilities</h4>
@@ -695,7 +770,7 @@
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <div class="flex h-64 flex-col justify-between rounded-[calc(var(--radius)*1.5)] bg-secondary p-8 text-secondary-foreground">
+                        <div class="flex h-64 flex-col justify-between rounded-[calc(var(--radius)*1.5)] bg-gradient-to-br from-secondary via-secondary/80 to-secondary/60 p-8 text-secondary-foreground shadow-lg ring-1 ring-secondary/40">
                           <div class="text-xs font-semibold uppercase tracking-wide text-secondary-foreground/80">Reusable layouts</div>
                           <div class="space-y-2">
                             <h4 class="text-2xl font-semibold">Accessible controls out of the box</h4>
@@ -719,7 +794,7 @@
           </div>
         </section>
 
-        <section id="forms" class="border-b border-border/80 bg-background">
+        <section id="forms" class="scroll-mt-28 border-b border-border/80 bg-background">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Forms</h2>
@@ -801,7 +876,7 @@
           </div>
         </section>
 
-        <section id="feedback" class="border-b border-border/80 bg-muted/30">
+        <section id="feedback" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Feedback &amp; indicators</h2>
@@ -1011,7 +1086,7 @@
           </div>
         </section>
 
-        <section id="interactions" class="border-b border-border/80 bg-background">
+        <section id="interactions" class="scroll-mt-28 border-b border-border/80 bg-background">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Interactive helpers</h2>
@@ -1070,7 +1145,7 @@
                     <div class="collapse" id="componentsCollapse">
                       <div class="card mt-4">
                         <div class="card-body">
-                          <p class="text-muted mb-0">This is the collapsed content. It appears and disappears when you click the toggle button above, demonstrating Bootstrap JS behaviour with shadcn styling.</p>
+                          <p class="mb-0 text-sm text-foreground">This is the collapsed content. It appears and disappears when you click the toggle button above, demonstrating Bootstrap JS behaviour with shadcn styling.</p>
                         </div>
                       </div>
                     </div>
@@ -1122,7 +1197,7 @@
           </div>
         </section>
 
-        <section id="overlays" class="border-b border-border/80 bg-muted/30">
+        <section id="overlays" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Overlays</h2>
@@ -1216,7 +1291,7 @@
           </div>
         </section>
 
-        <section id="utilities" class="border-b border-border/80 bg-background">
+        <section id="utilities" class="scroll-mt-28 border-b border-border/80 bg-background">
           <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-semibold text-foreground">Utilities</h2>
@@ -1258,7 +1333,7 @@
                     <p class="text-xs text-muted">Warning</p>
                   </div>
                   <div class="text-center">
-                    <div class="mb-2 h-16 w-16 rounded-lg bg-danger"></div>
+                    <div class="mb-2 h-16 w-16 rounded-lg bg-destructive"></div>
                     <p class="text-xs text-muted">Danger</p>
                   </div>
                   <div class="text-center">
@@ -1315,6 +1390,10 @@
             </div>
           </div>
         </section>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer class="border-t border-border/80 bg-background/80">
@@ -1423,6 +1502,12 @@
         });
 
         if (window.bootstrap) {
+          window.bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+            target: '#component-nav',
+            offset: 120,
+            rootMargin: '0px 0px -40%',
+          });
+
           document.querySelectorAll('.alert').forEach((alertEl) => {
             window.bootstrap.Alert.getOrCreateInstance(alertEl);
           });
