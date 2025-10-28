@@ -44,9 +44,13 @@
   };
 
   const applyTheme = (theme, { remember = false } = {}) => {
+    const isDark = theme === 'dark';
+
     root.setAttribute('data-theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.style.setProperty('color-scheme', theme === 'dark' ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', isDark);
+    root.classList.toggle('dark', isDark);
+    document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light');
     updateToggleVisuals(theme);
 
     if (remember) {
