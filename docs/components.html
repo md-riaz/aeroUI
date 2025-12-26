@@ -35,178 +35,231 @@
     data-bs-smooth-scroll="true"
   >
     <div class="flex min-h-screen flex-col">
-      <header class="border-b border-border/80 bg-background/80">
-        <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <a class="flex items-center gap-2 text-base font-semibold sm:text-lg" href="./">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <!-- Modern sticky header with blur effect -->
+      <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+        <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+          <a class="flex items-center gap-2.5 text-base font-bold sm:text-lg" href="./">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-blue-600 text-white shadow-md shadow-primary/25">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m12 4 6.928 4v8L12 20l-6.928-4V8L12 4Z" stroke-linejoin="round" stroke-linecap="round"></path>
                 <path d="m9.5 9.75 5 2.25-5 2.25" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </span>
-            aeroUI Components
+            <span class="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">aeroUI</span>
           </a>
-          <nav class="hidden items-center gap-6 text-sm font-medium md:flex">
-            <a class="text-muted-foreground transition hover:text-foreground" href="index.html">Overview</a>
-            <a class="text-muted-foreground transition hover:text-foreground" href="docs.html">Docs</a>
-            <a class="text-muted-foreground transition hover:text-foreground" href="blocks.html">Blocks</a>
+          <nav class="hidden items-center gap-1 md:flex">
+            <a class="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground" href="index.html">Overview</a>
+            <a class="rounded-md px-3 py-2 text-sm font-medium text-foreground" href="components.html">Components</a>
+            <a class="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground" href="docs.html">Docs</a>
+            <a class="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground" href="blocks.html">Blocks</a>
           </nav>
           <div class="flex items-center gap-2">
             <button
               type="button"
               data-theme-toggle
               aria-label="Switch to dark theme"
-              class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground shadow-sm transition hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <span class="sr-only">Toggle theme</span>
-              <span data-theme-icon="light" aria-hidden="true" class="inline-flex items-center gap-2">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <span data-theme-icon="light" aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="4"></circle>
-                  <path
-                    d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M8.05 15.95l-1.414 1.414m12.728 0-1.414-1.414M8.05 8.05 6.636 6.636"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
+                  <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M8.05 15.95l-1.414 1.414m12.728 0-1.414-1.414M8.05 8.05 6.636 6.636" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
-                <span>Light</span>
               </span>
-              <span data-theme-icon="dark" aria-hidden="true" class="hidden inline-flex items-center gap-2">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path
-                    d="M21 12.79A9 9 0 0 1 11.21 3a7 7 0 1 0 9.79 9.79Z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
+              <span data-theme-icon="dark" aria-hidden="true" class="hidden">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 0 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
-                <span>Dark</span>
               </span>
             </button>
             <a
               href="https://github.com/md-riaz/aeroUI"
-              class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+              class="hidden items-center gap-2 rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background shadow-sm transition-colors hover:bg-foreground/90 sm:inline-flex"
             >
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
               GitHub
             </a>
+            <!-- Mobile menu button -->
+            <button class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground md:hidden" type="button" aria-label="Open menu">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+            </button>
           </div>
         </div>
       </header>
 
       <main class="flex-1">
-        <section class="border-b border-border/80 bg-background">
-          <div class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 lg:px-8">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Component gallery
-            </span>
-            <h1 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Preview and copy every aeroUI element</h1>
-            <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">
-              Explore polished Bootstrap components rendered with aeroUI&rsquo;s shadcn-inspired tokens. Each example pairs a live preview with copy-ready markup so you can drop the snippets into any Bootstrap template, then compile <code class="rounded bg-secondary px-1 py-0.5 text-xs text-foreground">src/aeroui.css</code> with your Tailwind build to generate the final styles.
-            </p>
-            <p class="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-              Every component honours the project motto: shadcn UI design foundations layered on Tailwind CSS, delivered through familiar Bootstrap semantics and interactive data attributes.
-            </p>
+        <!-- Hero Section - Modern gradient background like shadcn -->
+        <section class="relative overflow-hidden border-b border-border/40">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(59,130,246,0.12),transparent)]"></div>
+          <div class="relative mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+            <div class="flex flex-col items-center text-center">
+              <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary shadow-sm">
+                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                </svg>
+                Component Library
+              </span>
+              <h1 class="max-w-4xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Build beautiful interfaces with <span class="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">aeroUI</span>
+              </h1>
+              <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                Beautifully designed components built with Tailwind CSS and Bootstrap interactivity. Copy, paste, and customize.
+              </p>
+              <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <a href="#navigation" class="btn btn-primary px-6 py-3 text-base shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/30">
+                  Browse Components
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <a href="docs.html" class="btn btn-outline px-6 py-3 text-base">
+                  Read Documentation
+                </a>
+              </div>
+            </div>
+            <!-- Stats row -->
+            <div class="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-foreground sm:text-4xl">50+</div>
+                <div class="mt-1 text-sm text-muted-foreground">Components</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-foreground sm:text-4xl">100%</div>
+                <div class="mt-1 text-sm text-muted-foreground">Responsive</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-foreground sm:text-4xl">A11y</div>
+                <div class="mt-1 text-sm text-muted-foreground">Accessible</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-foreground sm:text-4xl">Dark</div>
+                <div class="mt-1 text-sm text-muted-foreground">Mode Ready</div>
+              </div>
+            </div>
           </div>
         </section>
 
         <div class="bg-background">
-          <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-[17rem_1fr] lg:items-start lg:gap-12">
+          <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-[16rem_1fr] lg:items-start lg:gap-10 xl:grid-cols-[18rem_1fr] xl:gap-14">
+              <!-- Modern sidebar navigation -->
               <nav
                 id="component-nav"
                 aria-label="Component sections"
-                class="sticky top-24 z-30 -mt-10 mb-6 flex w-full scroll-pt-24 flex-wrap items-center gap-2 overflow-x-auto rounded-full border border-border/80 bg-card/90 px-3 py-3 text-xs font-semibold text-muted-foreground transition-shadow duration-200 ease-out backdrop-blur supports-[backdrop-filter]:bg-card/70 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-400/40 sm:px-4 sm:py-4 sm:text-sm lg:mt-0 lg:mb-0 lg:max-h-[calc(100vh-7rem)] lg:flex-col lg:items-stretch lg:gap-1.5 lg:overflow-y-auto lg:rounded-3xl lg:border lg:bg-card/90 lg:px-4 lg:py-6 lg:pr-1 lg:text-sm"
+                class="sticky top-20 z-30 -mt-6 mb-8 hidden w-full scroll-pt-24 flex-col gap-1 py-8 lg:flex lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto lg:pr-4 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent"
               >
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#navigation"
-                >
+                <div class="mb-4 px-3">
+                  <h4 class="text-sm font-semibold text-foreground">Components</h4>
+                  <p class="mt-1 text-xs text-muted-foreground">Browse all available components</p>
+                </div>
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#navigation">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
                   Navigation
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#buttons"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#buttons">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>
                   Buttons
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#menus"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#menus">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" /></svg>
                   Menus
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#layout"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#layout">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
                   Layout
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#content"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#content">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
                   Content
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#forms"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#forms">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>
                   Forms
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#feedback"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#feedback">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" /></svg>
                   Feedback
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#interactions"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#interactions">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>
                   Interactions
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#overlays"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#overlays">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" /></svg>
                   Overlays
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#utilities"
-                >
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#utilities">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" /></svg>
                   Utilities
                 </a>
-                <a
-                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
-                  href="#shadcn-extras"
-                >
+                <div class="my-4 h-px bg-border"></div>
+                <a class="nav-link group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-accent hover:text-accent-foreground [.active&]:bg-primary/10 [.active&]:text-primary [.active&]:font-semibold" href="#shadcn-extras">
+                  <svg class="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
                   Shadcn Extras
+                  <span class="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">New</span>
                 </a>
               </nav>
 
-              <div class="lg:pb-24">
-        <section id="navigation" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
-          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
-            <div class="flex flex-col gap-2">
-              <h2 class="text-2xl font-semibold text-foreground">Navigation</h2>
-              <p class="text-sm text-muted-foreground">Structure primary navigation, breadcrumbs, and tabbed interfaces with cohesive styling.</p>
+              <!-- Mobile navigation tabs -->
+              <div class="sticky top-16 z-30 -mx-4 mb-8 overflow-x-auto border-b border-border bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:-mx-6 sm:px-6 lg:hidden">
+                <nav class="flex gap-1 py-3" aria-label="Component sections mobile">
+                  <a href="#navigation" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Navigation</a>
+                  <a href="#buttons" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Buttons</a>
+                  <a href="#menus" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Menus</a>
+                  <a href="#layout" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Layout</a>
+                  <a href="#content" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Content</a>
+                  <a href="#forms" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Forms</a>
+                  <a href="#feedback" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Feedback</a>
+                  <a href="#interactions" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Interactions</a>
+                  <a href="#overlays" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Overlays</a>
+                  <a href="#utilities" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Utilities</a>
+                  <a href="#shadcn-extras" class="nav-link shrink-0 rounded-full border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [.active&]:border-primary/30 [.active&]:bg-primary/10 [.active&]:text-primary">Extras</a>
+                </nav>
+              </div>
+
+              <div class="pb-16 lg:pb-24">
+        <!-- Section with modern styling -->
+        <section id="navigation" class="scroll-mt-32 py-12 lg:py-16">
+          <div class="space-y-8">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 text-primary">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold tracking-tight text-foreground">Navigation</h2>
+                  <p class="text-sm text-muted-foreground">Structure primary navigation, breadcrumbs, and tabbed interfaces with cohesive styling.</p>
+                </div>
+              </div>
             </div>
 
-            <article id="navbar" data-component-example class="rounded-3xl border border-border bg-card">
-              <div class="border-b border-border/80 px-6 py-5">
-                <h3 class="text-lg font-semibold text-foreground">Navbar</h3>
-                <p class="mt-1 text-sm text-muted-foreground">Responsive header with branding, nav links, and call-to-action buttons.</p>
-              </div>
-              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
-                <div class="flex items-center gap-2">
-                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
-                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+            <article id="navbar" data-component-example class="group overflow-hidden rounded-xl border border-border/60 bg-card shadow-sm transition-all duration-300 hover:border-border hover:shadow-md">
+              <div class="flex items-center justify-between border-b border-border/60 px-4 py-4 sm:px-6">
+                <div>
+                  <h3 class="text-base font-semibold text-foreground">Navbar</h3>
+                  <p class="mt-0.5 text-sm text-muted-foreground">Responsive header with branding, nav links, and call-to-action buttons.</p>
                 </div>
-                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
-                  Copy markup
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/40 bg-muted/30 px-4 py-2.5 sm:px-6">
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1.5 rounded-md bg-background px-3 py-1.5 text-xs font-medium text-foreground shadow-sm ring-1 ring-border transition hover:bg-accent">
+                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    Preview
+                  </button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-accent hover:text-accent-foreground">
+                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
+                    Code
+                  </button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-accent hover:text-accent-foreground">
+                  <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184" /></svg>
+                  Copy
                 </button>
               </div>
-              <div data-slot="preview" class="px-6 py-6"></div>
-              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <div data-slot="preview" class="bg-gradient-to-br from-muted/30 to-background p-6 sm:p-8"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto bg-zinc-950 p-6 text-sm text-zinc-100 dark:bg-zinc-900"><code class="language-html"></code></pre>
               <template data-example>
                 <nav class="navbar flex flex-col gap-4 rounded-2xl border border-border bg-background px-4 py-4 md:flex-row md:items-center md:justify-between">
                   <div class="flex items-center gap-3">
