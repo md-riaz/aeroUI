@@ -175,6 +175,12 @@
                 >
                   Utilities
                 </a>
+                <a
+                  class="nav-link inline-flex items-center justify-center whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-muted-foreground transition-colors duration-200 hover:border-primary/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:justify-start lg:rounded-2xl lg:px-3 lg:py-2 lg:whitespace-normal [.active&]:border-primary/40 [.active&]:bg-primary/15 [.active&]:text-primary"
+                  href="#shadcn-extras"
+                >
+                  Shadcn Extras
+                </a>
               </nav>
 
               <div class="lg:pb-24">
@@ -3028,6 +3034,587 @@
                 </div>
               </template>
             </article>
+          </div>
+        </section>
+
+        <section id="shadcn-extras" class="scroll-mt-28 border-b border-border/80 bg-muted/30">
+          <div class="mx-auto w-full max-w-6xl space-y-10 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-semibold text-foreground">Shadcn Extras</h2>
+              <p class="text-sm text-muted-foreground">Additional components inspired by shadcn/ui for a complete modern design system.</p>
+            </div>
+
+            <article id="avatar" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Avatar</h3>
+                <p class="mt-1 text-sm text-muted-foreground">User profile images with fallback initials and grouping support.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">Avatar Sizes</h4>
+                  <div class="flex items-center gap-4">
+                    <div class="avatar avatar-sm">
+                      <div class="avatar-fallback">SM</div>
+                    </div>
+                    <div class="avatar">
+                      <div class="avatar-fallback">MD</div>
+                    </div>
+                    <div class="avatar avatar-lg">
+                      <div class="avatar-fallback">LG</div>
+                    </div>
+                    <div class="avatar avatar-xl">
+                      <div class="avatar-fallback">XL</div>
+                    </div>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Avatar with Image</h4>
+                  <div class="flex items-center gap-4">
+                    <div class="avatar">
+                      <img class="avatar-image" src="https://api.dicebear.com/7.x/initials/svg?seed=JD" alt="JD">
+                    </div>
+                    <div class="avatar">
+                      <img class="avatar-image" src="https://api.dicebear.com/7.x/initials/svg?seed=AR" alt="AR">
+                    </div>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Avatar Group</h4>
+                  <div class="avatar-group">
+                    <div class="avatar">
+                      <div class="avatar-fallback">JD</div>
+                    </div>
+                    <div class="avatar">
+                      <div class="avatar-fallback">AR</div>
+                    </div>
+                    <div class="avatar">
+                      <div class="avatar-fallback">MK</div>
+                    </div>
+                    <div class="avatar">
+                      <div class="avatar-fallback">+3</div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="separator" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Separator</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Visual dividers for content separation.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">Horizontal Separator</h4>
+                  <div class="space-y-4">
+                    <p class="text-sm text-muted-foreground">Content above the separator</p>
+                    <div class="separator separator-horizontal"></div>
+                    <p class="text-sm text-muted-foreground">Content below the separator</p>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Separator with Text</h4>
+                  <div class="separator-with-text">
+                    <span class="separator-text">OR</span>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Vertical Separator</h4>
+                  <div class="flex h-10 items-center gap-4">
+                    <span class="text-sm">Item 1</span>
+                    <div class="separator separator-vertical"></div>
+                    <span class="text-sm">Item 2</span>
+                    <div class="separator separator-vertical"></div>
+                    <span class="text-sm">Item 3</span>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="skeleton" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Skeleton</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Loading placeholder animations for content that is being fetched.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">Basic Skeletons</h4>
+                  <div class="space-y-3">
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text-sm"></div>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Card Skeleton</h4>
+                  <div class="flex items-center gap-4">
+                    <div class="skeleton skeleton-avatar"></div>
+                    <div class="flex-1 space-y-2">
+                      <div class="skeleton skeleton-text"></div>
+                      <div class="skeleton skeleton-text-sm"></div>
+                    </div>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Button Skeleton</h4>
+                  <div class="flex gap-3">
+                    <div class="skeleton skeleton-button"></div>
+                    <div class="skeleton skeleton-button"></div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="slider" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Slider</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Range input for selecting values within a range.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">Native Range Slider</h4>
+                  <div class="space-y-4">
+                    <div class="space-y-2">
+                      <label class="text-sm font-medium">Volume</label>
+                      <input type="range" class="slider-input w-full" min="0" max="100" value="50">
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-sm font-medium">Brightness</label>
+                      <input type="range" class="slider-input w-full" min="0" max="100" value="75">
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="toggle" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Toggle</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Single button toggle for on/off states.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">Toggle Buttons</h4>
+                  <div class="flex items-center gap-2">
+                    <button class="toggle">Bold</button>
+                    <button class="toggle active">Italic</button>
+                    <button class="toggle">Underline</button>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Toggle Group</h4>
+                  <div class="toggle-group toggle-group-single rounded-lg border border-border p-1">
+                    <button class="toggle-group-item active">Left</button>
+                    <button class="toggle-group-item">Center</button>
+                    <button class="toggle-group-item">Right</button>
+                  </div>
+                  <h4 class="text-sm font-semibold text-foreground">Outline Toggle</h4>
+                  <div class="flex items-center gap-2">
+                    <button class="toggle toggle-outline">Option A</button>
+                    <button class="toggle toggle-outline active">Option B</button>
+                    <button class="toggle toggle-outline">Option C</button>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="command" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Command Palette</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Command menu interface for keyboard-driven navigation.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="command mx-auto max-w-md rounded-lg border border-border shadow-lg">
+                  <div class="command-input-wrapper">
+                    <svg class="command-input-icon h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21-4.35-4.35" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                    <input class="command-input" placeholder="Type a command or search...">
+                  </div>
+                  <div class="command-list">
+                    <div class="command-group">
+                      <div class="command-group-heading">Suggestions</div>
+                      <div class="command-item" data-selected="true">
+                        <svg class="command-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Dashboard
+                        <span class="command-shortcut">⌘D</span>
+                      </div>
+                      <div class="command-item">
+                        <svg class="command-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M12 3a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Profile
+                        <span class="command-shortcut">⌘P</span>
+                      </div>
+                      <div class="command-item">
+                        <svg class="command-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle></svg>
+                        Settings
+                        <span class="command-shortcut">⌘S</span>
+                      </div>
+                    </div>
+                    <div class="command-separator"></div>
+                    <div class="command-group">
+                      <div class="command-group-heading">Actions</div>
+                      <div class="command-item">
+                        <svg class="command-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Create New
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="drawer" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Drawer</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Bottom sheet drawer for mobile-friendly interactions.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="relative mx-auto max-w-md overflow-hidden rounded-xl border border-border bg-background shadow-lg" style="height: 300px;">
+                  <div class="p-4 text-center">
+                    <p class="text-sm text-muted-foreground">Drawer preview (static example)</p>
+                  </div>
+                  <div class="absolute inset-x-0 bottom-0 rounded-t-xl border-t border-border bg-background">
+                    <div class="drawer-handle"></div>
+                    <div class="drawer-header">
+                      <h4 class="drawer-title">Edit Profile</h4>
+                      <p class="drawer-description">Make changes to your profile here.</p>
+                    </div>
+                    <div class="p-4 space-y-4">
+                      <div class="space-y-2">
+                        <label class="text-sm font-medium">Name</label>
+                        <input class="form-control" value="John Doe">
+                      </div>
+                      <div class="space-y-2">
+                        <label class="text-sm font-medium">Username</label>
+                        <input class="form-control" value="@johndoe">
+                      </div>
+                    </div>
+                    <div class="drawer-footer">
+                      <button class="btn btn-primary w-full">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="sheet" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Sheet</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Side panel that slides in from any edge of the screen.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="relative mx-auto max-w-2xl overflow-hidden rounded-xl border border-border bg-background shadow-lg" style="height: 350px;">
+                  <div class="flex h-full">
+                    <div class="flex-1 p-6">
+                      <p class="text-sm text-muted-foreground">Main content area</p>
+                      <button class="btn btn-outline mt-4">Open Sheet</button>
+                    </div>
+                    <div class="w-64 border-l border-border bg-background p-6">
+                      <div class="sheet-header">
+                        <h4 class="sheet-title">Sheet Title</h4>
+                        <p class="sheet-description">This is a sheet description.</p>
+                      </div>
+                      <div class="mt-4 space-y-4">
+                        <div class="space-y-2">
+                          <label class="text-sm font-medium">Email</label>
+                          <input class="form-control" placeholder="email@example.com">
+                        </div>
+                        <div class="space-y-2">
+                          <label class="text-sm font-medium">Message</label>
+                          <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                      </div>
+                      <div class="sheet-footer mt-6">
+                        <button class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="radio-group" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Radio Group</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Styled radio button groups and radio cards.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">Radio Cards</h4>
+                  <div class="grid gap-3 sm:grid-cols-3">
+                    <label class="radio-card checked">
+                      <input type="radio" name="plan" value="starter" checked class="sr-only">
+                      <div class="radio-card-content">
+                        <div class="radio-card-title">Starter</div>
+                        <div class="radio-card-description">Perfect for trying out</div>
+                      </div>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="plan" value="pro" class="sr-only">
+                      <div class="radio-card-content">
+                        <div class="radio-card-title">Pro</div>
+                        <div class="radio-card-description">For growing teams</div>
+                      </div>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="plan" value="enterprise" class="sr-only">
+                      <div class="radio-card-content">
+                        <div class="radio-card-title">Enterprise</div>
+                        <div class="radio-card-description">Large-scale deployment</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="data-table" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Data Table</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Enhanced table component with sorting and selection support.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="rounded-lg border border-border">
+                  <table class="data-table">
+                    <thead class="data-table-header">
+                      <tr>
+                        <th class="data-table-head">
+                          <input type="checkbox" class="rounded border-input">
+                        </th>
+                        <th class="data-table-head">
+                          <div class="data-table-sortable">
+                            Name
+                            <svg class="data-table-sort-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                          </div>
+                        </th>
+                        <th class="data-table-head">Email</th>
+                        <th class="data-table-head">Status</th>
+                        <th class="data-table-head text-right">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody class="data-table-body">
+                      <tr class="data-table-row">
+                        <td class="data-table-cell"><input type="checkbox" class="rounded border-input"></td>
+                        <td class="data-table-cell font-medium">Olivia Martin</td>
+                        <td class="data-table-cell">olivia@example.com</td>
+                        <td class="data-table-cell"><span class="badge badge-success">Success</span></td>
+                        <td class="data-table-cell text-right">$1,999.00</td>
+                      </tr>
+                      <tr class="data-table-row" data-state="selected">
+                        <td class="data-table-cell"><input type="checkbox" checked class="rounded border-input"></td>
+                        <td class="data-table-cell font-medium">Jackson Lee</td>
+                        <td class="data-table-cell">jackson@example.com</td>
+                        <td class="data-table-cell"><span class="badge badge-warning">Pending</span></td>
+                        <td class="data-table-cell text-right">$39.00</td>
+                      </tr>
+                      <tr class="data-table-row">
+                        <td class="data-table-cell"><input type="checkbox" class="rounded border-input"></td>
+                        <td class="data-table-cell font-medium">Isabella Nguyen</td>
+                        <td class="data-table-cell">isabella@example.com</td>
+                        <td class="data-table-cell"><span class="badge badge-danger">Failed</span></td>
+                        <td class="data-table-cell text-right">$299.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="data-table-pagination border-t border-border p-4">
+                    <div class="data-table-pagination-info">1 of 3 row(s) selected.</div>
+                    <div class="data-table-page-buttons">
+                      <button class="btn btn-outline btn-sm" disabled>Previous</button>
+                      <button class="btn btn-outline btn-sm">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
+            <article id="input-otp" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Input OTP</h3>
+                <p class="mt-1 text-sm text-muted-foreground">One-time password input for verification codes.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-6">
+                  <h4 class="text-sm font-semibold text-foreground">6-Digit OTP Input</h4>
+                  <div class="input-otp">
+                    <div class="input-otp-group">
+                      <div class="input-otp-slot">
+                        <span class="input-otp-slot-char">1</span>
+                      </div>
+                      <div class="input-otp-slot">
+                        <span class="input-otp-slot-char">2</span>
+                      </div>
+                      <div class="input-otp-slot">
+                        <span class="input-otp-slot-char">3</span>
+                      </div>
+                    </div>
+                    <span class="input-otp-separator">-</span>
+                    <div class="input-otp-group">
+                      <div class="input-otp-slot" data-active>
+                        <div class="input-otp-slot-caret"></div>
+                      </div>
+                      <div class="input-otp-slot"></div>
+                      <div class="input-otp-slot"></div>
+                    </div>
+                  </div>
+                  <p class="text-sm text-muted-foreground">Enter the 6-digit code sent to your phone.</p>
+                </div>
+              </template>
+            </article>
+
+            <article id="sonner-toast" data-component-example class="rounded-3xl border border-border bg-card">
+              <div class="border-b border-border/80 px-6 py-5">
+                <h3 class="text-lg font-semibold text-foreground">Sonner Toast</h3>
+                <p class="mt-1 text-sm text-muted-foreground">Enhanced toast notifications with different states.</p>
+              </div>
+              <div class="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/40 px-6 py-3 text-xs font-semibold">
+                <div class="flex items-center gap-2">
+                  <button type="button" data-view="preview" class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-primary transition hover:bg-primary/20">Preview</button>
+                  <button type="button" data-view="code" class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-muted/60">Code</button>
+                </div>
+                <button type="button" data-copy class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-muted-foreground transition hover:border-primary/60 hover:text-primary">
+                  Copy markup
+                </button>
+              </div>
+              <div data-slot="preview" class="px-6 py-6"></div>
+              <pre data-slot="code" class="hidden overflow-x-auto px-6 py-6 text-xs text-muted-foreground"><code class="language-html"></code></pre>
+              <template data-example>
+                <div class="space-y-4 max-w-md">
+                  <div class="sonner-toast sonner-toast-success rounded-lg">
+                    <div class="flex-1">
+                      <div class="sonner-toast-title">Success!</div>
+                      <div class="sonner-toast-description">Your changes have been saved.</div>
+                    </div>
+                    <button class="sonner-toast-action">Undo</button>
+                  </div>
+                  <div class="sonner-toast sonner-toast-error rounded-lg">
+                    <div class="flex-1">
+                      <div class="sonner-toast-title">Error</div>
+                      <div class="sonner-toast-description">Something went wrong. Please try again.</div>
+                    </div>
+                  </div>
+                  <div class="sonner-toast sonner-toast-warning rounded-lg">
+                    <div class="flex-1">
+                      <div class="sonner-toast-title">Warning</div>
+                      <div class="sonner-toast-description">Please review your changes before submitting.</div>
+                    </div>
+                  </div>
+                  <div class="sonner-toast sonner-toast-info rounded-lg">
+                    <div class="flex-1">
+                      <div class="sonner-toast-title">Info</div>
+                      <div class="sonner-toast-description">Your session will expire in 5 minutes.</div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </article>
+
           </div>
         </section>
 
