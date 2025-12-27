@@ -175,11 +175,22 @@
    ============================================================= */
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 
   .btn-sm {
-    @apply h-9 rounded-md px-3 text-xs;
+    @apply h-8 rounded-md px-3 text-xs;
   }
 
   .btn-lg {
@@ -188,11 +199,16 @@
 
   .btn-icon,
   .btn.btn-icon {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-full;
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full p-0;
   }
 
   .btn-primary {
     @apply bg-primary text-primary-foreground hover:bg-primary/90;
+    box-shadow: 0 1px 3px 0 hsl(var(--primary) / 0.3), 0 1px 2px -1px hsl(var(--primary) / 0.2);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 20px -6px hsl(var(--primary) / 0.4), 0 4px 8px -2px hsl(var(--primary) / 0.2);
   }
 
   .btn-secondary {
@@ -201,56 +217,95 @@
 
   .btn-success {
     @apply bg-success text-success-foreground hover:bg-success/90;
+    box-shadow: 0 1px 3px 0 hsl(var(--success) / 0.3), 0 1px 2px -1px hsl(var(--success) / 0.2);
+  }
+
+  .btn-success:hover {
+    box-shadow: 0 8px 20px -6px hsl(var(--success) / 0.4), 0 4px 8px -2px hsl(var(--success) / 0.2);
   }
 
   .btn-warning {
     @apply bg-warning text-warning-foreground hover:bg-warning/85;
+    box-shadow: 0 1px 3px 0 hsl(var(--warning) / 0.3), 0 1px 2px -1px hsl(var(--warning) / 0.2);
+  }
+
+  .btn-warning:hover {
+    box-shadow: 0 8px 20px -6px hsl(var(--warning) / 0.4), 0 4px 8px -2px hsl(var(--warning) / 0.2);
   }
 
   .btn-danger,
   .btn-destructive {
     @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+    box-shadow: 0 1px 3px 0 hsl(var(--destructive) / 0.3), 0 1px 2px -1px hsl(var(--destructive) / 0.2);
+  }
+
+  .btn-danger:hover,
+  .btn-destructive:hover {
+    box-shadow: 0 8px 20px -6px hsl(var(--destructive) / 0.4), 0 4px 8px -2px hsl(var(--destructive) / 0.2);
   }
 
   .btn-info {
     @apply bg-info text-info-foreground hover:bg-info/85;
+    box-shadow: 0 1px 3px 0 hsl(var(--info) / 0.3), 0 1px 2px -1px hsl(var(--info) / 0.2);
+  }
+
+  .btn-info:hover {
+    box-shadow: 0 8px 20px -6px hsl(var(--info) / 0.4), 0 4px 8px -2px hsl(var(--info) / 0.2);
   }
 
   .btn-outline,
   .btn-outline-primary {
-    @apply border-border bg-transparent text-foreground hover:bg-primary/10 hover:text-primary;
+    @apply border-border bg-background text-foreground hover:border-primary/50 hover:bg-primary/5 hover:text-primary;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  }
+
+  .btn-outline:hover,
+  .btn-outline-primary:hover {
+    box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.06);
   }
 
   .btn-outline-secondary {
-    @apply border-border bg-transparent text-secondary-foreground hover:bg-secondary/70;
+    @apply border-border bg-background text-secondary-foreground hover:bg-secondary/60;
   }
 
   .btn-outline-success {
-    @apply border border-success/40 bg-transparent text-success hover:bg-success/10;
+    @apply border border-success/30 bg-background text-success hover:border-success/50 hover:bg-success/5;
   }
 
   .btn-outline-danger {
-    @apply border border-destructive/50 bg-transparent text-destructive hover:bg-destructive/10;
+    @apply border border-destructive/30 bg-background text-destructive hover:border-destructive/50 hover:bg-destructive/5;
   }
 
   .btn-outline-warning {
-    @apply border border-warning/50 bg-transparent text-warning hover:bg-warning/10;
+    @apply border border-warning/30 bg-background text-warning hover:border-warning/50 hover:bg-warning/5;
   }
 
   .btn-outline-info {
-    @apply border border-info/50 bg-transparent text-info hover:bg-info/10;
+    @apply border border-info/30 bg-background text-info hover:border-info/50 hover:bg-info/5;
   }
 
   .btn-ghost {
-    @apply border border-transparent bg-transparent text-foreground hover:bg-muted;
+    @apply border border-transparent bg-transparent text-foreground hover:bg-accent;
+    box-shadow: none;
+  }
+
+  .btn-ghost:hover {
+    transform: none;
+    box-shadow: none;
   }
 
   .btn-link {
-    @apply inline-flex items-center gap-1 rounded-md border border-transparent px-2 py-0 text-sm font-medium text-primary underline-offset-4 hover:text-primary/90 hover:underline;
+    @apply inline-flex items-center gap-1 rounded-md border border-transparent px-2 py-0 text-sm font-medium text-primary underline-offset-4 hover:text-primary/80 hover:underline;
+    box-shadow: none;
+  }
+
+  .btn-link:hover {
+    transform: none;
+    box-shadow: none;
   }
 
   .btn-light {
-    @apply bg-muted text-muted-foreground hover:bg-muted/70;
+    @apply bg-muted text-muted-foreground hover:bg-muted/80;
   }
 
   .btn-dark {
@@ -258,14 +313,19 @@
   }
 
   .btn-close {
-    @apply inline-flex h-8 w-8 items-center justify-center rounded-full border border-transparent text-muted-foreground transition hover:bg-muted hover:text-foreground;
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-md border border-transparent text-muted-foreground transition-all duration-200 hover:bg-muted hover:text-foreground;
+    box-shadow: none;
+  }
+
+  .btn-close:hover {
+    transform: none;
+    box-shadow: none;
   }
 
   .btn-close::before {
     content: "";
     display: block;
-    width: 0.75rem;
-    height: 0.75rem;
+    @apply h-3.5 w-3.5;
     background-color: currentColor;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m5 5 6 6m0-6-6 6'/%3E%3C/svg%3E");
     mask-repeat: no-repeat;
@@ -278,11 +338,16 @@
   }
 
   .btn-group {
-    @apply inline-flex overflow-hidden rounded-md shadow-sm;
+    @apply inline-flex overflow-hidden rounded-md;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 
   .btn-group > .btn {
     @apply rounded-none first:rounded-l-md last:rounded-r-md;
+  }
+
+  .btn-group > .btn:hover {
+    transform: none;
   }
 }
 
@@ -407,27 +472,46 @@
    ============================================================= */
 @layer components {
   .card {
-    @apply flex flex-col overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm;
+    @apply flex flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-all duration-200;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.02);
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 40px -15px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
   }
 
   .card-header {
-    @apply border-b border-border bg-muted/40 px-6 py-4;
+    @apply border-b border-border/60 bg-muted/30 px-6 py-4;
   }
 
   .card-footer {
-    @apply border-t border-border bg-muted/40 px-6 py-4;
+    @apply border-t border-border/60 bg-muted/30 px-6 py-4;
   }
 
   .card-body {
-    @apply px-6 py-5;
+    @apply flex-1 px-6 py-5;
   }
 
   .card-title {
-    @apply text-lg font-semibold text-foreground;
+    @apply text-lg font-semibold tracking-tight text-foreground;
   }
 
   .card-text {
-    @apply text-sm text-muted-foreground;
+    @apply text-sm leading-relaxed text-muted-foreground;
+  }
+
+  /* Interactive card variant */
+  .card-interactive {
+    @apply cursor-pointer;
+  }
+
+  .card-interactive:hover {
+    @apply border-border/80;
+    transform: translateY(-2px);
+  }
+
+  .card-interactive:active {
+    transform: translateY(0);
   }
 }
 
@@ -1130,5 +1214,1294 @@
 
   .popover-body {
     @apply px-4 py-3 text-sm text-muted-foreground;
+  }
+}
+
+/* =============================================================
+   Avatar (shadcn component)
+   ============================================================= */
+@layer components {
+  .avatar {
+    @apply relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full;
+  }
+
+  .avatar-sm {
+    @apply h-8 w-8;
+  }
+
+  .avatar-lg {
+    @apply h-12 w-12;
+  }
+
+  .avatar-xl {
+    @apply h-16 w-16;
+  }
+
+  .avatar-image {
+    @apply aspect-square h-full w-full object-cover;
+  }
+
+  .avatar-fallback {
+    @apply flex h-full w-full items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground;
+  }
+
+  .avatar-group {
+    @apply flex -space-x-3;
+  }
+
+  .avatar-group .avatar {
+    @apply border-2 border-background;
+  }
+}
+
+/* =============================================================
+   Separator (shadcn component)
+   ============================================================= */
+@layer components {
+  .separator {
+    @apply shrink-0 bg-border;
+  }
+
+  .separator-horizontal {
+    @apply h-px w-full;
+  }
+
+  .separator-vertical {
+    @apply h-full w-px;
+  }
+
+  .separator-decorative {
+    @apply my-4;
+  }
+
+  .separator-with-text {
+    @apply flex items-center gap-4;
+  }
+
+  .separator-with-text::before,
+  .separator-with-text::after {
+    content: "";
+    @apply h-px flex-1 bg-border;
+  }
+
+  .separator-text {
+    @apply text-xs font-medium text-muted-foreground;
+  }
+}
+
+/* =============================================================
+   Skeleton (shadcn component)
+   ============================================================= */
+@layer components {
+  .skeleton {
+    @apply animate-pulse rounded-md bg-muted;
+  }
+
+  .skeleton-text {
+    @apply h-4 w-full;
+  }
+
+  .skeleton-text-sm {
+    @apply h-3 w-3/4;
+  }
+
+  .skeleton-avatar {
+    @apply h-10 w-10 rounded-full;
+  }
+
+  .skeleton-button {
+    @apply h-10 w-24 rounded-md;
+  }
+
+  .skeleton-card {
+    @apply h-48 w-full rounded-xl;
+  }
+
+  .skeleton-image {
+    @apply aspect-video w-full rounded-lg;
+  }
+}
+
+/* =============================================================
+   Slider (shadcn component)
+   ============================================================= */
+@layer components {
+  .slider {
+    @apply relative flex w-full touch-none select-none items-center;
+  }
+
+  .slider-track {
+    @apply relative h-2 w-full grow overflow-hidden rounded-full bg-muted;
+  }
+
+  .slider-range {
+    @apply absolute h-full bg-primary;
+  }
+
+  .slider-thumb {
+    @apply block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  }
+
+  .slider-thumb:hover {
+    @apply bg-accent;
+  }
+
+  .slider-thumb:active {
+    transform: scale(1.1);
+  }
+
+  /* Native input range styling */
+  input[type="range"].slider-input {
+    @apply h-2 w-full cursor-pointer appearance-none rounded-full bg-muted;
+  }
+
+  input[type="range"].slider-input::-webkit-slider-thumb {
+    @apply h-5 w-5 appearance-none rounded-full border-2 border-primary bg-background;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  }
+
+  input[type="range"].slider-input::-moz-range-thumb {
+    @apply h-5 w-5 rounded-full border-2 border-primary bg-background;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  }
+}
+
+/* =============================================================
+   Toggle (shadcn component)
+   ============================================================= */
+@layer components {
+  .toggle {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply h-10 px-3;
+  }
+
+  .toggle[data-state="on"],
+  .toggle.active {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .toggle-sm {
+    @apply h-9 px-2.5;
+  }
+
+  .toggle-lg {
+    @apply h-11 px-5;
+  }
+
+  .toggle-outline {
+    @apply border border-input bg-transparent hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .toggle-group {
+    @apply inline-flex items-center justify-center gap-1 rounded-md;
+  }
+
+  .toggle-group-item {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply h-10 px-3;
+  }
+
+  .toggle-group-item[data-state="on"],
+  .toggle-group-item.active {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* Single toggle group styling */
+  .toggle-group-single .toggle-group-item:first-child {
+    @apply rounded-r-none;
+  }
+
+  .toggle-group-single .toggle-group-item:last-child {
+    @apply rounded-l-none;
+  }
+
+  .toggle-group-single .toggle-group-item:not(:first-child):not(:last-child) {
+    @apply rounded-none;
+  }
+}
+
+/* =============================================================
+   Aspect Ratio (shadcn component)
+   ============================================================= */
+@layer components {
+  .aspect-ratio {
+    @apply relative w-full;
+  }
+
+  .aspect-ratio > * {
+    @apply absolute inset-0 h-full w-full;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-wide {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+/* =============================================================
+   Scroll Area (shadcn component)
+   ============================================================= */
+@layer components {
+  .scroll-area {
+    @apply relative overflow-hidden;
+  }
+
+  .scroll-area-viewport {
+    @apply h-full w-full rounded-[inherit];
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scroll-area-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar {
+    @apply flex touch-none select-none p-0.5 transition-colors;
+  }
+
+  .scrollbar-vertical {
+    @apply h-full w-2.5 border-l border-l-transparent;
+  }
+
+  .scrollbar-horizontal {
+    @apply h-2.5 flex-col border-t border-t-transparent;
+  }
+
+  .scrollbar-thumb {
+    @apply relative flex-1 rounded-full bg-border;
+  }
+
+  .scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+/* =============================================================
+   Hover Card (shadcn component)
+   ============================================================= */
+@layer components {
+  .hover-card {
+    @apply relative inline-block;
+  }
+
+  .hover-card-trigger {
+    @apply cursor-pointer;
+  }
+
+  .hover-card-content {
+    @apply z-50 w-64 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-lg outline-none;
+    @apply opacity-0 invisible transition-all duration-200;
+    @apply data-[state=open]:opacity-100 data-[state=open]:visible;
+  }
+
+  .hover-card:hover .hover-card-content,
+  .hover-card-content.show {
+    @apply opacity-100 visible;
+  }
+
+  .hover-card-arrow {
+    @apply fill-popover;
+  }
+}
+
+/* =============================================================
+   Context Menu (shadcn component)
+   ============================================================= */
+@layer components {
+  .context-menu {
+    @apply z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-lg;
+  }
+
+  .context-menu-trigger {
+    @apply cursor-context-menu;
+  }
+
+  .context-menu-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .context-menu-item[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .context-menu-item-inset {
+    @apply pl-8;
+  }
+
+  .context-menu-checkbox-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .context-menu-radio-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .context-menu-label {
+    @apply px-2 py-1.5 text-sm font-semibold text-foreground;
+  }
+
+  .context-menu-separator {
+    @apply -mx-1 my-1 h-px bg-border;
+  }
+
+  .context-menu-shortcut {
+    @apply ml-auto text-xs tracking-widest text-muted-foreground;
+  }
+
+  .context-menu-sub-trigger {
+    @apply flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent;
+  }
+
+  .context-menu-sub-trigger[data-state="open"] {
+    @apply bg-accent;
+  }
+
+  .context-menu-sub-content {
+    @apply z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-lg;
+  }
+}
+
+/* =============================================================
+   Menubar (shadcn component)
+   ============================================================= */
+@layer components {
+  .menubar {
+    @apply flex h-10 items-center space-x-1 rounded-md border border-border bg-background p-1;
+  }
+
+  .menubar-menu {
+    @apply relative;
+  }
+
+  .menubar-trigger {
+    @apply flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .menubar-trigger[data-state="open"] {
+    @apply bg-accent;
+  }
+
+  .menubar-content {
+    @apply z-50 min-w-[12rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-lg;
+  }
+
+  .menubar-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .menubar-item[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .menubar-item-inset {
+    @apply pl-8;
+  }
+
+  .menubar-checkbox-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .menubar-radio-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .menubar-label {
+    @apply px-2 py-1.5 text-sm font-semibold;
+  }
+
+  .menubar-separator {
+    @apply -mx-1 my-1 h-px bg-muted;
+  }
+
+  .menubar-shortcut {
+    @apply ml-auto text-xs tracking-widest text-muted-foreground;
+  }
+
+  .menubar-sub-trigger {
+    @apply flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent;
+  }
+
+  .menubar-sub-content {
+    @apply z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-lg;
+  }
+}
+
+/* =============================================================
+   Command Palette (shadcn component)
+   ============================================================= */
+@layer components {
+  .command {
+    @apply flex h-full w-full flex-col overflow-hidden rounded-lg bg-popover text-popover-foreground;
+  }
+
+  .command-dialog {
+    @apply overflow-hidden p-0 shadow-2xl;
+  }
+
+  .command-input-wrapper {
+    @apply flex items-center border-b border-border px-3;
+  }
+
+  .command-input-icon {
+    @apply mr-2 h-4 w-4 shrink-0 opacity-50;
+  }
+
+  .command-input {
+    @apply flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .command-list {
+    @apply max-h-[300px] overflow-y-auto overflow-x-hidden;
+  }
+
+  .command-empty {
+    @apply py-6 text-center text-sm;
+  }
+
+  .command-group {
+    @apply overflow-hidden p-1 text-foreground;
+  }
+
+  .command-group-heading {
+    @apply px-2 py-1.5 text-xs font-medium text-muted-foreground;
+  }
+
+  .command-separator {
+    @apply -mx-1 h-px bg-border;
+  }
+
+  .command-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors;
+  }
+
+  .command-item[data-selected="true"],
+  .command-item:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .command-item[data-disabled="true"] {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .command-item-icon {
+    @apply mr-2 h-4 w-4;
+  }
+
+  .command-shortcut {
+    @apply ml-auto text-xs tracking-widest text-muted-foreground;
+  }
+}
+
+/* =============================================================
+   Calendar (shadcn component)
+   ============================================================= */
+@layer components {
+  .calendar {
+    @apply p-3;
+  }
+
+  .calendar-months {
+    @apply flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0;
+  }
+
+  .calendar-month {
+    @apply space-y-4;
+  }
+
+  .calendar-caption {
+    @apply flex justify-center pt-1 relative items-center;
+  }
+
+  .calendar-caption-label {
+    @apply text-sm font-medium;
+  }
+
+  .calendar-nav {
+    @apply space-x-1 flex items-center;
+  }
+
+  .calendar-nav-button {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100;
+  }
+
+  .calendar-nav-button-previous {
+    @apply absolute left-1;
+  }
+
+  .calendar-nav-button-next {
+    @apply absolute right-1;
+  }
+
+  .calendar-table {
+    @apply w-full border-collapse space-y-1;
+  }
+
+  .calendar-head-row {
+    @apply flex;
+  }
+
+  .calendar-head-cell {
+    @apply text-muted-foreground rounded-md w-9 font-normal text-[0.8rem];
+  }
+
+  .calendar-row {
+    @apply flex w-full mt-2;
+  }
+
+  .calendar-cell {
+    @apply h-9 w-9 text-center text-sm p-0 relative;
+  }
+
+  .calendar-cell:has(.calendar-day-range-end) {
+    @apply rounded-r-md;
+  }
+
+  .calendar-cell:has(.calendar-day-range-start) {
+    @apply rounded-l-md;
+  }
+
+  .calendar-day {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 p-0 font-normal;
+  }
+
+  .calendar-day-selected {
+    @apply bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground;
+  }
+
+  .calendar-day-today {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .calendar-day-outside {
+    @apply text-muted-foreground opacity-50;
+  }
+
+  .calendar-day-disabled {
+    @apply text-muted-foreground opacity-50;
+  }
+
+  .calendar-day-range-middle {
+    @apply bg-accent rounded-none;
+  }
+
+  .calendar-day-hidden {
+    @apply invisible;
+  }
+}
+
+/* =============================================================
+   Collapsible (shadcn component)
+   ============================================================= */
+@layer components {
+  .collapsible {
+    @apply w-full;
+  }
+
+  .collapsible-trigger {
+    @apply flex w-full items-center justify-between py-2 font-medium transition-all hover:underline;
+  }
+
+  .collapsible-trigger[data-state="open"] .collapsible-icon {
+    transform: rotate(180deg);
+  }
+
+  .collapsible-icon {
+    @apply h-4 w-4 shrink-0 transition-transform duration-200;
+  }
+
+  .collapsible-content {
+    @apply overflow-hidden text-sm transition-all;
+  }
+
+  .collapsible-content[data-state="closed"] {
+    @apply h-0;
+  }
+
+  .collapsible-content[data-state="open"] {
+    @apply h-auto;
+  }
+}
+
+/* =============================================================
+   Combobox (shadcn component)
+   ============================================================= */
+@layer components {
+  .combobox {
+    @apply relative;
+  }
+
+  .combobox-trigger {
+    @apply flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .combobox-trigger[data-state="open"] {
+    @apply ring-2 ring-ring ring-offset-2;
+  }
+
+  .combobox-value {
+    @apply truncate;
+  }
+
+  .combobox-icon {
+    @apply ml-2 h-4 w-4 shrink-0 opacity-50;
+  }
+
+  .combobox-content {
+    @apply relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-md;
+  }
+
+  .combobox-viewport {
+    @apply p-1;
+  }
+
+  .combobox-item {
+    @apply relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .combobox-item[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .combobox-item[data-selected] {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .combobox-item-indicator {
+    @apply absolute left-2 flex h-3.5 w-3.5 items-center justify-center;
+  }
+
+  .combobox-separator {
+    @apply -mx-1 my-1 h-px bg-muted;
+  }
+}
+
+/* =============================================================
+   Radio Group (shadcn component)
+   ============================================================= */
+@layer components {
+  .radio-group {
+    @apply grid gap-2;
+  }
+
+  .radio-group-item {
+    @apply aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .radio-group-item[data-state="checked"]::after,
+  .radio-group-item:checked::after {
+    content: "";
+    @apply block h-2.5 w-2.5 rounded-full bg-current;
+    margin: auto;
+  }
+
+  .radio-group-indicator {
+    @apply flex items-center justify-center;
+  }
+
+  .radio-group-indicator::after {
+    content: "";
+    @apply block h-2.5 w-2.5 rounded-full bg-current;
+  }
+
+  /* Styled radio cards */
+  .radio-card {
+    @apply flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-background p-4 transition-colors hover:bg-accent;
+  }
+
+  .radio-card[data-state="checked"],
+  .radio-card.checked {
+    @apply border-primary bg-primary/5;
+  }
+
+  .radio-card-content {
+    @apply flex-1;
+  }
+
+  .radio-card-title {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .radio-card-description {
+    @apply mt-1 text-sm text-muted-foreground;
+  }
+}
+
+/* =============================================================
+   Sheet (shadcn component - enhanced offcanvas)
+   ============================================================= */
+@layer components {
+  .sheet-overlay {
+    @apply fixed inset-0 z-50 bg-black/80 opacity-0 transition-opacity duration-300;
+  }
+
+  .sheet-overlay[data-state="open"],
+  .sheet-overlay.show {
+    @apply opacity-100;
+  }
+
+  .sheet {
+    @apply fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out duration-300;
+  }
+
+  .sheet[data-state="closed"] {
+    @apply duration-300;
+  }
+
+  .sheet[data-state="open"],
+  .sheet.show {
+    @apply duration-500;
+  }
+
+  .sheet-top {
+    @apply inset-x-0 top-0 border-b;
+    transform: translateY(-100%);
+  }
+
+  .sheet-top[data-state="open"],
+  .sheet-top.show {
+    transform: translateY(0);
+  }
+
+  .sheet-bottom {
+    @apply inset-x-0 bottom-0 border-t;
+    transform: translateY(100%);
+  }
+
+  .sheet-bottom[data-state="open"],
+  .sheet-bottom.show {
+    transform: translateY(0);
+  }
+
+  .sheet-left {
+    @apply inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm;
+    transform: translateX(-100%);
+  }
+
+  .sheet-left[data-state="open"],
+  .sheet-left.show {
+    transform: translateX(0);
+  }
+
+  .sheet-right {
+    @apply inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm;
+    transform: translateX(100%);
+  }
+
+  .sheet-right[data-state="open"],
+  .sheet-right.show {
+    transform: translateX(0);
+  }
+
+  .sheet-close {
+    @apply absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none;
+  }
+
+  .sheet-header {
+    @apply flex flex-col space-y-2 text-center sm:text-left;
+  }
+
+  .sheet-footer {
+    @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2;
+  }
+
+  .sheet-title {
+    @apply text-lg font-semibold text-foreground;
+  }
+
+  .sheet-description {
+    @apply text-sm text-muted-foreground;
+  }
+}
+
+/* =============================================================
+   Navigation Menu (shadcn component)
+   ============================================================= */
+@layer components {
+  .navigation-menu {
+    @apply relative z-10 flex max-w-max flex-1 items-center justify-center;
+  }
+
+  .navigation-menu-list {
+    @apply flex flex-1 list-none items-center justify-center space-x-1;
+  }
+
+  .navigation-menu-item {
+    @apply relative;
+  }
+
+  .navigation-menu-trigger {
+    @apply inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .navigation-menu-trigger[data-state="open"] {
+    @apply bg-accent/50;
+  }
+
+  .navigation-menu-trigger-icon {
+    @apply relative top-[1px] ml-1 h-3 w-3 transition duration-200;
+  }
+
+  .navigation-menu-trigger[data-state="open"] .navigation-menu-trigger-icon {
+    transform: rotate(180deg);
+  }
+
+  .navigation-menu-content {
+    @apply left-0 top-0 w-full md:absolute md:w-auto;
+  }
+
+  .navigation-menu-link {
+    @apply block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground;
+  }
+
+  .navigation-menu-viewport-wrapper {
+    @apply absolute left-0 top-full flex justify-center;
+  }
+
+  .navigation-menu-viewport {
+    @apply relative mt-1.5 w-full overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-lg;
+    transform-origin: top center;
+    height: var(--radix-navigation-menu-viewport-height);
+  }
+
+  @screen md {
+    .navigation-menu-viewport {
+      width: var(--radix-navigation-menu-viewport-width);
+    }
+  }
+
+  .navigation-menu-indicator {
+    @apply top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden;
+  }
+
+  .navigation-menu-indicator-arrow {
+    @apply relative h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md;
+    top: 60%;
+  }
+}
+
+/* =============================================================
+   Resizable (shadcn component)
+   ============================================================= */
+@layer components {
+  .resizable-panel-group {
+    @apply flex h-full w-full;
+  }
+
+  .resizable-panel-group[data-direction="vertical"] {
+    @apply flex-col;
+  }
+
+  .resizable-panel {
+    @apply flex-1;
+  }
+
+  .resizable-handle {
+    @apply relative flex w-px items-center justify-center bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1;
+  }
+
+  .resizable-handle[data-direction="vertical"] {
+    @apply h-px w-full after:left-0 after:h-1 after:w-full after:-translate-y-1/2 after:translate-x-0;
+  }
+
+  .resizable-handle-icon {
+    @apply z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border;
+  }
+
+  .resizable-handle:hover {
+    @apply bg-primary/50;
+  }
+}
+
+/* =============================================================
+   Input OTP (shadcn component)
+   ============================================================= */
+@layer components {
+  .input-otp {
+    @apply flex items-center gap-2;
+  }
+
+  .input-otp-group {
+    @apply flex items-center;
+  }
+
+  .input-otp-slot {
+    @apply relative flex h-10 w-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md;
+  }
+
+  .input-otp-slot[data-active] {
+    @apply z-10 ring-2 ring-ring ring-offset-background;
+  }
+
+  .input-otp-slot-char {
+    @apply text-foreground;
+  }
+
+  .input-otp-slot-caret {
+    @apply pointer-events-none absolute inset-0 flex items-center justify-center;
+  }
+
+  .input-otp-slot-caret::after {
+    content: "";
+    @apply h-4 w-px animate-pulse bg-foreground duration-1000;
+  }
+
+  .input-otp-separator {
+    @apply text-muted-foreground;
+  }
+}
+
+/* =============================================================
+   Drawer (shadcn component)
+   ============================================================= */
+@layer components {
+  .drawer-overlay {
+    @apply fixed inset-0 z-50 bg-black/80;
+  }
+
+  .drawer {
+    @apply fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border border-border bg-background;
+  }
+
+  .drawer-handle {
+    @apply mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted;
+  }
+
+  .drawer-header {
+    @apply grid gap-1.5 p-4 text-center sm:text-left;
+  }
+
+  .drawer-footer {
+    @apply mt-auto flex flex-col gap-2 p-4;
+  }
+
+  .drawer-title {
+    @apply text-lg font-semibold leading-none tracking-tight;
+  }
+
+  .drawer-description {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .drawer-close {
+    @apply absolute right-4 top-4;
+  }
+}
+
+/* =============================================================
+   Data Table (shadcn component - enhanced table)
+   ============================================================= */
+@layer components {
+  .data-table {
+    @apply w-full caption-bottom text-sm;
+  }
+
+  .data-table-header {
+    @apply border-b;
+  }
+
+  .data-table-body {
+    @apply divide-y divide-border;
+  }
+
+  .data-table-body tr:last-child {
+    @apply border-0;
+  }
+
+  .data-table-footer {
+    @apply border-t bg-muted/50 font-medium;
+  }
+
+  .data-table-row {
+    @apply border-b transition-colors hover:bg-muted/50;
+  }
+
+  .data-table-row[data-state="selected"] {
+    @apply bg-muted;
+  }
+
+  .data-table-head {
+    @apply h-12 px-4 text-left align-middle font-medium text-muted-foreground;
+  }
+
+  .data-table-head:has([role="checkbox"]) {
+    @apply pr-0;
+  }
+
+  .data-table-cell {
+    @apply p-4 align-middle;
+  }
+
+  .data-table-cell:has([role="checkbox"]) {
+    @apply pr-0;
+  }
+
+  .data-table-caption {
+    @apply mt-4 text-sm text-muted-foreground;
+  }
+
+  /* Sortable header */
+  .data-table-sortable {
+    @apply flex cursor-pointer items-center gap-1;
+  }
+
+  .data-table-sortable:hover {
+    @apply text-foreground;
+  }
+
+  .data-table-sort-icon {
+    @apply h-4 w-4;
+  }
+
+  /* Pagination */
+  .data-table-pagination {
+    @apply flex items-center justify-between px-2;
+  }
+
+  .data-table-pagination-info {
+    @apply flex-1 text-sm text-muted-foreground;
+  }
+
+  .data-table-pagination-controls {
+    @apply flex items-center space-x-6 lg:space-x-8;
+  }
+
+  .data-table-rows-per-page {
+    @apply flex items-center space-x-2;
+  }
+
+  .data-table-page-info {
+    @apply flex w-[100px] items-center justify-center text-sm font-medium;
+  }
+
+  .data-table-page-buttons {
+    @apply flex items-center space-x-2;
+  }
+}
+
+/* =============================================================
+   Sonner/Toast Enhanced (shadcn component)
+   ============================================================= */
+@layer components {
+  .sonner-toast {
+    @apply pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-lg border border-border bg-background p-4 pr-8 shadow-lg transition-all;
+  }
+
+  .sonner-toast-viewport {
+    @apply fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px];
+  }
+
+  .sonner-toast-action {
+    @apply inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .sonner-toast-close {
+    @apply absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100;
+  }
+
+  .sonner-toast-title {
+    @apply text-sm font-semibold;
+  }
+
+  .sonner-toast-description {
+    @apply text-sm opacity-90;
+  }
+
+  .sonner-toast-success {
+    @apply border-success/30 bg-success/10;
+  }
+
+  .sonner-toast-success .sonner-toast-title {
+    @apply text-success;
+  }
+
+  .sonner-toast-error {
+    @apply border-destructive/30 bg-destructive/10;
+  }
+
+  .sonner-toast-error .sonner-toast-title {
+    @apply text-destructive;
+  }
+
+  .sonner-toast-warning {
+    @apply border-warning/30 bg-warning/10;
+  }
+
+  .sonner-toast-warning .sonner-toast-title {
+    @apply text-warning;
+  }
+
+  .sonner-toast-info {
+    @apply border-info/30 bg-info/10;
+  }
+
+  .sonner-toast-info .sonner-toast-title {
+    @apply text-info;
+  }
+}
+
+/* =============================================================
+   Breadcrumb (shadcn component)
+   ============================================================= */
+@layer components {
+  .breadcrumb {
+    @apply flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5;
+  }
+
+  .breadcrumb-list {
+    @apply flex flex-wrap items-center gap-1.5 break-words sm:gap-2.5;
+  }
+
+  .breadcrumb-item {
+    @apply inline-flex items-center gap-1.5;
+  }
+
+  .breadcrumb-link {
+    @apply transition-colors hover:text-foreground;
+  }
+
+  .breadcrumb-link.active {
+    @apply font-normal text-foreground;
+  }
+
+  .breadcrumb-page {
+    @apply font-normal text-foreground;
+  }
+
+  .breadcrumb-separator {
+    @apply text-muted-foreground;
+  }
+
+  .breadcrumb-ellipsis {
+    @apply flex h-9 w-9 items-center justify-center;
+  }
+}
+
+/* =============================================================
+   List Group Enhanced (shadcn component)
+   ============================================================= */
+@layer components {
+  .list-group {
+    @apply flex flex-col divide-y divide-border rounded-lg border border-border bg-card;
+  }
+
+  .list-group-item {
+    @apply flex items-center gap-3 px-4 py-3 text-sm transition-colors;
+  }
+
+  .list-group-item:first-child {
+    @apply rounded-t-lg;
+  }
+
+  .list-group-item:last-child {
+    @apply rounded-b-lg;
+  }
+
+  .list-group-item-action {
+    @apply cursor-pointer hover:bg-muted;
+  }
+
+  .list-group-item-action:focus {
+    @apply bg-muted outline-none ring-2 ring-ring ring-offset-2;
+  }
+
+  .list-group-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .list-group-item-icon {
+    @apply h-4 w-4 text-muted-foreground;
+  }
+
+  .list-group-item.active .list-group-item-icon {
+    @apply text-primary-foreground;
+  }
+
+  .list-group-flush {
+    @apply border-0 rounded-none;
+  }
+
+  .list-group-flush .list-group-item:first-child {
+    @apply rounded-none;
+  }
+
+  .list-group-flush .list-group-item:last-child {
+    @apply rounded-none;
+  }
+}
+
+/* =============================================================
+   Carousel Enhanced (shadcn component)
+   ============================================================= */
+@layer components {
+  .carousel {
+    @apply relative;
+  }
+
+  .carousel-content {
+    @apply flex;
+  }
+
+  .carousel-content[data-orientation="horizontal"] {
+    @apply -ml-4;
+  }
+
+  .carousel-content[data-orientation="vertical"] {
+    @apply -mt-4 flex-col;
+  }
+
+  .carousel-item {
+    @apply min-w-0 shrink-0 grow-0 basis-full;
+  }
+
+  .carousel-item[data-orientation="horizontal"] {
+    @apply pl-4;
+  }
+
+  .carousel-item[data-orientation="vertical"] {
+    @apply pt-4;
+  }
+
+  .carousel-previous,
+  .carousel-next {
+    @apply absolute h-8 w-8 rounded-full border border-border bg-background shadow-sm;
+  }
+
+  .carousel-previous {
+    @apply -left-12 top-1/2 -translate-y-1/2;
+  }
+
+  .carousel-next {
+    @apply -right-12 top-1/2 -translate-y-1/2;
+  }
+
+  .carousel-previous:hover,
+  .carousel-next:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .carousel-dots {
+    @apply flex justify-center gap-2 pt-4;
+  }
+
+  .carousel-dot {
+    @apply h-2 w-2 rounded-full bg-muted transition-colors;
+  }
+
+  .carousel-dot.active {
+    @apply bg-primary;
   }
 }
